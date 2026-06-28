@@ -1,4 +1,4 @@
-\chapter{Mathematical Review}
+\chapter{Sets and Functions}
 
 Set theory is generally accepted as the foundation of modern mathematics, and it plays an instrumental role in the treatment of probability.
 Unfortunately, a simple description of set theory can lead to paradoxes, while a rigorous axiomatic approach is quite tedious.
@@ -8,7 +8,6 @@ From here, we proceed to define relevant notation and operations.
 
 \begin{figure}[htb]
 \begin{center}
-% FIGURE GROUP = BALLS
 \begin{footnotesize}
 \begin{tikzpicture}
 \draw[color=black, thick, dashed] (0,0) ellipse (30mm and 20mm);
@@ -61,7 +60,7 @@ If the set contains only a few elements, one can simply list the objects in the 
 \begin{equation*}
 S = \{ x_1, x_2, x_3 \} .
 \end{equation*}
-The content of a set can also be enumerated whenever $S$ has a countable number of elements,
+The content of a set can also be specified by an unending list, provided its elements can be arranged in a sequence,
 \begin{equation*}
 S = \{ x_1, x_2, \ldots \} .
 \end{equation*}
@@ -76,7 +75,7 @@ The braces are to be read as ``the set of'' while the symbol $|$ stands for the 
 It is convenient to introduce two special sets.
 The \emph{empty set}, denoted by $\emptyset$, is a set that contains no elements.\index{Empty set}
 The \emph{universal set} is the collection of all objects of interest in a particular context, and it is represented by $\Omega$.
-Once a universal set $\Omega$ is specified, we need only consider sets that are subsets of $\Omega$.
+Once a universal set $\Omega$ is fixed, we need only consider sets that are subsets of $\Omega$.
 In the context of probability, $\Omega$ is often called the \emph{sample space}.\index{Sample space}
 The \emph{complement} of a set $S$, relative to the universal set $\Omega$, is the collection of all objects in $\Omega$ that do not belong to $S$,\index{Complement}
 \begin{equation*}
@@ -140,7 +139,7 @@ It is denoted by $S \cap T$, and it can be expressed mathematically as $S \cap T
 When $S$ and $T$ have no elements in common, we write $S \cap T = \emptyset$.
 We also express this fact by saying that $S$ and $T$ are \emph{disjoint}.\index{Disjoint sets}
 More generally, a collection of sets is said to be disjoint if no two sets have a common element.
-A collection of sets is said to form a \emph{partition} of $S$ if the sets in the collection are disjoint and their union is $S$.\index{Partition}
+A collection of nonempty sets is said to form a \emph{partition} of $S$ if the sets in the collection are disjoint and their union is $S$.\index{Partition}
 
 \begin{figure}[htb]
 \begin{center}
@@ -194,7 +193,7 @@ A collection of sets is said to form a \emph{partition} of $S$ if the sets in th
 \coordinate [label=center:{$S_3$}] (S3b) at (7cm,0);
 \end{tikzpicture}
 \caption{A partition of $S$ is a collection of sets that are disjoint and whose union is $S$.
-Above, $S$ is partition into three disjoint subsets: $S_1$, $S_2$, and $S_3$.}
+Above, $S$ is partitioned into three disjoint subsets: $S_1$, $S_2$, and $S_3$.}
 \end{center}
 \end{figure}
 
@@ -225,9 +224,9 @@ This is defined in a straightforward way,
 \bigcup_{i \in \IndexSet} S_{i}
 &= \{ x | x \in S_{i} \text{ for some } i \in \IndexSet \} \\
 \bigcap_{i \in \IndexSet} S_{i}
-&= \{ x | x \in S_{i} \text{ for all } i \in \IndexSet \} .
+&= \{ x | x \in S_{i} \text{ for all } i \in \IndexSet \}
 \end{align*}
-The index set $\IndexSet$ can be finite or infinite.
+where the index set $\IndexSet$ can be finite or infinite.
 
 
 \section{Additional Rules and Properties}
@@ -303,7 +302,6 @@ Given sets $S$ and $T$, the \emph{cartesian product} $S \times T$ is the set of 
 
 \begin{figure}[htb]
 \begin{center}
-% FIGURE GROUP = BALLS
 \begin{footnotesize}
 \begin{tikzpicture}
 \shade[draw=black, ball color=red, circular drop shadow] (0,1.25) circle (4mm);
@@ -365,9 +363,13 @@ In this example, the sets $\{ 1, 2, 3 \}$ and $\{ \mathrm{a}, \mathrm{b} \}$ are
 
 \section{Functions}
 
-A \emph{function} is a special type of relation that assigns exactly one value to each possible input.\index{Function}
-A common representation for a function is $f(x) = y$, where $f$ denotes the rule of correspondence.
-The \emph{domain} of a function is the set over which this function is defined; that is, the collection of arguments that can be used as input.\index{Domain}
+The Cartesian product gives us the language to describe correspondences between sets.
+A \emph{relation} between sets $X$ and $Y$ is any subset of the Cartesian product $X \times Y$;\index{Relation}
+when the pair $(x, y)$ belongs to the relation, we say that $x$ is related to $y$.
+A \emph{function} is a relation with a special property: it associates with every element of $X$ exactly one element of $Y$.\index{Function}
+That is, $f \subset X \times Y$ is a function if, for each $x \in X$, there is one and only one $y \in Y$ for which $(x, y) \in f$.
+This unique value is written $f(x)$, so that $f(x) = y$ exactly when $(x, y) \in f$, and the rule that produces $f(x)$ from $x$ is called the rule of correspondence.
+The \emph{domain} of a function is the set over which it is defined; that is, the collection of arguments that can be used as input.\index{Domain}
 The \emph{codomain} is the set into which all the outputs of the function are constrained to lie.\index{Codomain}
 To specify these sets explicitly, the notation
 \begin{equation*}
@@ -375,7 +377,7 @@ f: X \rightarrow Y
 \end{equation*}
 is frequently used, where $X$ indicates the domain and $Y$ is the codomain.
 In these notes, we subscribe to an intuitive viewpoint with the understanding that a function maps every argument to a unique value in the codomain.
-Nonetheless, a function can be defined formally as a triple $(X, Y, F)$ where $F$ is a structured subset of the Cartesian product $X \times Y$.
+Formally, however, a function is precisely a triple $(X, Y, f)$ in which the \emph{graph} $f \subset X \times Y$ obeys the single-value property stated above.
 
 \begin{example}
 Consider the function $f: \RealNumbers \rightarrow \RealNumbers$ where $f(x) = x^2$.
@@ -385,14 +387,15 @@ The rule of correspondence for this function is $x \mapsto x^2$, which should be
 
 \begin{example}
 An interesting function that plays an important role in probability is the indicator function.
-Suppose $S$ is a subset of the real numbers.
-We define the indicator function of set $S$, denoted $\IndicatorFcn_S: \RealNumbers \rightarrow \{ 0, 1 \}$, by
+Suppose $S$ is a subset of the universal set $\Omega$.
+We define the indicator function of set $S$, denoted $\IndicatorFcn_S: \Omega \rightarrow \{ 0, 1 \}$, by
 \begin{equation*}
-\IndicatorFcn_S (x) = \begin{cases} 1, & x \in S\\
-0, & x \notin S . \end{cases}
+\IndicatorFcn_S (\omega) = \begin{cases} 1, & \omega \in S\\
+0, & \omega \notin S . \end{cases}
 \end{equation*}
 In words, the value of the function $\IndicatorFcn_S (\cdot)$ indicates whether its argument belongs to $S$ or not.
 A value of one represents inclusion of the argument in $S$, whereas a zero signifies exclusion.
+When $\Omega$ plays the role of a sample space, the indicator of $S$ reports whether an observed outcome falls in $S$; this is the seed of the Bernoulli random variable encountered later.
 \end{example}
 
 The \emph{image} of $X$ under function $f: X \rightarrow Y$ is the set of all objects of the form $f(x)$, where $x$ ranges over the elements of $X$,\index{Image}
@@ -410,6 +413,35 @@ f^{-1} (\{ y \}) = \{ x \in X | f(x) = y \} .
 \end{equation*}
 This set, $f^{-1} (\{ y \})$, is sometimes called the \emph{level set} of $y$.
 
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  width=4in, height=2.8in,
+  axis lines=middle,
+  xlabel={$x$}, ylabel={$f(x)$},
+  xlabel style={right}, ylabel style={above},
+  xtick={-1.4142,1.4142}, xticklabels={$-\sqrt{c}$,$\sqrt{c}$},
+  ytick={2}, yticklabels={$c$}, yticklabel style={yshift=7pt},
+  xmin=-2.4, xmax=2.4, ymin=-0.5, ymax=4.4,
+  samples=100, clip=false,
+]
+\addplot[thick, domain=-2.05:2.05] {x^2};
+\draw[dashed] (axis cs:-2.4,2) -- (axis cs:2.4,2);
+\draw[dashed] (axis cs:-1.4142,2) -- (axis cs:-1.4142,0);
+\draw[dashed] (axis cs:1.4142,2) -- (axis cs:1.4142,0);
+\node[circle,fill,inner sep=1.5pt] at (axis cs:-1.4142,2) {};
+\node[circle,fill,inner sep=1.5pt] at (axis cs:1.4142,2) {};
+\node[circle,fill,inner sep=1.5pt] at (axis cs:-1.4142,0) {};
+\node[circle,fill,inner sep=1.5pt] at (axis cs:1.4142,0) {};
+\end{axis}
+\end{tikzpicture}
+\caption{The level set of a value $c > 0$ under $f(x) = x^2$ is its preimage $f^{-1} (\{ c \}) = \{ -\sqrt{c}, \sqrt{c} \}$.
+The horizontal line at height $c$ meets the graph at two points, whose arguments make up the preimage.
+This illustrates that the preimage of a single value may contain several elements.}
+\end{center}
+\end{figure}
+
 A function is \emph{injective} or \emph{one-to-one} if it preserves distinctness;\index{Injective}\index{One-to-one}
 that is, different elements from the domain never map to a same element in the codomain.
 Mathematically, the function $f: X \rightarrow Y$ is injective if $f(x_1) = f(x_2)$ implies $x_1 = x_2$ for all $x_1, x_2 \in X$.
@@ -426,6 +458,9 @@ with $f^{-1} (f(x)) = x$ and $f (f^{-1} (y)) = y$.
 
 Set theory provides a rigorous foundation for modern probability and its axiomatic basis.
 It is employed to describe the laws of probability, give meaning to their implications and answer practical questions.
+Many of the constructs assembled in this chapter reappear in a probabilistic guise.
+The universal set becomes the sample space of an experiment, and a partition of it underlies the law of total probability.
+The preimage of a function is the mechanism behind random variables, while the Cartesian product lets us describe the joint behavior of several quantities at once.
 Becoming familiar with basic definitions and set operations is key in understanding the subtleties of probability; it will help overcome its many challenges.
 A working knowledge of set theory is especially critical when modeling measured quantities and evolving processes that appear random, an invaluable skill for engineers.
 

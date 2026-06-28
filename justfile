@@ -9,7 +9,7 @@ open_cmd   := "open"
 # Chapter order — mirrors the \include sequence in the main .tex.
 # (appendix is intentionally excluded; it is commented out in the main file.)
 md_files := "chapters/preface.md \
-chapters/mathematical_review.md \
+chapters/sets_and_functions.md \
 chapters/combinatorics.md \
 chapters/basic_concepts.md \
 chapters/conditional_probability.md \

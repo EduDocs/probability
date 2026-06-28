@@ -136,7 +136,7 @@ The default linear chain (no map needed) for this book is:
 
 ```
 preface ->
-mathematical_review -> combinatorics -> basic_concepts -> conditional_probability ->
+sets_and_functions -> combinatorics -> basic_concepts -> conditional_probability ->
 discrete_random_variables -> discrete_expectations -> discrete_vectors ->
 continuous_random_variables -> derived_distributions -> expectations_and_bounds ->
 random_vectors -> empirical_sums
