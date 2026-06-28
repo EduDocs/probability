@@ -1,6 +1,6 @@
 ---
 introduces: [finite-equally-likely-model, counting-principle, permutation, combination, binomial-coefficient, multinomial-coefficient]
-requires:   [set, cartesian-product, event]
+requires:   [set, cartesian-product]
 ---
 
 # Intuitive Probability and Combinatorics — scratch

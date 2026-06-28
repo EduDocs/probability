@@ -16,6 +16,7 @@ Extend the discrete RV machinery to jointly distributed collections — joint PM
 - Conditional RVs: conditioning on an event, then on a random variable (a family of conditional PMFs indexed by the conditioning value).
 - Conditional expectation E[X | Y]: itself a random variable; tower property E[E[X|Y]] = E[X].
 - Independence: joint PMF factors as product of marginals; equivalent formulations.
+- iid random variables: the independent-and-identically-distributed notion from `discrete_random_variables`, made rigorous at the RV level here once independence of random variables is defined; the standing assumption for sums and the later limit theorems.
 - OGFs as a multiplicative tool: OGF of a sum of independent integer-valued RVs is the product of OGFs.
 - Sums of two independent RVs via convolution of PMFs.
 - Numerous RVs: extending to n-tuples, joint independence, and structural shortcuts that scale.

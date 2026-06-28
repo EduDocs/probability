@@ -1,6 +1,6 @@
 ---
-introduces: [random-variable, pmf, function-of-rv, bernoulli, binomial, poisson, geometric, discrete-uniform]
-requires:   [sample-space, event, probability-law, function, preimage, iid]
+introduces: [random-variable, pmf, function-of-rv, bernoulli, iid, binomial, poisson, geometric, discrete-uniform]
+requires:   [sample-space, event, probability-law, function, preimage, independence-of-events]
 ---
 
 # Discrete Random Variables — scratch
@@ -15,6 +15,7 @@ Promote random variables from events to functions on the sample space, focus on 
 - Probability mass function (PMF) p_X(x) = Pr(X = x); axioms (nonneg, sums to 1).
 - Events on X are pulled back to events on Omega via preimages.
 - Bernoulli RV: single trial, parameter p; the atomic building block.
+- Independent and identically distributed (iid) trials: repeated trials that are mutually independent (via independence of events) and share one distribution; the standard building block for the binomial and geometric models, and reused later for sums and limit theorems.
 - Binomial RV: number of successes in n iid Bernoulli trials.
 - Poisson RV: limit of binomial under rare-events scaling; counts of occurrences in an interval.
 - Geometric RV: trial index of the first success in iid Bernoulli trials.

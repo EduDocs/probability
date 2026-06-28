@@ -33,8 +33,9 @@ requires: []
 ## Purpose
 
 A reference appendix consolidating the calculus and discrete-math facts the
-notes assume but that students routinely need to look up. Designed for **lookup,
-not linear reading** — the main chapters call back to specific entries via
+notes assume but that students routinely need to look up, together with a
+summary table of the named distributions the notes introduce. Designed for
+**lookup, not linear reading** — the main chapters call back to specific entries via
 semantic labels (`\Cref{app:gaussian-integral}`, not `Appendix A.3`). The
 preliminaries chapter (`mathematical_review.tex`) stays the *motivating*
 front-matter; this appendix is the *reference manual*.
@@ -77,6 +78,16 @@ front-matter; this appendix is the *reference manual*.
 - Inclusion–exclusion in its general form (the two- and three-set forms are
   covered in `basic_concepts.tex`; the general statement and a short induction
   proof live here).
+
+### Distribution reference table
+- A compact lookup table of the named distributions introduced in the notes:
+  name, parameters, PMF or PDF, mean, and variance — one row per distribution.
+- Discrete rows: Bernoulli, binomial, Poisson, geometric, discrete uniform.
+- Continuous rows: uniform, Gaussian, exponential, gamma, Rayleigh, Laplace,
+  Cauchy (mean and variance undefined), plus the bivariate normal (mean vector
+  and covariance matrix).
+- A summary, not a source: each row back-references the chapter where the
+  distribution is defined; the table only collects results already derived.
 
 ## Open questions
 
@@ -125,3 +136,11 @@ front-matter; this appendix is the *reference manual*.
   prerequisite, not on any book concept. If a later draft notices it leaning
   on a book concept, that is a signal the content belongs in a chapter, not
   the appendix.
+- Added a *Distribution reference table* section (REVIEW4 D13). This is a
+  deliberate exception to the `requires: []` rule above: the table tabulates
+  the means, variances, and PMFs/PDFs already derived in the distribution
+  chapters, so it back-references book concepts rather than re-deriving them.
+  When this appendix is realized into `.tex`, update `requires:` to list the
+  summarized distributions (bernoulli, binomial, poisson, geometric,
+  discrete-uniform, uniform-continuous, gaussian, exponential, gamma, rayleigh,
+  laplace, cauchy, gaussian-vector) plus `expectation` and `variance`.

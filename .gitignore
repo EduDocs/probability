@@ -1,2 +1,5 @@
 # LaTeX build artifacts
 output/
+
+# Local resources
+resources/
