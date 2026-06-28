@@ -1,3 +1,8 @@
+---
+introduces: [finite-equally-likely-model, counting-principle, permutation, combination, binomial-coefficient, multinomial-coefficient]
+requires:   [set, cartesian-product, event]
+---
+
 # Intuitive Probability and Combinatorics — scratch
 
 > Scratch/ideas only. The shipped prose lives in `combinatorics.tex`. Not part of the LaTeX build.

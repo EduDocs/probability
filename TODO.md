@@ -83,6 +83,30 @@ surgical and additive — unless flagged otherwise.
   Decide: finish the appendix, fold its content into another chapter, or
   delete it.
 
+## Outside the structural audit (graph-resolution limits)
+
+`just concept md` reads the YAML frontmatter and surfaces forward references
+as a set-membership check. Two findings above are **deliberately invisible to
+that mechanical audit** and live only in this document:
+
+- **MGF blocker in `expectations_and_bounds.md`** (above). At the frontmatter
+  level, `independence-of-rvs` *is* introduced upstream (in
+  `discrete_vectors.md`), so the graph treats this as satisfied. The actual
+  defect is that the discrete introduction does not extend to continuous RVs
+  without the construction in `random_vectors.md`. The sidecars do not split
+  the concept into `independence-of-rvs-discrete` / `-continuous`, so the gap
+  shows up only in prose.
+- **Gamma / Rayleigh warning in `continuous_random_variables.md`** (above).
+  Same reason: `independence-of-rvs` and `joint-pdf` *are* in the requires
+  list, but the discrete vs. continuous distinction that makes these
+  forward-pointing is not in the graph's resolution.
+
+If we ever want these flagged mechanically, the fix is to split the concept
+in the sidecars' frontmatter (`independence-of-rvs-discrete`,
+`independence-of-rvs-continuous`) and update the chapters that introduce /
+require each variant. For now, leave the graph at its current resolution and
+track these via this TODO.
+
 ## Process
 
 - The progression audit is naturally convergent — re-running `/progression`

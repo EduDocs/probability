@@ -1,3 +1,8 @@
+---
+introduces: [joint-cdf, joint-pdf, conditional-pdf]
+requires:   [cdf, pdf, marginal, conditional-expectation, tower-property, change-of-variables, jacobian, independence-of-rvs, convolution]
+---
+
 # Multiple Continuous Random Variables — scratch
 
 > Scratch/ideas only. The shipped prose lives in `random_vectors.tex`. Not part of the LaTeX build.

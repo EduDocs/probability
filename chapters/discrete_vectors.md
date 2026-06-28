@@ -1,3 +1,8 @@
+---
+introduces: [joint-pmf, marginal, conditional-pmf, conditional-expectation, tower-property, linearity-of-expectation, independence-of-rvs, convolution]
+requires:   [random-variable, pmf, expectation, ogf, independence-of-events]
+---
+
 # Multiple Discrete Random Variables — scratch
 
 > Scratch/ideas only. The shipped prose lives in `discrete_vectors.tex`. Not part of the LaTeX build.

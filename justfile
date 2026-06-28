@@ -41,7 +41,7 @@ view kind:
 # --- LaTeX ----------------------------------------------------------------
 
 _build-latex:
-    mkdir -p {{outdir}}
+    mkdir -p {{outdir}}/chapters
     {{latex}} {{latexflags}} -output-directory={{outdir}} {{main}}.tex
     -cd {{outdir}} && makeindex {{main}}.idx
     {{latex}} {{latexflags}} -output-directory={{outdir}} {{main}}.tex
@@ -62,6 +62,15 @@ _build-md:
 
 _view-md: _build-md
     {{open_cmd}} {{outdir}}/{{main}}_sidecars.pdf
+
+# --- Derived documents ----------------------------------------------------
+
+# Generate a derived document. Currently: just concept md -> CONCEPT_MAP.md
+concept kind:
+    @just _concept-{{kind}}
+
+_concept-md:
+    python3 scripts/concept_graph.py
 
 # --- Housekeeping ---------------------------------------------------------
 

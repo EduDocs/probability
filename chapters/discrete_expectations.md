@@ -1,3 +1,8 @@
+---
+introduces: [expectation, lotus, variance, moment, ogf]
+requires:   [random-variable, pmf, function-of-rv, independence-of-rvs, convolution]
+---
+
 # Meeting Expectations — scratch
 
 > Scratch/ideas only. The shipped prose lives in `discrete_expectations.tex`. Not part of the LaTeX build.

@@ -1,3 +1,8 @@
+---
+introduces: [sample-space, event, probability-law, axioms-of-probability, inclusion-exclusion, union-bound, sigma-field]
+requires:   [set, partition, finite-equally-likely-model, counting-principle]
+---
+
 # Basic Concepts of Probability — scratch
 
 > Scratch/ideas only. The shipped prose lives in `basic_concepts.tex`. Not part of the LaTeX build.

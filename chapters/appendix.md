@@ -1,3 +1,8 @@
+---
+introduces: []
+requires:   [expectation, function-of-rv, pmf]
+---
+
 # Sums — scratch
 
 > Scratch/ideas only. The shipped prose lives in `appendix.tex`. Not part of the LaTeX build.

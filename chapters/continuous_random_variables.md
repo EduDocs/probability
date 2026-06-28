@@ -1,3 +1,8 @@
+---
+introduces: [cdf, pdf, uniform-continuous, gaussian, exponential, gamma, rayleigh, laplace, cauchy]
+requires:   [random-variable, pmf, expectation, lotus, function-of-rv, independence-of-rvs, joint-pdf]
+---
+
 # Continuous Random Variables — scratch
 
 > Scratch/ideas only. The shipped prose lives in `continuous_random_variables.tex`. Not part of the LaTeX build.

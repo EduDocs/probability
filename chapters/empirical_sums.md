@@ -1,3 +1,8 @@
+---
+introduces: [convergence-in-probability, convergence-in-distribution, convergence-in-mean-square, lln, clt]
+requires:   [random-variable, expectation, variance, iid, gaussian]
+---
+
 # Sequences, Convergence and Limit Theorems — scratch
 
 > Scratch/ideas only. The shipped prose lives in `empirical_sums.tex`. Not part of the LaTeX build.

@@ -1,3 +1,8 @@
+---
+introduces: [change-of-variables, jacobian, probability-integral-transform]
+requires:   [random-variable, pmf, pdf, cdf, function-of-rv, uniform-continuous]
+---
+
 # Functions and Derived Distributions — scratch
 
 > Scratch/ideas only. The shipped prose lives in `derived_distributions.tex`. Not part of the LaTeX build.

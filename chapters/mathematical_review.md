@@ -1,3 +1,8 @@
+---
+introduces: [set, partition, cartesian-product, function, preimage, indicator-function]
+requires:   []
+---
+
 # Mathematical Review — scratch
 
 > Scratch/ideas only. The shipped prose lives in `mathematical_review.tex`. Not part of the LaTeX build.

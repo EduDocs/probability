@@ -1,3 +1,8 @@
+---
+introduces: [conditional-probability, total-probability, bayes-rule, independence-of-events, conditional-independence]
+requires:   [sample-space, event, probability-law, partition]
+---
+
 # Conditional Probability — scratch
 
 > Scratch/ideas only. The shipped prose lives in `conditional_probability.tex`. Not part of the LaTeX build.

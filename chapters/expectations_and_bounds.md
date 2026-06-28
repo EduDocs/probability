@@ -1,3 +1,8 @@
+---
+introduces: [mgf, markov-inequality, chebyshev-inequality, chernoff-bound, jensen-inequality]
+requires:   [expectation, variance, moment, ogf, random-variable, independence-of-rvs]
+---
+
 # Expectations and Bounds — scratch
 
 > Scratch/ideas only. The shipped prose lives in `expectations_and_bounds.tex`. Not part of the LaTeX build.

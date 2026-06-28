@@ -1,3 +1,8 @@
+---
+introduces: []
+requires:   []
+---
+
 # Preface — scratch
 
 > Scratch/ideas only. The shipped prose lives in `preface.tex`. Not part of the LaTeX build.
@@ -12,10 +17,12 @@ Set expectations for the notes: scope (an introduction to probability), audience
 - Programming skills help for the computing material and examples.
 - Probability fits computers naturally: simulation, imaging, and graphical illustration of difficult concepts.
 - Computers also handle problems without closed-form solutions.
-- Pointer to an external interactive resource (Seeing Theory).
 
 ## Open questions
 -
 
 ## Notes & references
-- External link: Seeing Theory — http://students.brown.edu/seeing-theory/
+-
+
+## Decisions
+- Dropped the "Additional Resources" section pointing to Seeing Theory (`http://students.brown.edu/seeing-theory/`); the page is no longer available.

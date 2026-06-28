@@ -1,3 +1,8 @@
+---
+introduces: [random-variable, pmf, function-of-rv, bernoulli, binomial, poisson, geometric, discrete-uniform]
+requires:   [sample-space, event, probability-law, function, preimage, iid]
+---
+
 # Discrete Random Variables — scratch
 
 > Scratch/ideas only. The shipped prose lives in `discrete_random_variables.tex`. Not part of the LaTeX build.
