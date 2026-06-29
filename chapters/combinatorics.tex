@@ -2,7 +2,7 @@
 
 The simplest probabilistic scenario is perhaps one where the set of possible outcomes is finite and these outcomes are all equally likely.
 A subset of the set of possible outcomes is called an \emph{event}.
-Computing the probability of an event amounts to counting the number of elements comprising this event and then dividing the sum by the total number of admissible outcomes.
+In such situations, computing the probability of an event amounts to counting the number of elements comprising this event and then dividing the sum by the total number of admissible outcomes.
 
 \begin{example}
 The rolling of a fair die is an experiment with a finite number of equally likely outcomes, namely the different faces labeled one through six.
@@ -21,7 +21,7 @@ For instance, the probability of rolling a prime number is
 
 While counting outcomes may appear intuitively straightforward, it is in many circumstances a daunting task.
 Calculating the number of ways that certain patterns can be formed is part of the field of \emph{combinatorics}. \index{Combinatorics}
-In this chapter, we introduce useful counting techniques that can be applied to situations pertinent to probability.
+Below, we introduce useful counting techniques that can be applied to situations pertinent to probability.
 
 
 \section{The Counting Principle}
@@ -33,7 +33,7 @@ The Cartesian product of $S$ and $T$ is given by
 S \times T = \{ (x, y) | x \in S \text{ and } y \in T \} .
 \end{equation*}
 The number of elements in the Cartesian product $S \times T$ is equal to $m n$.
-This is illustrated in Figure~\ref{figure:CountingPrinciple}.
+This notion is illustrated in Figure~\ref{figure:CountingPrinciple}.
 
 \begin{figure}[htb!]
 \begin{center}
@@ -133,24 +133,24 @@ That is, there are twelve different ways to flip a coin and roll a die.
 \end{example}
 
 Using the equally likely outcome model, the above example implies that the probability of each outcome is $\frac{1}{2} \cdot \frac{1}{6} = \frac{1}{12}$.
-As we will eventually see, this is an instance of the \emph{product rule} for \emph{independent} experiments, which says the probability that two events both occur is given by the product of their individual probabilities if and only if they are independent.
-For now, we will interpet the word independent intuitively and take it to mean that the two experiments have no relation to each other.
+Observe that this is the product of $\frac{1}{2}$, the probability of a particular coin face, and $\frac{1}{6}$, the probability of a particular die face.
+This factorization is no accident; it is a feature of combining unrelated experiments through a Cartesian product, as the next example illustrates.
 
 \begin{example}
 Consider two experiments and let $S_1$ be the set of outcomes for the first and $S_2$ be the set of outcomes for the second.
 Let $E_1 \subseteq S_1$ and $E_2 \subseteq S_2$ be events of interest for the two experiments.
 One can think of the two experiments together as a single experiment with outcomes contained in $S = S_1 \times S_2$.
 In this model, the set of joint outcomes where $E_1$ and $E_2$ both occur is given by the joint event $E = E_1 \times E_2$.
-The equally likely outcome model for this joint experiment asserts that the probability that both events occur is given by
+The equally likely outcome model for this joint experiment then gives
 \begin{equation*}
 \frac{|E|}{|S|} = \frac{|E_1 \times E_2|}{|S_1 \times S_2|}
 = \frac{|E_1|\,|E_2|}{|S_1|\,|S_2|}
 = \frac{|E_1|}{|S_1|}\,\frac{|E_2|}{|S_2|},
 \end{equation*}
 where $|T|$ represents the cardinality of set $T$, i.e., the number of elements in $T$.
-This implies that the product rule remains accurate when equally-likely experiments are combined this way.
-Conversely, events are called independent only if the product rule works.
-Therefore, combining multiple experiments in this way is the same as assuming they are independent.
+In words, the probability that both events occur is the product of their individual probabilities.
+When two experiments are combined through a Cartesian product in this manner, we think of them intuitively as \emph{independent}, meaning the outcome of one has no bearing on the other.
+We will make this notion precise when we study conditional probability and independence in subsequent chapters.
 \end{example}
 
 The counting principle can be broadened to calculating the number of elements in the Cartesian product of multiple sets.
@@ -368,16 +368,6 @@ They can be written as $123, 132, 213, 231, 312, 321$.
 \end{figure}
 
 
-\subsection{Stirling's Formula*}
-
-The number $n!$ grows very rapidly as a function of $n$.
-A good approximation for $n!$ when $n$ is large is given by \emph{Stirling's formula}, \index{Stirling's formula}
-\begin{equation*}
-n! \sim n^n e^{-n} \sqrt{ 2 \pi n} .
-\end{equation*}
-The notation $a_n \sim b_n$ signifies that the ratio $a_n / b_n \rightarrow 1$ as $n \rightarrow \infty$.
-
-
 \subsection{k-Permutations}
 
 Suppose that we rank only $k$ elements out of the set $S = \{ 1, 2, \ldots, n \}$, where $k \leq n$.
@@ -392,7 +382,7 @@ The number of possible sequences is therefore given by
 \begin{example}
 A recently formed music group can play four original songs.
 They are asked to perform two songs at South by Southwest.
-We wish to compute the number of song arrangements the group can offer in concert.
+We wish to compute the number of song arrangements the group can offer in concert (without playing the same song twice).
 Abstractly, this is equivalent to computing the number of $2$-permutations of four songs.
 Thus, the number of distinct arrangements is ${4!}/{2!} = 12$.
 \end{example}
@@ -510,6 +500,12 @@ whereas the $2$-permutations of $S$ are more numerous with
 \end{equation*}
 Consequently, there are fewer $2$-element subsets of $S$ than $2$-permutations of $S$.
 
+The distinction between the two is worth dwelling on, as it is among the most common sources of confusion in counting problems.
+Both notions begin with the same objects; they differ in the question being asked.
+Returning to the music group with four original songs, asking \emph{which two songs to perform} is a combination, and there are six such choices.
+Asking \emph{which two songs to perform and in what order} is a $2$-permutation, and there are twelve.
+The two counts differ by a factor of $2! = 2$, precisely the number of ways to order the two selected songs.
+
 \begin{figure}[htb!]
 \begin{center}
 % FIGURE GROUP = BALLS
@@ -595,6 +591,7 @@ Because there is no ordering in the jar, this amounts to counting the number of 
 \begin{equation*}
 \binom{n}{k} = \frac{n!}{k! (n-k)!}.
 \end{equation*}
+This way of counting unordered selections drawn without replacement is the combinatorial engine behind the \emph{hypergeometric distribution}, which we will revisit when we catalog discrete random variables in subsequent chapters.
 \end{example}
 
 Again, let $S = \{1, 2, \ldots, n\}$.
@@ -602,6 +599,48 @@ Since a combination is also a subset and the number of $k$-element combinations 
 \begin{equation*}
 \sum_{k=0}^n \binom{n}{k} = 2^n .
 \end{equation*}
+We recover this identity from a different angle below, once the binomial theorem is in place.
+
+
+\subsection{The Binomial Theorem}
+
+Binomial coefficients obey a simple recursion known as \emph{Pascal's rule}, \index{Pascal's rule}
+\begin{equation*}
+\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k} .
+\end{equation*}
+This identity admits a transparent combinatorial proof.
+Consider the $k$-element subsets of $S = \{ 1, 2, \ldots, n \}$ and focus on whether a particular element, say $n$, belongs to the subset.
+Those subsets that contain $n$ are completed by choosing the remaining $k-1$ elements from $\{ 1, \ldots, n-1 \}$, and there are $\binom{n-1}{k-1}$ of them.
+Those that do not contain $n$ are formed by choosing all $k$ elements from $\{ 1, \ldots, n-1 \}$, and there are $\binom{n-1}{k}$ of them.
+Adding these two disjoint cases yields Pascal's rule.
+Arranging the binomial coefficients in rows indexed by $n$ produces Pascal's triangle, in which every entry is the sum of the two entries immediately above it.
+
+Binomial coefficients earn their name from the \emph{binomial theorem}, \index{Binomial theorem}
+\begin{equation*}
+(x + y)^n = \sum_{k=0}^n \binom{n}{k} x^k y^{n-k} .
+\end{equation*}
+To see why, expand the product $(x+y)^n = (x+y)(x+y) \cdots (x+y)$ into a sum of terms, each obtained by selecting either $x$ or $y$ from every one of the $n$ factors.
+A term equal to $x^k y^{n-k}$ arises precisely when $x$ is chosen from $k$ of the factors and $y$ from the remaining $n-k$.
+The number of ways to designate those $k$ factors is $\binom{n}{k}$, which is therefore the coefficient of $x^k y^{n-k}$.
+
+Setting $x = y = 1$ in the binomial theorem recovers the identity obtained earlier through the power set,
+\begin{equation*}
+\sum_{k=0}^n \binom{n}{k} = (1 + 1)^n = 2^n ,
+\end{equation*}
+whereas setting $x = -1$ and $y = 1$ shows that the alternating sum of the binomial coefficients vanishes,
+\begin{equation*}
+\sum_{k=0}^n (-1)^k \binom{n}{k} = 0 .
+\end{equation*}
+
+
+\subsection{Stirling's Formula*}
+
+The number $n!$ grows very rapidly as a function of $n$.
+A good approximation for $n!$ when $n$ is large is given by \emph{Stirling's formula}, \index{Stirling's formula}
+\begin{equation*}
+n! \sim n^n e^{-n} \sqrt{ 2 \pi n} .
+\end{equation*}
+The notation $a_n \sim b_n$ signifies that the ratio $a_n / b_n \rightarrow 1$ as $n \rightarrow \infty$.
 
 
 \section{Partitions}
@@ -639,10 +678,12 @@ This expression is called a \emph{multinomial coefficient}. \index{Multinomial c
 
 \begin{example}
 A die is rolled nine times.
-We wish to compute the number of possible outcomes for which every odd number appears three times.
-The number of distinct sequences in which one, three and five each appear three times is equal to the number of partitions of $\{ 1, 2, \ldots, 9 \}$ into three subsets of size three, namely
+We wish to compute the number of ordered outcomes in which the faces one, three, and five each appear exactly three times, so that no even face occurs at all.
+Every such outcome is a sequence of nine rolls assembled from three ones, three threes, and three fives.
+Counting these sequences is equivalent to partitioning the nine roll positions $\{ 1, 2, \ldots, 9 \}$ into three subsets of size three, one subset recording the positions at which each odd face lands.
+The number of such sequences is therefore
 \begin{equation*}
-\frac{9!}{3! 3! 3!} = 1680 .
+\frac{9!}{3! \, 3! \, 3!} = 1680 .
 \end{equation*}
 \end{example}
 
@@ -655,9 +696,9 @@ Specifically, we wish to compute the number of ways integers $n_1, n_2, \ldots, 
 \begin{equation*}
 \sum_{i = 1}^r n_i = n.
 \end{equation*}
-We can visualize the number of possible assignments as follows.
-Picture $n$ balls spaced out on a straight line and consider $r-1$ vertical markers, each of which can be put between two consecutive balls, before the first ball, or after the last ball. 
-For instance, if there are five balls and two markers then one possible assignment is illustrated in Figure~\ref{figure:Partitioning}.
+We can visualize the number of possible assignments through an argument known as \emph{stars and bars}. \index{Stars and bars}
+Picture the $n$ objects as $n$ identical \emph{stars} laid out in a row, and introduce $r-1$ \emph{bars}, each of which can be placed between two consecutive stars, before the first star, or after the last star.
+For instance, if there are five stars and two bars, then one possible arrangement is illustrated in Figure~\ref{figure:Partitioning}.
 
 \begin{figure}[htb!]
 \begin{center}
@@ -665,20 +706,20 @@ For instance, if there are five balls and two markers then one possible assignme
 \begin{footnotesize}
 \begin{tikzpicture}
 \shade[draw=black, ball color=red, circular drop shadow] (0.5,1.25) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0.5,1.25) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (0.5,1.25) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \shade[draw=black, ball color=red, circular drop shadow] (1.5,1.25) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1.5,1.25) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (1.5,1.25) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \shade[draw=black, ball color=red, circular drop shadow] (2.5,1.25) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (2.5,1.25) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (2.5,1.25) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \shade[draw=black, ball color=red, circular drop shadow] (1,2.25) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1,2.25) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (1,2.25) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \shade[draw=black, ball color=red, circular drop shadow] (2,2.25) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (2,2.25) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (2,2.25) circle (4mm) node[fill opacity=1]{$\bigstar$};
 
 \shade[draw=black, ball color=black, circular drop shadow] (4.5,1.25) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (4.5,1.25) circle (4mm) node[fill opacity=1]{};
+\shade[fill=white, fill opacity=0.3] (4.5,1.25) circle (4mm) node[fill opacity=1]{$|$};
 \shade[draw=black, ball color=black, circular drop shadow] (5.5,1.25) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (5.5,1.25) circle (4mm) node[fill opacity=1]{};
+\shade[fill=white, fill opacity=0.3] (5.5,1.25) circle (4mm) node[fill opacity=1]{$|$};
 
 \draw[draw=black] (0,0) circle (4mm);
 \draw[draw=black] (1,0) circle (4mm);
@@ -691,30 +732,30 @@ For instance, if there are five balls and two markers then one possible assignme
 \draw[very thick, ->, >=stealth'] (3,-0.75) -- (3,-1.75);
 
 \shade[draw=black, ball color=black, circular drop shadow] (0,-2.5) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0,-2.5) circle (4mm) node[fill opacity=1]{};
+\shade[fill=white, fill opacity=0.3] (0,-2.5) circle (4mm) node[fill opacity=1]{$|$};
 \shade[draw=black, ball color=red, circular drop shadow] (1,-2.5) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1,-2.5) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (1,-2.5) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \shade[draw=black, ball color=red, circular drop shadow] (2,-2.5) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (2,-2.5) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (2,-2.5) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \shade[draw=black, ball color=black, circular drop shadow] (3,-2.5) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (3,-2.5) circle (4mm) node[fill opacity=1]{};
+\shade[fill=white, fill opacity=0.3] (3,-2.5) circle (4mm) node[fill opacity=1]{$|$};
 \shade[draw=black, ball color=red, circular drop shadow] (4,-2.5) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (4,-2.5) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (4,-2.5) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \shade[draw=black, ball color=red, circular drop shadow] (5,-2.5) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (5,-2.5) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (5,-2.5) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \shade[draw=black, ball color=red, circular drop shadow] (6,-2.5) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (6,-2.5) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (6,-2.5) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \end{tikzpicture}
 \end{footnotesize}
-\caption{The number of possible cardinality assignments for the partition of a set of $n$ elements into $r$ distinct subsets is equivalent to the number of ways to select $n$ positions out of $n + r - 1$ candidates.} 
+\caption{Each cardinality assignment for the partition of a set of $n$ elements into $r$ distinct subsets corresponds to an arrangement of $n$ stars and $r-1$ bars in a row of $n + r - 1$ positions; equivalently, to a choice of the $n$ star positions out of $n + r - 1$ candidates.}
 \label{figure:Partitioning}
 \end{center}
 \end{figure}
 
-The number of objects in the first subset corresponds to the number of balls appearing before the first marker.
-Similarly, the number of objects in the $i$th subset is equal to the number of balls positioned between the $i$th marker and the preceding one.
-Finally, the number of objects in the last subset is simply the number of balls after the last marker.
-In this scheme, two consecutive markers imply that the corresponding subset is empty.
+The number of objects in the first subset corresponds to the number of stars appearing before the first bar.
+Similarly, the number of objects in the $i$th subset is equal to the number of stars positioned between the $i$th bar and the preceding one.
+Finally, the number of objects in the last subset is simply the number of stars after the last bar.
+In this scheme, two consecutive bars imply that the corresponding subset is empty.
 For example, the integer assignment associated with the Figure~\ref{figure:Partitioning} is
 \begin{equation*}
 (n_1, n_2, n_3) = (0,2,3).
@@ -729,17 +770,17 @@ For example, the integer assignment associated with the Figure~\ref{figure:Parti
 
 \draw[color=black, thick, dashed] (2.3,0) ellipse (12mm and 8mm);
 \shade[draw=black, ball color=red, circular drop shadow] (1.85,0) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1.85,0) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (1.85,0) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \shade[draw=black, ball color=red, circular drop shadow] (2.75,0) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (2.75,0) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (2.75,0) circle (4mm) node[fill opacity=1]{$\bigstar$};
 
 \draw[color=black, thick, dashed] (5.4,0) ellipse (16mm and 8mm);
 \shade[draw=black, ball color=red, circular drop shadow] (4.5,0) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (4.5,0) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (4.5,0) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \shade[draw=black, ball color=red, circular drop shadow] (5.4,0) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (5.4,0) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (5.4,0) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \shade[draw=black, ball color=red, circular drop shadow] (6.3,0) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (6.3,0) circle (4mm) node[fill opacity=1]{1};
+\shade[fill=white, fill opacity=0.3] (6.3,0) circle (4mm) node[fill opacity=1]{$\bigstar$};
 \end{tikzpicture}
 \end{footnotesize}
 \caption{The assignment displayed in Figure~\ref{figure:Partitioning} corresponds to having no element in the first set, two elements in the second set and three elements in the last one.}
@@ -748,9 +789,9 @@ For example, the integer assignment associated with the Figure~\ref{figure:Parti
 \end{figure}
 
 There is a natural relation between an integer assignment and the graphical representation depicted above.
-To count the number of possible integer assignments, it suffices to calculate the number of ways to place the markers and the balls.
-In particular, there are $n + r - 1$ positions, $n$ balls and $r - 1$ markers.
-The number of ways to assign the markers is equal to the number of $n$-combinations of $n + r - 1$ elements,
+To count the number of possible integer assignments, it suffices to calculate the number of ways to arrange the stars and the bars.
+In particular, there are $n + r - 1$ positions, occupied by $n$ stars and $r - 1$ bars.
+The number of ways to choose the $n$ star positions among the $n + r - 1$ slots is the number of $n$-combinations of $n + r - 1$ elements,
 \begin{equation*}
 \binom{n + r - 1}{n} = \binom{n + r - 1}{r - 1} .
 \end{equation*}
@@ -770,15 +811,65 @@ The number of possible outcomes is therefore given by
 \end{example}
 
 
+\section{A Unified View of Sampling}
+
+The urn examples scattered through this chapter together cover every combination of two binary choices: whether each drawn item is returned to the urn before the next draw (\emph{with} or \emph{without replacement}), and whether the order of the draws is recorded (\emph{ordered} or \emph{unordered}).
+Recognizing which of the four situations is at hand is often the crux of a counting problem.
+Suppose we draw $k$ times from an urn of $n$ distinguishable items.
+The number of possible outcomes in each case is collected in Table~\ref{table:Sampling}.
+
+\begin{table}[htb!]
+\begin{center}
+\setlength{\tabcolsep}{14pt}
+\begin{tabular}{l c c}
+\toprule
+& Ordered & Unordered \\
+\midrule
+With replacement & $n^k$ & $\dbinom{n + k - 1}{k}$ \\
+\addlinespace
+Without replacement & $\dfrac{n!}{(n-k)!}$ & $\dbinom{n}{k}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{The number of ways to draw $k$ items from a set of $n$ distinguishable items, according to whether the draws are made with or without replacement and whether their order is recorded.
+The unordered, with-replacement entry is the stars-and-bars count derived earlier in this chapter, with the $n$ item types now playing the role of the subsets and the $k$ draws the role of the stars.}
+\label{table:Sampling}
+\end{table}
+
+The ordered counts come directly from the counting principle, and each unordered count is obtained from the ordered one by quotienting out arrangements that differ only in order.
+Without replacement, every selection of $k$ distinct items can be ordered in $k!$ ways, so the unordered count is the ordered count $n!/(n-k)!$ divided by $k!$, namely $\binom{n}{k}$.
+With replacement the bookkeeping is subtler, because a draw may repeat an item and repeated items cannot be reordered into distinct sequences; the stars-and-bars argument handles this case and yields $\binom{n + k - 1}{k}$.
+
+
 \section{Combinatorial Examples}
 
 In this section, we present a few applications of combinatorics to computing the probabilities of specific events.
 
+\begin{example}[Birthday Problem]
+Suppose that a room contains $k$ people and that each person's birthday is equally likely to fall on any of the $365$ days of the year, with different people's birthdays bearing no relation to one another.
+We wish to compute the probability that at least two people in the room share a birthday.
+Most people find the answer surprising, which is precisely what makes the example instructive.
+
+It is easier to work with the complementary event, namely that all $k$ birthdays are distinct, and to subtract its probability from one.
+Recording the birthdays in order produces a sequence of $k$ days drawn from $365$ possibilities.
+Since birthdays may coincide, this is sampling with replacement and ordering, so there are $365^k$ equally likely outcomes in total.
+The outcomes in which all birthdays are distinct are exactly those drawn without replacement, of which there are
+\begin{equation*}
+365 \cdot 364 \cdots (365 - k + 1) = \frac{365!}{(365 - k)!} .
+\end{equation*}
+The probability that all $k$ birthdays are distinct is the ratio of these two counts, and so
+\begin{equation*}
+\Pr ( \text{at least one shared birthday} )
+= 1 - \frac{365!}{(365 - k)! \, 365^k} .
+\end{equation*}
+Evaluating this expression, the probability first exceeds one half at $k = 23$, where it equals roughly $0.507$.
+In other words, in a room of just twenty-three people it is more likely than not that some pair shares a birthday, even though there are $365$ possible days.
+The intuition that many more people ought to be required stems from confusing this question with a different one, the probability that someone shares \emph{your particular} birthday, which indeed grows far more slowly.
+\end{example}
+
 \begin{example}[Pick 3 Texas Lottery]
-The Texas Lottery game ``Pick $3$'' is easy to play.
-A player must pick three numbers from zero to nine, and choose how to play them: exact order or any order.
-The Pick $3$ balls are drawn using three air-driven machines.
-These machines employ compressed air to mix and select each ball.
+In the Texas Lottery game ``Pick $3$,'' a player selects three numbers from zero to nine and chooses how to play them: in exact order or in any order.
+Three numbers are then drawn at random with replacement, so that repetitions are possible.
 
 The probability of winning when playing the exact order is
 \begin{equation*}
@@ -794,24 +885,18 @@ If a number is repeated twice, the probability of winning becomes
 \begin{equation*}
 \frac{\binom{3}{2}}{1000} = \frac{3}{1000} .
 \end{equation*}
-Finally, if a same number is selected three times, the probability of winning decreases to $1/1000$.
+Finally, if the same number is selected three times, the probability of winning decreases to $1/1000$.
 \end{example}
 
 \begin{example}[Mega Millions Texas Lottery]
-To play the Mega Millions game, a player must select five numbers from $1$ to $56$ in the upper white play area of the play board, and one Mega Ball number from $1$ to $46$ in the lower yellow play area of the play board.
-All drawing equipment is stored in a secured on-site storage room.
-Only authorized drawings department personnel have keys to the door.
-Upon entry of the secured room to begin the drawing process, a lottery drawing specialist examines the security seal to determine if any unauthorized access has occurred.
-For each drawing, the Lotto Texas balls are mixed by four acrylic mixing paddles rotating clockwise.
-High speed is used for mixing and low speed for ball selection.
-As each ball is selected, it rolls down a chute into an official number display area.
-We wish to compute the probability of winning the Mega Millions Grand Prize, which requires the correct selection of the five white balls plus the gold Mega ball.
+To play the Mega Millions game, a player selects five distinct numbers from $1$ to $56$ in the white play area, together with one Mega Ball number from $1$ to $46$ in the gold play area.
+We wish to compute the probability of winning the Grand Prize, which requires matching all five white balls, in any order, along with the gold Mega Ball.
 
 The probability of winning the Mega Millions Grand Prize is
 \begin{equation*}
 \frac{1}{\binom{56}{5}} \frac{1}{46}
 = \frac{51!5!}{56!} \frac{1}{46}
-= \frac{1}{175 711 536} .
+= \frac{1}{175{,}711{,}536} .
 \end{equation*}
 \end{example}
 
@@ -822,7 +907,7 @@ Two Coast Guard vessels, the Ibis and the Mako, come to the rescue.
 Each boat can rescue six people.
 What is the probability that no two people from a same couple end up on the Mako?
 
-Suppose that rescued passengers are assigned to the Ibis and the Mako  at random.
+Suppose that rescued passengers are assigned to the Ibis and the Mako at random.
 Then, the number of possible ways to partition these passengers between the two vessels is
 \begin{equation*}
 \binom{12}{6} = \frac{12!}{6! 6!} .
