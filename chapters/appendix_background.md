@@ -37,7 +37,7 @@ notes assume but that students routinely need to look up, together with a
 summary table of the named distributions the notes introduce. Designed for
 **lookup, not linear reading** — the main chapters call back to specific entries via
 semantic labels (`\Cref{app:gaussian-integral}`, not `Appendix A.3`). The
-preliminaries chapter (`mathematical_review.tex`) stays the *motivating*
+preliminaries chapter (`sets_and_functions.tex`) stays the *motivating*
 front-matter; this appendix is the *reference manual*.
 
 ## Key points / outline
@@ -76,7 +76,7 @@ front-matter; this appendix is the *reference manual*.
 - Vandermonde's identity.
 - Pascal's identity / Pascal's triangle.
 - Inclusion–exclusion in its general form (the two- and three-set forms are
-  covered in `basic_concepts.tex`; the general statement and a short induction
+  covered in `probability_models.tex`; the general statement and a short induction
   proof live here).
 
 ### Distribution reference table
@@ -102,7 +102,7 @@ front-matter; this appendix is the *reference manual*.
   inflating into a calculus textbook. Resolution: include only facts the main
   chapters actually call back to (or are likely to within one revision); do not
   speculatively add "things a probability student might need."
-- **Relationship to `mathematical_review.tex`.** Is the boundary clear? Rough
+- **Relationship to `sets_and_functions.tex`.** Is the boundary clear? Rough
   rule: Ch. 1 is for *probability-specific set/function setup* (sample space as
   universal set, indicator function, σ-field preview); this appendix is for
   *calculus and arithmetic identities the prose calls back to*. Re-check at
@@ -113,7 +113,7 @@ front-matter; this appendix is the *reference manual*.
 - Inline pointers from chapters should be **semantic labels**, not numeric
   ("see the appendix on Gaussian integrals" + `\Cref{app:gaussian-integral}`,
   not "see Appendix A.3"). See the earlier discussion in the project log.
-- The `mathematical_review.tex` chapter remains the motivating preliminaries
+- The `sets_and_functions.tex` chapter remains the motivating preliminaries
   read up front. This appendix is purely a reference manual.
 - `chapters/appendix.tex` (titled "Sums" and currently `\include`-commented)
   contains partial proofs of `Σ k`, `Σ k^2`, `Σ k^3`. Its content folds
@@ -128,7 +128,7 @@ front-matter; this appendix is the *reference manual*.
   this appendix is realized into `.tex`, the parked `appendix.tex` should be
   retired and its useful sum-formula content folded into *Series and sums*.
 - Framed as a **reference appendix**, not a self-contained refresher.
-  Pedagogical move: students read `mathematical_review.tex` up front
+  Pedagogical move: students read `sets_and_functions.tex` up front
   (motivation, framed for this book's notation) and consult this appendix
   on-demand when a later chapter calls back. See the in-conversation
   discussion of the Bishop / ESL hybrid pattern.

@@ -43,7 +43,7 @@ sidecar's design log, not the shipped chapter.
   that the book will surface and refute them (whether it does or not is a
   separate question, see Pedagogical observations §misconceptions).
 
-### `mathematical_review.md`
+### `sets_and_functions.md`
 
 - Coverage: comprehensive for naive set theory. Good move to declare
   "rigorous axiomatic treatment is set aside" up front. The frontmatter
@@ -57,10 +57,10 @@ sidecar's design log, not the shipped chapter.
   is no calculus review of series convergence, geometric series, Taylor
   expansions, multivariable integration, or polar coordinates — all of
   which the later chapters use heavily. The new `appendix_background.md`
-  partially fills this, but the spine of `mathematical_review.md` does not
+  partially fills this, but the spine of `sets_and_functions.md` does not
   signal the split or point readers to the appendix.
 - Pedagogical observation: the chapter sidesteps cardinality except in
-  `basic_concepts.md`, where countability is then quietly invoked. The
+  `probability_models.md`, where countability is then quietly invoked. The
   natural home for the countable/uncountable distinction is here (Ross
   Ch. 1 Appendix, Bertsekas–Tsitsiklis §1.1) as part of the set toolkit, not
   next to the axioms.
@@ -81,7 +81,7 @@ sidecar's design log, not the shipped chapter.
   all the basic counts are established, because it is an *asymptotic
   result* not a counting tool.
 - Frontmatter mismatch (already in TODO.md / CONCEPT_MAP.md): chapter
-  `requires: event`, but `event` is introduced in `basic_concepts`. The
+  `requires: event`, but `event` is introduced in `probability_models`. The
   spine handles this by speaking of "events" intuitively while deferring
   the formal definition; the sidecar should make that pedagogical choice
   explicit rather than relying on the reader to fail gracefully.
@@ -99,7 +99,7 @@ sidecar's design log, not the shipped chapter.
   *one* worked problem framed both ways with explicit contrast — would
   pay for itself.
 
-### `basic_concepts.md`
+### `probability_models.md`
 
 - Coverage: solid axiomatic spine. Sample space, events, axioms, finite /
   countably infinite / uncountably infinite models, sigma-field preview.
@@ -165,7 +165,7 @@ sidecar's design log, not the shipped chapter.
   on the spine in Ross §4.8.2 and Pitman §3.4. The spine could mention it
   in passing as "negative binomial extends the geometric to k successes".
 - Coverage gap: the connection between Bernoulli and the *indicator function*
-  introduced in `mathematical_review.md` is not made (the orphan flagged in
+  introduced in `sets_and_functions.md` is not made (the orphan flagged in
   TODO.md). This is not just a tie-back; it is the *one place* where the
   abstract set machinery from Ch. 1 visibly turns into probability machinery.
 - Coverage gap: the chapter lists distributions but does not introduce
@@ -439,17 +439,17 @@ sidecar's design log, not the shipped chapter.
   are actually called back to from any main chapter, or whether they are
   speculative inclusions. The sidecar's own open question raises this; the
   audit's recommendation is "include only what's actually cited."
-- Relationship to `mathematical_review.md` (the sidecar's own open
+- Relationship to `sets_and_functions.md` (the sidecar's own open
   question): the current split — motivating front-matter vs. reference
-  manual — is correct, but it is invisible from `mathematical_review.md`,
+  manual — is correct, but it is invisible from `sets_and_functions.md`,
   which has no closing bullet pointing readers at the reference. Worth a
-  one-line tie-in on `mathematical_review.md`.
+  one-line tie-in on `sets_and_functions.md`.
 
 ## DAG vs. best-practice probability curricula
 
 The book's reading order is:
 
-> preface → mathematical_review → combinatorics → basic_concepts →
+> preface → sets_and_functions → combinatorics → probability_models →
 > conditional_probability → discrete_random_variables → discrete_expectations
 > → discrete_vectors → continuous_random_variables → derived_distributions →
 > expectations_and_bounds → random_vectors → empirical_sums
@@ -501,9 +501,9 @@ The audit's standard checklist:
 
 | Topic | Status | Notes |
 |---|---|---|
-| Set theory preliminaries | Present (`mathematical_review`) | Solid |
+| Set theory preliminaries | Present (`sets_and_functions`) | Solid |
 | Counting / combinatorics | Present (`combinatorics`) | Missing birthday/derangement/hypergeometric framing |
-| Axioms, sample space, events | Present (`basic_concepts`) | Continuity-of-probability missing |
+| Axioms, sample space, events | Present (`probability_models`) | Continuity-of-probability missing |
 | Inclusion–exclusion, union bound | Present | Good |
 | Conditional probability, total probability, Bayes | Present | No canonical Bayes example named on spine |
 | Independence (events) | Present | Good |
@@ -541,7 +541,7 @@ flagged for explicitness):
 - Markov chains, random walks (typically a separate course; the book is
   explicit about being a single semester).
 - Measure-theoretic foundations (sigma-field preview is appropriately
-  starred in `basic_concepts.md`).
+  starred in `probability_models.md`).
 
 ### Pacing
 
@@ -568,7 +568,7 @@ deliberately a preview rather than a complete treatment.
 
 High-load chapters on the current spine:
 
-- **`basic_concepts.md`** — five abstract constructs (sample space, event,
+- **`probability_models.md`** — five abstract constructs (sample space, event,
   probability law, sigma-field, the three axioms) plus four derived
   properties plus three sample-space cases plus the cardinality detour.
   This is a textbook-typical introduction but the spine does not signal a
@@ -672,10 +672,10 @@ Falk & Bar-Hillel, 1983; Garfield & Ben-Zvi, 2007):
 
 | Misconception | Where it should be addressed | Spine status |
 |---|---|---|
-| Outcome approach (every outcome is equally likely) | `combinatorics`, `basic_concepts` | Not named |
+| Outcome approach (every outcome is equally likely) | `combinatorics`, `probability_models` | Not named |
 | Gambler's fallacy / representativeness | `conditional_probability` / `discrete_random_variables` | Not named |
 | Confusing `Pr(A|B)` with `Pr(B|A)` | `conditional_probability` | Not named (Bayes bullet does the math, not the contrast) |
-| Conjunction fallacy | `basic_concepts` | Not named |
+| Conjunction fallacy | `probability_models` | Not named |
 | `Pr(X = x) = 0` for continuous X means X cannot equal x | `continuous_random_variables` | Partially named ("f_X is not itself a probability") |
 | Mean = "most likely value" | `discrete_expectations` | Not named |
 | LLN means the next coin must be heads to "balance out" | `empirical_sums` | Not named |
@@ -704,7 +704,7 @@ The Bishop / ESL pattern is: short motivating preliminaries up front
 (notation, key facts), reference appendices for the heavy calculus. The
 new `appendix_background.md` correctly adopts this split (the sidecar's
 own Decisions block names it). What is missing is the *forward pointer*
-from `mathematical_review.md` to the reference appendix; without it the
+from `sets_and_functions.md` to the reference appendix; without it the
 reader does not know the appendix exists until a chapter cites it.
 
 ## Open questions for the author
@@ -833,7 +833,7 @@ principle or canonical reference), and the cost / risk.
 ### 4. Name documented student misconceptions on the spine where each lives
 
 - **What:** add a "Common misconception" sub-bullet to each chapter that
-  is the natural home for a documented misconception: `basic_concepts.md`
+  is the natural home for a documented misconception: `probability_models.md`
   (outcome approach, conjunction fallacy), `conditional_probability.md`
   (`Pr(A|B)` vs. `Pr(B|A)`, base-rate neglect — Falk & Bar-Hillel, 1983),
   `discrete_expectations.md` (mean as "most likely"), `empirical_sums.md`
@@ -915,7 +915,7 @@ principle or canonical reference), and the cost / risk.
 - **Cost / risk:** low — a coherence fix.
 - **Impact:** moderate.
 
-### 11. Make the appendix relationship visible from `mathematical_review.md`
+### 11. Make the appendix relationship visible from `sets_and_functions.md`
 
 - **What:** closing tie-back bullet pointing at `appendix_background.md`,
   spelling out that calculus identities live there and the chapter is the

@@ -17,7 +17,7 @@ For each chapter in `chapters/`, there are two files:
 | `<name>.tex` | Authoring        | The polished prose that actually ships in the compiled PDF.      |
 | `<name>.md`  | Thinking         | The design log: scratch, ideas, the conceptual spine, decisions. |
 
-Example: `chapters/basic_concepts.tex` (shipped) ↔ `chapters/basic_concepts.md` (sidecar).
+Example: `chapters/probability_models.tex` (shipped) ↔ `chapters/probability_models.md` (sidecar).
 
 The sidecar is **never** `\include`d by `UndergraduateProbabilityI.tex`, so it is invisible to
 the LaTeX build and can never leak into the PDF. Both files are tracked in git.
@@ -136,7 +136,7 @@ The default linear chain (no map needed) for this book is:
 
 ```
 preface ->
-sets_and_functions -> combinatorics -> basic_concepts -> conditional_probability ->
+sets_and_functions -> combinatorics -> probability_models -> conditional_probability ->
 discrete_random_variables -> discrete_expectations -> discrete_vectors ->
 continuous_random_variables -> derived_distributions -> expectations_and_bounds ->
 random_vectors -> empirical_sums

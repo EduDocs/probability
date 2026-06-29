@@ -11,7 +11,7 @@ open_cmd   := "open"
 md_files := "chapters/preface.md \
 chapters/sets_and_functions.md \
 chapters/combinatorics.md \
-chapters/basic_concepts.md \
+chapters/probability_models.md \
 chapters/conditional_probability.md \
 chapters/discrete_random_variables.md \
 chapters/discrete_expectations.md \

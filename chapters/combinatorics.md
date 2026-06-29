@@ -11,8 +11,8 @@ requires:   [set, cartesian-product]
 Build intuition for probability in the simplest case — finite, equally-likely outcomes — by developing the counting tools needed to compute event probabilities as ratios of cardinalities.
 
 ## Pedagogical stance
-- Intentionally informal: "event" is used loosely (a subset of outcomes) and the equally-likely model is computed directly, *before* the axioms are introduced in `basic_concepts`. The formal treatment can technically come next; locally, the intuitive approach lands better. Frontmatter therefore deliberately does **not** `require: event` — the spine commits to using it pre-formally.
-- Ordering constraint: this chapter precedes `basic_concepts`, so inclusion–exclusion and the axioms are **not** yet available. Examples that need inclusion–exclusion (derangement / hat-check) are out of scope here; the birthday problem (counting + complement only) is in scope.
+- Intentionally informal: "event" is used loosely (a subset of outcomes) and the equally-likely model is computed directly, *before* the axioms are introduced in `probability_models`. The formal treatment can technically come next; locally, the intuitive approach lands better. Frontmatter therefore deliberately does **not** `require: event` — the spine commits to using it pre-formally.
+- Ordering constraint: this chapter precedes `probability_models`, so inclusion–exclusion and the axioms are **not** yet available. Examples that need inclusion–exclusion (derangement / hat-check) are out of scope here; the birthday problem (counting + complement only) is in scope.
 
 ## Key points / outline
 - Finite equally-likely model: probability of an event = (favorable outcomes) / (total outcomes).

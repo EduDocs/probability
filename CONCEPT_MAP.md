@@ -5,9 +5,9 @@
 ## Reading order
 
 1. `preface`
-2. `mathematical_review`
+2. `sets_and_functions`
 3. `combinatorics`
-4. `basic_concepts`
+4. `probability_models`
 5. `conditional_probability`
 6. `discrete_random_variables`
 7. `discrete_expectations`
@@ -24,10 +24,8 @@
 
 ```mermaid
 graph LR
-    basic_concepts --> combinatorics
-    basic_concepts --> conditional_probability
-    basic_concepts --> discrete_random_variables
-    combinatorics --> basic_concepts
+    combinatorics --> probability_models
+    conditional_probability --> discrete_random_variables
     conditional_probability --> discrete_vectors
     continuous_random_variables --> derived_distributions
     continuous_random_variables --> empirical_sums
@@ -38,6 +36,7 @@ graph LR
     discrete_expectations --> discrete_vectors
     discrete_expectations --> empirical_sums
     discrete_expectations --> expectations_and_bounds
+    discrete_expectations --> random_vectors
     discrete_random_variables --> appendix
     discrete_random_variables --> continuous_random_variables
     discrete_random_variables --> derived_distributions
@@ -49,24 +48,25 @@ graph LR
     discrete_vectors --> discrete_expectations
     discrete_vectors --> expectations_and_bounds
     discrete_vectors --> random_vectors
-    mathematical_review --> basic_concepts
-    mathematical_review --> combinatorics
-    mathematical_review --> conditional_probability
-    mathematical_review --> discrete_random_variables
+    probability_models --> conditional_probability
+    probability_models --> discrete_random_variables
     random_vectors --> continuous_random_variables
+    sets_and_functions --> combinatorics
+    sets_and_functions --> conditional_probability
+    sets_and_functions --> discrete_random_variables
+    sets_and_functions --> probability_models
 ```
 
 ## Forward references
 
-- `combinatorics` requires `event`, introduced later in `basic_concepts`
 - `continuous_random_variables` requires `joint-pdf`, introduced later in `random_vectors`
 - `discrete_expectations` requires `convolution`, introduced later in `discrete_vectors`
 - `discrete_expectations` requires `independence-of-rvs`, introduced later in `discrete_vectors`
 
 ## Undefined concepts
 
-- `iid` required by `discrete_random_variables`, `empirical_sums`
+None.
 
 ## Aliasing / redundancy
 
-None.
+- `binomial-theorem` introduced by `appendix_background`, `combinatorics`

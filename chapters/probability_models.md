@@ -3,9 +3,9 @@ introduces: [sample-space, event, probability-law, axioms-of-probability, inclus
 requires:   [set, partition, finite-equally-likely-model, counting-principle]
 ---
 
-# Basic Concepts of Probability — scratch
+# Probability Models — scratch
 
-> Scratch/ideas only. The shipped prose lives in `basic_concepts.tex`. Not part of the LaTeX build.
+> Scratch/ideas only. The shipped prose lives in `probability_models.tex`. Not part of the LaTeX build.
 
 ## Purpose
 Introduce the axiomatic framework of probability: sample spaces, events, and probability laws, then specialize the framework to finite, countably infinite, and uncountably infinite models.
