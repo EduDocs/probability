@@ -33,12 +33,12 @@ Introduce the axiomatic framework of probability: sample spaces, events, and pro
 
 ## Open questions
 - **No single running example** threads the chapter. The prose uses four separate vignettes (die, urn, coin, wheel); Cognitive Load Theory flags this introductory chapter as high intrinsic load and favors one anchoring example carried throughout (Bertsekas–Tsitsiklis thread Bernoulli trials + dart-on-a-square). Decide: adopt one anchor or keep the vignette-per-section structure deliberately.
-- **Misconceptions not named**: this chapter is the natural home for the *outcome approach* (Konold, 1989 — "every outcome is equally likely") and the *conjunction fallacy* (Kahneman & Tversky). The book names misconceptions explicitly elsewhere (heavy tails, Cauchy mean); extending the pattern here is low-cost and high-leverage. Decide whether to surface + refute one or both.
 
 ## Resolved (realized in the .tex)
 - **Complement rule** Pr(Aᶜ) = 1 − Pr(A), with Pr(∅) = 0 as an immediate corollary, added as the lead consequence right after the axioms.
 - **Continuity of probability** added as a starred subsection (*Continuity of Probability\**): continuity from below with a disjointification proof, plus the decreasing-sequence case derived via the complement rule.
 - **Vocabulary pointer**: a sentence at the definition notes that "probability law" is elsewhere called a *probability measure*, with a forward pointer to the starred measure-theory section.
+- **Misconceptions named**: the *conjunction fallacy* (Pr(A∩B) ≤ Pr(A), via monotonicity) is refuted right after the monotonicity proposition; the *outcome approach* (equiprobability bias) is cautioned at the equally-likely model in §§Finite Sample Spaces.
 
 ## Notes & references
 - Ross, *A First Course in Probability*, Chapter 2.
