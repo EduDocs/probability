@@ -42,6 +42,16 @@ Introduce the axiomatic framework of probability: sample spaces, events, and pro
 
 ## Open questions
 - **No single running example** threads the chapter. The prose uses four separate vignettes (die, urn, coin, wheel); Cognitive Load Theory flags this introductory chapter as high intrinsic load and favors one anchoring example carried throughout (Bertsekas–Tsitsiklis thread Bernoulli trials + dart-on-a-square). Decide: adopt one anchor or keep the vignette-per-section structure deliberately.
+  - **Deferred (future possibility, not committed).** Candidate anchor: the *fair coin*, revisited as the chapter's ambition grows — one apparatus across all three regimes. Mapping:
+    - Sample spaces/events + axioms: flip `n` times, outcomes in {H,T}ⁿ, each sequence `2⁻ⁿ`.
+    - Complement rule: `Pr(at least one H) = 1 − 2⁻ⁿ` (natural first use of the new complement rule).
+    - Finite / equally likely: `2ⁿ` equally likely sequences, `Pr(A)=|A|/2ⁿ`, counted with the `combinatorics` machinery.
+    - Countably infinite: flip until first head — `Ω={1,2,…}`, `Pr(k)=2⁻ᵏ` (already the chapter's coin example; zero friction).
+    - Uncountably infinite: flip forever — the infinite sequence *is* a real in [0,1] via binary expansion; fair coin ↦ uniform law, `Pr(interval)=length` (connects to the existing [0,1] development).
+    - Measure-theory coda: the infinite-coin space is the canonical case where not every subset is assignable — motivates σ-fields concretely.
+  - The coin wins over a dart/spinner because the countable→uncountable bridge (flip-until-heads → binary digits of a uniform number) is genuine, not contrived.
+  - **Anchor + satellites, not literally one example.** Two current vignettes out-teach the coin and would survive as side-examples: the die *admissible-vs-non-admissible* illustration (overlap of even/odd/prime — no coin analogue) and the urn *union bound* (rare events where the bound is actually useful; the coin's union bound is loose).
+  - Cost: a real structural rewrite touching every section opening — a deliberate pass, not a surgical add. Left for a future session.
 
 ## Resolved (realized in the .tex)
 - **Complement rule** Pr(Aᶜ) = 1 − Pr(A), with Pr(∅) = 0 as an immediate corollary, added as the lead consequence right after the axioms.

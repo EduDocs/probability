@@ -12,3 +12,6 @@ __pycache__/
 
 # Local resources
 resources/
+
+# Personal scratch todo list (superseded by TODO.md)
+ToDos.txt
