@@ -122,6 +122,7 @@ This latter description forms a possible sample space for the rolling of a die.
 
 A \emph{probability law} specifies the likelihood of events related to an experiment.\index{Probability law}
 Formally, a probability law assigns to every event $A$ a number $\Pr (A)$, called the \emph{probability of event $A$}, such that the following axioms are satisfied.
+In other areas of mathematics, the same object is known as a \emph{probability measure}, a name that emphasizes its formal status as a set function defined on an admissible class of events;\index{Probability measure} we return to this connection in the starred section at the end of the chapter.
 \begin{enumerate}
 \item \textbf{(Nonnegativity)} $\Pr (A) \geq 0$, for every event $A$.
 \item \textbf{(Normalization)} The probability of the sample space $\Omega$ is equal to one,
@@ -140,7 +141,12 @@ More generally, if $A_1, A_2, \ldots$ is a sequence of disjoint events and $\big
 \end{enumerate}
 
 A number of important properties can be deduced from the three axioms of probability.
-We prove two such properties below.
+For instance, an event $A$ and its complement $A^{\Complement}$ are disjoint and together exhaust the sample space, so nonnegativity, normalization, and additivity yield the \emph{complement rule}\index{Complement rule}
+\begin{equation*}
+\Pr (A^{\Complement}) = 1 - \Pr (A) .
+\end{equation*}
+Taking $A = \Omega$ shows in particular that the impossible event carries no probability, $\Pr (\emptyset) = 0$.
+We prove two further properties below.
 The first statement describes the relation between inclusion and probabilities.
 \begin{proposition}
 If $A \subset B$, then $\Pr (A) \leq \Pr (B)$.
@@ -236,7 +242,7 @@ Then, we have
 \leq \sum_{k = 1}^{n+1} \Pr (A_k) .
 \end{split}
 \end{equation*}
-Therefore, by the principle of mathematical induction, \eqref{equation:UnionBound} is valid for all positive integers.
+Then, by the principle of mathematical induction, \eqref{equation:UnionBound} is valid for all positive integers.
 \end{proof}
 
 The union bound is often employed in situations where finding the joint probability of multiple rare events is difficult, but computing the probabilities of the individual components is straightforward. 
@@ -375,7 +381,7 @@ The probability of the entire sample space is therefore equal to
 = \sum_{k=1}^{\infty} \frac{1}{2^k} = 1 ,
 \end{equation*}
 as expected.
-Similarly, the probability of the number of coin tosses being even can be computed as
+Similarly, the probability of the number of coin tosses being even is given by
 \begin{equation*}
 \Pr ( \{ 2, 4, 6, \ldots \} )
 = \sum_{k=1}^{\infty} \Pr (2k)
@@ -579,6 +585,37 @@ If $B \subset [0, 2 \pi)$ is a set representing all winning outcomes, then the p
 \Pr(B) = \int_B \frac{1}{2 \pi} d\theta .
 \end{equation*}
 \end{example}
+
+
+\subsection{Continuity of Probability*}
+
+The axioms of probability have a further consequence that becomes indispensable when working with sequences of events.
+Consider an increasing sequence of events $A_1 \subset A_2 \subset \cdots$, and let $A = \bigcup_{k=1}^{\infty} A_k$ denote its limit.
+It is natural to expect the probability of $A_n$ to approach the probability of $A$ as $n$ grows without bound.
+This is indeed the case.
+
+\begin{proposition}[Continuity from Below]
+If $A_1 \subset A_2 \subset \cdots$ is an increasing sequence of events with union $A = \bigcup_{k=1}^{\infty} A_k$, then
+\begin{equation*}
+\Pr (A) = \lim_{n \to \infty} \Pr (A_n) .
+\end{equation*}
+\end{proposition}
+\begin{proof}
+Define $B_1 = A_1$ and $B_k = A_k - A_{k-1}$ for $k \geq 2$.
+The events $B_1, B_2, \ldots$ are disjoint, with $\bigcup_{k=1}^{n} B_k = A_n$ for every $n$ and $\bigcup_{k=1}^{\infty} B_k = A$.
+Applying the third axiom of probability, we get
+\begin{equation*}
+\Pr (A)
+= \sum_{k=1}^{\infty} \Pr (B_k)
+= \lim_{n \to \infty} \sum_{k=1}^{n} \Pr (B_k)
+= \lim_{n \to \infty} \Pr (A_n) ,
+\end{equation*}
+which is the desired result.
+\end{proof}
+
+A symmetric statement holds for a decreasing sequence of events $A_1 \supset A_2 \supset \cdots$.
+Writing $A = \bigcap_{k=1}^{\infty} A_k$, one obtains $\Pr (A) = \lim_{n \to \infty} \Pr (A_n)$ by applying continuity from below to the complements $A_k^{\Complement}$ and invoking the complement rule.
+Together, these two results are known as the \emph{continuity of probability}.\index{Continuity of probability}
 
 
 \subsection{Probability and Measure Theory*}
