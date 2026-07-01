@@ -1,0 +1,63 @@
+name: Deploy course site
+
+# Builds the course website and deploys it to GitHub Pages.
+#
+# What this does NOT do: commit anything back to the repository. The book PDF
+# is compiled fresh in the CI runner and bundled into the deployed site only.
+# It is never written into the repo, so this workflow cannot collide with any
+# local editing (VS Code, the Claude app, etc.).
+
+# Manual only: this site deploys when you ask it to, never automatically on a
+# push. Trigger it from GitHub -> Actions -> "Deploy course site" -> "Run
+# workflow", or from a terminal with:  gh workflow run pages.yml
+on:
+  workflow_dispatch:
+
+# Least-privilege token: read the repo, publish to Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deploy at a time; newer pushes cancel in-flight runs.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      # Compile UndergraduateProbabilityI.tex -> UndergraduateProbabilityI.pdf.
+      # latexmk handles the multiple pdflatex passes and the makeindex step.
+      - name: Build the book PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: UndergraduateProbabilityI.tex
+
+      # Assemble the static site: the committed site/ folder plus the freshly
+      # built PDF (which is not tracked in git).
+      - name: Assemble the site
+        run: |
+          mkdir -p _site
+          cp -R site/. _site/
+          cp UndergraduateProbabilityI.pdf _site/UndergraduateProbabilityI.pdf
+
+      - name: Upload the Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

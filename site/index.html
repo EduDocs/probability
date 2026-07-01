@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Undergraduate Probability I</title>
+  <style>
+    :root {
+      --ink: #1a1a2e;
+      --muted: #5b6472;
+      --accent: #2f5d8a;
+      --accent-soft: #e8f0f8;
+      --line: #dfe3e8;
+      --bg: #ffffff;
+      --card: #f7f9fb;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    header { border-bottom: 1px solid var(--line); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+    h1 { font-size: 2rem; margin: 0 0 .35rem; letter-spacing: -0.01em; }
+    .subtitle { color: var(--muted); font-size: 1.05rem; margin: 0; }
+    h2 { font-size: 1.25rem; margin: 2.5rem 0 .75rem; }
+    p { color: #2a2f38; }
+    .lead { font-size: 1.08rem; color: #333b45; }
+
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    @media (max-width: 620px) { .cards { grid-template-columns: 1fr; } }
+    .card {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.25rem 1.25rem 1.15rem;
+      background: var(--card);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(20,40,70,.08); }
+    .card .eyebrow { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-weight: 700; }
+    .card .title { font-size: 1.15rem; font-weight: 650; margin: .35rem 0 .25rem; }
+    .card .desc { font-size: .95rem; color: var(--muted); margin: 0; }
+
+    .map {
+      margin-top: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    .note { font-size: .9rem; color: var(--muted); background: var(--accent-soft); border-radius: 8px; padding: .6rem .8rem; }
+    footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
+    a.inline { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Undergraduate Probability I</h1>
+      <p class="subtitle">Class notes for engineering students &middot; a probability course, mapped.</p>
+    </header>
+
+    <p class="lead">
+      This site is the map to the course: read the notes as a book, watch the
+      companion videos, and see how every idea depends on the ones before it.
+    </p>
+
+    <div class="cards">
+      <a class="card" href="UndergraduateProbabilityI.pdf">
+        <div class="eyebrow">Read</div>
+        <div class="title">The book (PDF)</div>
+        <p class="desc">The full set of notes, typeset for careful linear reading.</p>
+      </a>
+      <a class="card" href="https://www.youtube.com/playlist?list=PLZzFXOuI8eaY">
+        <div class="eyebrow">Watch</div>
+        <div class="title">Video playlist</div>
+        <p class="desc">Short companion videos, one topic at a time, on YouTube.</p>
+      </a>
+    </div>
+
+    <h2>The concept map</h2>
+    <p>
+      Each box is a chapter; an arrow means the target builds on the source.
+      Follow the arrows and you have a valid path through the course.
+    </p>
+    <div class="map">
+      <pre class="mermaid">
+graph TD
+  sets["Sets &amp; Functions"]
+  comb["Combinatorics"]
+  pmod["Probability Models"]
+  cond["Conditional Probability"]
+  drv["Discrete Random Variables"]
+  dexp["Discrete Expectations"]
+  dvec["Discrete Vectors"]
+  crv["Continuous Random Variables"]
+  derv["Derived Distributions"]
+  ebnd["Expectations &amp; Bounds"]
+  rvec["Random Vectors"]
+  esum["Empirical Sums"]
+
+  sets --> comb
+  sets --> pmod
+  sets --> cond
+  sets --> drv
+  comb --> pmod
+  pmod --> cond
+  pmod --> drv
+  cond --> drv
+  cond --> dvec
+  drv --> dexp
+  drv --> dvec
+  drv --> crv
+  drv --> derv
+  drv --> ebnd
+  drv --> esum
+  dexp --> dvec
+  dexp --> crv
+  dexp --> ebnd
+  dexp --> rvec
+  dexp --> esum
+  dvec --> crv
+  dvec --> ebnd
+  dvec --> rvec
+  crv --> derv
+  crv --> rvec
+  crv --> esum
+  derv --> rvec
+  rvec --> crv
+      </pre>
+    </div>
+    <p class="note">
+      This graph is a hand-placed snapshot for now. The next iteration generates
+      it automatically from the chapter sidecars and makes each node clickable —
+      opening its summary, its videos, and the matching pages of the PDF.
+    </p>
+
+    <footer>
+      Undergraduate Probability I &middot; built from source on every update.
+      &copy; Jean-Fran&ccedil;ois Chamberland.
+    </footer>
+  </div>
+
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      themeVariables: {
+        primaryColor: "#e8f0f8",
+        primaryBorderColor: "#2f5d8a",
+        primaryTextColor: "#1a1a2e",
+        lineColor: "#7a8698",
+        fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
+      }
+    });
+  </script>
+</body>
+</html>

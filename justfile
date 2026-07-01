@@ -72,6 +72,24 @@ concept kind:
 _concept-md:
     python3 scripts/concept_graph.py
 
+# --- Website --------------------------------------------------------------
+
+# Serve the static course site locally for preview at http://localhost:8000.
+# The PDF link resolves only in the deployed site (the PDF is built in CI,
+# never committed); locally, run `just build latex` and copy it into site/ if
+# you want to preview that link too.
+web:
+    python3 -m http.server 8000 --directory site
+
+# Publish the site to GitHub Pages, on demand. This builds the PDF and the
+# site in the cloud (from whatever is on the `main` branch) and deploys it —
+# it does not commit anything. Requires a one-time `gh auth login`.
+# Note: it deploys the *pushed* state of `main`, so commit and push first if
+# you want your latest edits to appear.
+deploy:
+    gh workflow run pages.yml
+    @echo "Deploy started. Watch progress with:  gh run watch"
+
 # --- Housekeeping ---------------------------------------------------------
 
 clean:
