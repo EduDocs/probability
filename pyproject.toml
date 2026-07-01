@@ -1,0 +1,14 @@
+[project]
+name = "probability-tools"
+version = "0.0.0"
+description = "Build tooling for the Probability course: concept-map and site-data generators."
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml>=6",
+]
+
+# This repo is a LaTeX book, not a Python package — uv manages the tooling
+# dependencies (currently just PyYAML, used by scripts/site_data.py and
+# scripts/concept_graph.py) without trying to build/install the repo itself.
+[tool.uv]
+package = false

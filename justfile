@@ -70,14 +70,14 @@ concept kind:
     @just _concept-{{kind}}
 
 _concept-md:
-    python3 scripts/concept_graph.py
+    uv run python3 scripts/concept_graph.py
 
 # --- Website --------------------------------------------------------------
 
 # Regenerate the concept-map data the site draws (site/data/graph.json).
-# Video links need PyYAML locally (one-time: pip3 install pyyaml).
+# Runs under uv so PyYAML (from pyproject.toml) is available for video links.
 web-data:
-    python3 scripts/site_data.py
+    uv run python3 scripts/site_data.py
 
 # Serve the static course site locally for preview at http://localhost:8000.
 # Regenerates the concept-map data first. The PDF link resolves only in the

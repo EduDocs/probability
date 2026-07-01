@@ -29,6 +29,15 @@ generalized `template-book/`.
 Chapter order is defined by the `\include` sequence in the main `.tex` and
 mirrored in the `md_files` list in the `justfile`.
 
+## Environment
+
+- System tools: `brew bundle` (see `Brewfile`) installs `just`, `uv`, `pandoc`,
+  `gh`, and a TeX distribution.
+- Python tooling: `uv sync` creates `.venv` and installs deps from
+  `pyproject.toml` (currently just PyYAML, used by the site/concept generators).
+  The generator `just` recipes call `uv run`; the CI Pages build installs PyYAML
+  with pip instead.
+
 ## Working approach
 
 Each concrete change here is an opportunity to generalize a reusable pattern for
