@@ -1,6 +1,11 @@
 ---
 introduces: [set, partition, cartesian-product, relation, function, preimage, indicator-function]
 requires:   []
+videos:
+  - title: Sets, Elements, and Subsets
+    url: https://www.youtube.com/watch?v=fGZCDMNES6k
+  - title: Relations and Functions
+    url: https://www.youtube.com/watch?v=mNs0Fki5EIM
 ---
 
 # Sets and Functions — scratch

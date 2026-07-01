@@ -1,6 +1,15 @@
 ---
 introduces: [finite-equally-likely-model, counting-principle, permutation, combination, binomial-coefficient, binomial-theorem, pascals-rule, multinomial-coefficient]
 requires:   [set, cartesian-product]
+videos:
+  - title: The Counting Principle
+    url: https://www.youtube.com/watch?v=RjI3suvRG2A
+  - title: Permutations and Combinations
+    url: https://www.youtube.com/watch?v=M2DJYK704L4
+  - title: Partitions
+    url: https://www.youtube.com/watch?v=Mhh1_y1KjgI
+  - title: Sampling, Replacement, and Ordering
+    url: https://www.youtube.com/watch?v=ZfURIW7ipkA
 ---
 
 # Intuitive Probability and Combinatorics — scratch

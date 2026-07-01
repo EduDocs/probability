@@ -1,6 +1,15 @@
 ---
 introduces: [sample-space, event, probability-law, axioms-of-probability, inclusion-exclusion, union-bound, sigma-field]
 requires:   [set, partition, finite-equally-likely-model, counting-principle]
+videos:
+  - title: Experiments and Sample Spaces
+    url: https://www.youtube.com/watch?v=SUUtjFn8nh4
+  - title: Probability Laws
+    url: https://www.youtube.com/watch?v=vbEUdfAjyew
+  - title: Model Categories
+    url: https://www.youtube.com/watch?v=HVpQbN0vzg8
+  - title: Continuity and Measure Theory
+    url: https://www.youtube.com/watch?v=PdD5u1hMzgA
 ---
 
 # Probability Models — scratch
