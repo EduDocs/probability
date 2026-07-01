@@ -38,8 +38,14 @@ jobs:
         with:
           root_file: UndergraduateProbabilityI.tex
 
-      # Assemble the static site: the committed site/ folder plus the freshly
-      # built PDF (which is not tracked in git).
+      # Generate the concept-map data (site/data/graph.json) from the chapter
+      # sidecars. The Ubuntu runner ships python3; the generator falls back to a
+      # built-in frontmatter parser when PyYAML is absent.
+      - name: Generate the concept-map data
+        run: python3 scripts/site_data.py
+
+      # Assemble the static site: the committed site/ folder, the generated
+      # data, plus the freshly built PDF (which is not tracked in git).
       - name: Assemble the site
         run: |
           mkdir -p _site

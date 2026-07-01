@@ -1,5 +1,11 @@
 # LaTeX build artifacts
 output/
 
+# Generated site data (regenerated locally and in CI; never committed)
+site/data/
+
+# Python bytecode
+__pycache__/
+
 # Local resources
 resources/

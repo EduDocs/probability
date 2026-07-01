@@ -74,11 +74,15 @@ _concept-md:
 
 # --- Website --------------------------------------------------------------
 
+# Regenerate the concept-map data the site draws (site/data/graph.json).
+web-data:
+    python3 scripts/site_data.py
+
 # Serve the static course site locally for preview at http://localhost:8000.
-# The PDF link resolves only in the deployed site (the PDF is built in CI,
-# never committed); locally, run `just build latex` and copy it into site/ if
-# you want to preview that link too.
-web:
+# Regenerates the concept-map data first. The PDF link resolves only in the
+# deployed site (the PDF is built in CI, never committed); locally, run
+# `just build latex` and copy it into site/ if you want to preview that too.
+web: web-data
     python3 -m http.server 8000 --directory site
 
 # Publish the site to GitHub Pages, on demand. This builds the PDF and the
