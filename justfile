@@ -75,6 +75,7 @@ _concept-md:
 # --- Website --------------------------------------------------------------
 
 # Regenerate the concept-map data the site draws (site/data/graph.json).
+# Video links need PyYAML locally (one-time: pip3 install pyyaml).
 web-data:
     python3 scripts/site_data.py
 

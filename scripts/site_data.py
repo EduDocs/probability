@@ -17,6 +17,12 @@ import json
 import re
 import sys
 
+try:
+    import yaml
+    HAVE_YAML = True
+except ImportError:  # video links need PyYAML; everything else degrades cleanly
+    HAVE_YAML = False
+
 # concept_graph.py lives beside this file; sys.path[0] is this dir when run as
 # ``python3 scripts/site_data.py``, so a plain import resolves it.
 import concept_graph as cg
@@ -87,7 +93,32 @@ def prettify(slug: str) -> str:
     return slug.replace("-", " ")
 
 
+def extract_videos(text: str) -> list[dict]:
+    """Pertinent videos for a chapter, from the sidecar's ``videos:`` frontmatter.
+
+    Each entry is ``{title, url}``. Needs PyYAML (the nested list is beyond the
+    flat fallback parser); returns [] when PyYAML is unavailable, so the rest of
+    the site still builds.
+    """
+    if not HAVE_YAML:
+        return []
+    body = cg.extract_frontmatter(text)
+    if not body:
+        return []
+    data = yaml.safe_load(body) or {}
+    out: list[dict] = []
+    for item in data.get("videos") or []:
+        if isinstance(item, dict) and item.get("title") and item.get("url"):
+            out.append({"title": str(item["title"]), "url": str(item["url"])})
+    return out
+
+
 def main() -> int:
+    if not HAVE_YAML:
+        print(
+            "warning: PyYAML not installed; video links skipped (pip install pyyaml)",
+            file=sys.stderr,
+        )
     reading_order = cg.read_chapter_order(cg.MAIN_TEX)
     chapters = cg.load_chapters()
     edges, _fwd, _und, _aliases = cg.build_graph(chapters, reading_order)
@@ -111,6 +142,7 @@ def main() -> int:
             "introduces": chapters[stem]["introduces"],
             "requires": chapters[stem]["requires"],
             "summary": extract_summary(body),
+            "videos": extract_videos(text),
             "pdf": PDF_NAME,
         })
 

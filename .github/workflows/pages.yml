@@ -31,9 +31,12 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v5
 
-      # Generate the concept-map data (site/data/graph.json) from the chapter
-      # sidecars. The Ubuntu runner ships python3; the generator falls back to a
-      # built-in frontmatter parser when PyYAML is absent.
+      # PyYAML parses the sidecars' `videos:` blocks. The graph edges parse fine
+      # without it; only the video links need it.
+      - name: Install generator dependencies
+        run: python3 -m pip install --break-system-packages pyyaml
+
+      # Generate the concept-map data (site/data/graph.json) from the chapter sidecars.
       - name: Generate the concept-map data
         run: python3 scripts/site_data.py
 

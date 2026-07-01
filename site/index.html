@@ -85,6 +85,11 @@
       padding: .5rem 1rem; border-radius: 8px; font-weight: 600; font-size: .92rem;
     }
     .detail .read:hover { background: #24486b; }
+    .detail ul.videos { list-style: none; padding: 0; margin: .35rem 0 0; }
+    .detail ul.videos li { margin: 0 0 .4rem; }
+    .detail ul.videos a { display: inline-flex; align-items: baseline; gap: .5rem; text-decoration: none; font-size: .95rem; color: var(--accent); }
+    .detail ul.videos a::before { content: "\25B6"; color: #c4302b; font-size: .7rem; }
+    .detail ul.videos a:hover { text-decoration: underline; }
 
     .loading, .error { padding: 1.4rem; color: var(--muted); }
     .error { color: #a3402f; }
@@ -125,6 +130,14 @@
       return list.map(s => `<span class="chip ${kind}">${pretty(s)}</span>`).join("");
     }
 
+    function videoSection(list) {
+      if (!list || list.length === 0) return "";
+      const items = list.map(v =>
+        `<li><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)}</a></li>`
+      ).join("");
+      return `<h3>Videos</h3><ul class="videos">${items}</ul>`;
+    }
+
     function showDetail(d) {
       panel.innerHTML = `
         <div class="detail">
@@ -135,7 +148,8 @@
           <div class="chips">${chips(d.introduces, "intro", "—")}</div>
           <h3>Builds on</h3>
           <div class="chips">${chips(d.requires, "req", "nothing — it's a starting point")}</div>
-          <a class="read" href="${esc(d.pdf)}">Read this chapter →</a>
+          ${videoSection(d.videos)}
+          <a class="read" href="${esc(d.pdf)}">Read notes →</a>
         </div>`;
     }
 
