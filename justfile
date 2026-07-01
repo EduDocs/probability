@@ -1,6 +1,6 @@
 # Build configuration
 outdir     := "output"
-main       := "UndergraduateProbabilityI"
+main       := "probability"
 latex      := "pdflatex"
 latexflags := "-interaction=nonstopmode -halt-on-error"
 pandoc     := "pandoc"

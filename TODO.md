@@ -79,7 +79,7 @@ surgical and additive — unless flagged otherwise.
   - Opens with an unmotivated `E[Y] = sum y p_Y(y)` derivation block that reads
     like a fragment imported from another chapter.
   - Only `sum k` has a proof; `sum k^2` and `sum k^3` are stated bare.
-  - Currently commented out of `UndergraduateProbabilityI.tex` (`%\include{chapters/appendix}`).
+  - Currently commented out of `probability.tex` (`%\include{chapters/appendix}`).
   Decide: finish the appendix, fold its content into another chapter, or
   delete it.
 

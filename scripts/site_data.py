@@ -22,7 +22,7 @@ import sys
 import concept_graph as cg
 
 SITE_DATA = cg.PROJECT_ROOT / "site" / "data" / "graph.json"
-PDF_NAME = "UndergraduateProbabilityI.pdf"
+PDF_NAME = "probability.pdf"
 
 # A single ``# `` heading line (not ``## ``).
 HEADING_RE = re.compile(r"^#\s+(.*?)\s*$", re.MULTILINE)

@@ -31,7 +31,7 @@ except ImportError:
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 CHAPTERS_DIR = PROJECT_ROOT / "chapters"
-MAIN_TEX = PROJECT_ROOT / "UndergraduateProbabilityI.tex"
+MAIN_TEX = PROJECT_ROOT / "probability.tex"
 OUTPUT_MD = PROJECT_ROOT / "CONCEPT_MAP.md"
 
 

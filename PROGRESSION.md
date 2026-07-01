@@ -19,7 +19,7 @@ For each chapter in `chapters/`, there are two files:
 
 Example: `chapters/probability_models.tex` (shipped) ↔ `chapters/probability_models.md` (sidecar).
 
-The sidecar is **never** `\include`d by `UndergraduateProbabilityI.tex`, so it is invisible to
+The sidecar is **never** `\include`d by `probability.tex`, so it is invisible to
 the LaTeX build and can never leak into the PDF. Both files are tracked in git.
 
 ## The progression (and the source-of-truth flip)
@@ -126,7 +126,7 @@ with a `## Decisions` or "resolved" trail recording why it reads the way it does
 ## Progression map (optional)
 
 By default the chapter order is the `\include{chapters/<name>}` sequence in
-`UndergraduateProbabilityI.tex`, and the progression is read as a **linear chain**. When the
+`probability.tex`, and the progression is read as a **linear chain**. When the
 document **branches** — parallel case studies, an appendix that depends on a specific result,
 two studies that share a model but not each other — declare the conceptual dependency structure
 here as a `parent -> child` edge list. `/progression` reads it to build the dependency
@@ -146,7 +146,7 @@ The appendix (`chapters/appendix.tex`) is currently parked — its `\include` li
 out in the main file, so the audit treats it as out of scope.
 
 Match the node names to the chapter file stems (`<name>.tex` / `<name>.md`). Keep the map in
-sync with `UndergraduateProbabilityI.tex`; `/progression` flags a chapter whose `.tex` is not
+sync with `probability.tex`; `/progression` flags a chapter whose `.tex` is not
 `\include`d as parked.
 
 ## Git

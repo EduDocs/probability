@@ -1,6 +1,6 @@
 # Probability
 
-Undergraduate probability book (Undergraduate Probability I). Currently in a
+Undergraduate probability book (Probability). Currently in a
 classical LaTeX layout, being slowly transformed into an agentic-ready folder.
 Part of the larger `EduDocs` collection; lessons learned here feed into a
 generalized `template-book/`.
@@ -13,15 +13,15 @@ generalized `template-book/`.
 
 ## Layout
 
-- `chapters/*.tex` — source chapters, included from `UndergraduateProbabilityI.tex`.
+- `chapters/*.tex` — source chapters, included from `probability.tex`.
 - `chapters/*.md` — Markdown sidecars mirroring the chapters.
 - `scripts/concept_graph.py` — generates `CONCEPT_MAP.md`.
 - `output/` — build artifacts (gitignored; regenerated, never committed).
 
 ## Build (via `just`)
 
-- `just build latex` → `output/UndergraduateProbabilityI.pdf`
-- `just build md` → `output/UndergraduateProbabilityI_sidecars.pdf` (pandoc)
+- `just build latex` → `output/probability.pdf`
+- `just build md` → `output/probability_sidecars.pdf` (pandoc)
 - `just view latex` / `just view md` — build then open the PDF
 - `just concept md` — regenerate `CONCEPT_MAP.md`
 - `just clean` — remove `output/`
