@@ -85,9 +85,20 @@ web-data:
 web: web-data
     python3 -m http.server 8000 --directory site
 
-# Publish the site to GitHub Pages, on demand. This builds the PDF and the
-# site in the cloud (from whatever is on the `main` branch) and deploys it —
-# it does not commit anything. Requires a one-time `gh auth login`.
+# Build the book PDF locally and publish it as an asset on the rolling `pdf`
+# release. The PDF is never committed to git — releases live outside the tree.
+# The deploy workflow pulls this asset. Run this whenever the book changes.
+# Requires a one-time `gh auth login`, and a one-time release creation:
+#   gh release create pdf {{outdir}}/{{main}}.pdf -t "Book PDF" -n "Latest build"
+# After that, this recipe rebuilds and overwrites the asset.
+publish-pdf: (build "latex")
+    gh release upload pdf {{outdir}}/{{main}}.pdf --clobber
+    @echo "Published {{main}}.pdf to the 'pdf' release."
+
+# Publish the site to GitHub Pages, on demand. Regenerates the concept map and
+# deploys the site in the cloud (from whatever is on the `main` branch), pulling
+# the book PDF from the `pdf` release. Does not commit anything, and does not
+# rebuild the PDF — run `just publish-pdf` for that. Requires `gh auth login`.
 # Note: it deploys the *pushed* state of `main`, so commit and push first if
 # you want your latest edits to appear.
 deploy:
