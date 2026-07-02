@@ -35,7 +35,7 @@ We can express the probability of getting a three given that the outcome is an o
 \begin{example}
 Let $A$ and $B$ be events associated with a random experiment, and assume that $\Pr(B)>0$.
 To gain additional insight into conditional probability, we consider the scenario where this experiment is repeated $N$ times.
-Let $N_{AB}$ be the number of trials for which $A \cap B$ occurs, $N_{A\overline{B}}$ be the number of times where only $A$ occurs,  $N_{\overline{A}B}$ be the number of times where only $B$ occurs, and  $N_{\overline{A}\overline{B}}$ be the number of trials for which neither takes place.
+Let $N_{AB}$ be the number of trials for which $A \cap B$ occurs, $N_{A\overline{B}}$ be the number of times where only $A$ occurs, $N_{\overline{A}B}$ be the number of times where only $B$ occurs, and $N_{\overline{A}\overline{B}}$ be the number of trials for which neither takes place.
 From these definitions, we gather that $A$ is observed exactly $N_A = N_{AB} + N_{A\overline{B}}$ times, and $B$ is seen $N_B = N_{AB} + N_{\overline{A}B}$ times.
 
 The frequentist view of probability is based on the fact that, as $N$ becomes large, one can approximate the probability of an event by taking the ratio of the number of times this event occurs over the total number of trials.
@@ -87,7 +87,7 @@ where the third equality follows from the third axiom of probability applied to 
 Thus, the conditional probability law defined by \eqref{equation:ConditionalProbability} satisfies the three axioms of probability.
 
 \begin{example}
-A fair coin is tossed repetitively until heads is observed.
+A fair coin is tossed repeatedly until heads is observed.
 In Example~\ref{example:CoinTossSequence}, we found that the probability of observing heads for the first time on trial $k$ is $2^{-k}$.
 We now wish to compute the probability that heads occurred for the first time on the second trial given that it took an even number of tosses to observe heads.
 In this example, $A = \{ 2 \}$ and $B$ is the set of even numbers.
@@ -122,15 +122,15 @@ This formula is known as the \emph{chain rule of probability}, and it can be ver
 This latter expression implicitly assumes that $\Pr \left( \bigcap_{k=1}^{n-1} A_k \right) \neq 0$.
 
 \begin{example}
-An urn contains eight blue balls and four green balls.
+An urn contains eight green balls and four gray balls.
 Three balls are drawn from this urn without replacement.
-We wish to compute the probability that all three balls are blue.
-The probability of drawing a blue ball the first time is equal to $8/12$.
-The probability of drawing a blue ball the second time given that the first ball is blue is $7/11$.
-Finally, the probability of drawing a blue ball the third time given that the first two balls are blue is $6/10$.
-Using \eqref{equation:SimultaneousEvents}, we can compute the probability of drawing three blue balls as
+We wish to compute the probability that all three balls are green.
+The probability of drawing a green ball the first time is equal to $8/12$.
+The probability of drawing a green ball the second time given that the first ball is green is $7/11$.
+Finally, the probability of drawing a green ball the third time given that the first two balls are green is $6/10$.
+Using \eqref{equation:SimultaneousEvents}, we can compute the probability of drawing three green balls as
 \begin{equation*}
-\Pr (bbb)
+\Pr (ggg)
 = \frac{8}{12} \frac{7}{11} \frac{6}{10}
 = \frac{14}{55} .
 \end{equation*}
@@ -140,97 +140,97 @@ Using \eqref{equation:SimultaneousEvents}, we can compute the probability of dra
 % FIGURE GROUP = BALLS
 \begin{footnotesize}
 \begin{tikzpicture}
-\shade[draw=black, ball color=blue, circular drop shadow] (0.9,1.732) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0.9,1.732) circle (4mm) node[fill opacity=1]{2};
+\shade[draw=black, ball color=gray, circular drop shadow] (0.9,1.732) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0.9,1.732) circle (4mm) node[fill opacity=1]{};
 
-\shade[draw=black, ball color=red, circular drop shadow] (0.45,0.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0.45,0.866) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=red, circular drop shadow] (1.35,0.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1.35,0.866) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=blue, circular drop shadow] (2.25,0.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (2.25,0.866) circle (4mm) node[fill opacity=1]{2};
-\shade[draw=black, ball color=red, circular drop shadow] (3.15,0.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (3.15,0.866) circle (4mm) node[fill opacity=1]{1};
+\shade[draw=black, ball color=green, circular drop shadow] (0.45,0.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0.45,0.866) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=green, circular drop shadow] (1.35,0.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (1.35,0.866) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=gray, circular drop shadow] (2.25,0.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (2.25,0.866) circle (4mm) node[fill opacity=1]{};
+\shade[draw=black, ball color=green, circular drop shadow] (3.15,0.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (3.15,0.866) circle (4mm) node[fill opacity=1]{g};
 
-\shade[draw=black, ball color=red, circular drop shadow] (0,0) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0,0) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=blue, circular drop shadow] (0.9,0) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0.9,0) circle (4mm) node[fill opacity=1]{2};
-\shade[draw=black, ball color=red, circular drop shadow] (1.8,0) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1.8,0) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=red, circular drop shadow] (2.7,0) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (2.7,0) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=blue, circular drop shadow] (3.6,0) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (3.6,0) circle (4mm) node[fill opacity=1]{2};
+\shade[draw=black, ball color=green, circular drop shadow] (0,0) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0,0) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=gray, circular drop shadow] (0.9,0) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0.9,0) circle (4mm) node[fill opacity=1]{};
+\shade[draw=black, ball color=green, circular drop shadow] (1.8,0) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (1.8,0) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=green, circular drop shadow] (2.7,0) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (2.7,0) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=gray, circular drop shadow] (3.6,0) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (3.6,0) circle (4mm) node[fill opacity=1]{};
 
-\draw[very thick, ->, >=stealth'] (4.6,0.866) -- (5.6,0.866);
+\draw[very thick, ->, >=stealth'] (4.6,0.866) -- (5.6,0.866) node[midway, above] {$\frac{6}{10}$};
 
-\shade[draw=black, ball color=red, circular drop shadow] (6.6,0.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (6.6,0.866) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=red, circular drop shadow] (7.6,0.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (7.6,0.866) circle (4mm) node[fill opacity=1]{1};
+\shade[draw=black, ball color=green, circular drop shadow] (6.6,0.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (6.6,0.866) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=green, circular drop shadow] (7.6,0.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (7.6,0.866) circle (4mm) node[fill opacity=1]{g};
 \draw[draw=black] (8.6,0.866) circle (4mm);
 
-\shade[draw=black, ball color=blue, circular drop shadow] (0.9,4.732) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0.9,4.732) circle (4mm) node[fill opacity=1]{2};
-\shade[draw=black, ball color=red, circular drop shadow] (1.8,4.732) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1.8,4.732) circle (4mm) node[fill opacity=1]{1};
+\shade[draw=black, ball color=gray, circular drop shadow] (0.9,4.732) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0.9,4.732) circle (4mm) node[fill opacity=1]{};
+\shade[draw=black, ball color=green, circular drop shadow] (1.8,4.732) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (1.8,4.732) circle (4mm) node[fill opacity=1]{g};
 
-\shade[draw=black, ball color=red, circular drop shadow] (0.45,3.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0.45,3.866) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=red, circular drop shadow] (1.35,3.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1.35,3.866) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=blue, circular drop shadow] (2.25,3.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (2.25,3.866) circle (4mm) node[fill opacity=1]{2};
-\shade[draw=black, ball color=red, circular drop shadow] (3.15,3.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (3.15,3.866) circle (4mm) node[fill opacity=1]{1};
+\shade[draw=black, ball color=green, circular drop shadow] (0.45,3.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0.45,3.866) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=green, circular drop shadow] (1.35,3.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (1.35,3.866) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=gray, circular drop shadow] (2.25,3.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (2.25,3.866) circle (4mm) node[fill opacity=1]{};
+\shade[draw=black, ball color=green, circular drop shadow] (3.15,3.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (3.15,3.866) circle (4mm) node[fill opacity=1]{g};
 
-\shade[draw=black, ball color=red, circular drop shadow] (0,3) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0,3) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=blue, circular drop shadow] (0.9,3) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0.9,3) circle (4mm) node[fill opacity=1]{2};
-\shade[draw=black, ball color=red, circular drop shadow] (1.8,3) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1.8,3) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=red, circular drop shadow] (2.7,3) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (2.7,3) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=blue, circular drop shadow] (3.6,3) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (3.6,3) circle (4mm) node[fill opacity=1]{2};
+\shade[draw=black, ball color=green, circular drop shadow] (0,3) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0,3) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=gray, circular drop shadow] (0.9,3) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0.9,3) circle (4mm) node[fill opacity=1]{};
+\shade[draw=black, ball color=green, circular drop shadow] (1.8,3) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (1.8,3) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=green, circular drop shadow] (2.7,3) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (2.7,3) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=gray, circular drop shadow] (3.6,3) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (3.6,3) circle (4mm) node[fill opacity=1]{};
 
-\draw[very thick, ->, >=stealth'] (4.6,3.866) -- (5.6,3.866);
+\draw[very thick, ->, >=stealth'] (4.6,3.866) -- (5.6,3.866) node[midway, above] {$\frac{7}{11}$};
 
-\shade[draw=black, ball color=red, circular drop shadow] (6.6,3.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (6.6,3.866) circle (4mm) node[fill opacity=1]{1};
+\shade[draw=black, ball color=green, circular drop shadow] (6.6,3.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (6.6,3.866) circle (4mm) node[fill opacity=1]{g};
 \draw[draw=black] (7.6,3.866) circle (4mm);
 \draw[draw=black] (8.6,3.866) circle (4mm);
 
-\shade[draw=black, ball color=blue, circular drop shadow] (0.9,7.732) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0.9,7.732) circle (4mm) node[fill opacity=1]{2};
-\shade[draw=black, ball color=red, circular drop shadow] (1.8,7.732) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1.8,7.732) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=red, circular drop shadow] (2.7,7.732) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (2.7,7.732) circle (4mm) node[fill opacity=1]{1};
+\shade[draw=black, ball color=gray, circular drop shadow] (0.9,7.732) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0.9,7.732) circle (4mm) node[fill opacity=1]{};
+\shade[draw=black, ball color=green, circular drop shadow] (1.8,7.732) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (1.8,7.732) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=green, circular drop shadow] (2.7,7.732) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (2.7,7.732) circle (4mm) node[fill opacity=1]{g};
 
-\shade[draw=black, ball color=red, circular drop shadow] (0.45,6.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0.45,6.866) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=red, circular drop shadow] (1.35,6.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1.35,6.866) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=blue, circular drop shadow] (2.25,6.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (2.25,6.866) circle (4mm) node[fill opacity=1]{2};
-\shade[draw=black, ball color=red, circular drop shadow] (3.15,6.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (3.15,6.866) circle (4mm) node[fill opacity=1]{1};
+\shade[draw=black, ball color=green, circular drop shadow] (0.45,6.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0.45,6.866) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=green, circular drop shadow] (1.35,6.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (1.35,6.866) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=gray, circular drop shadow] (2.25,6.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (2.25,6.866) circle (4mm) node[fill opacity=1]{};
+\shade[draw=black, ball color=green, circular drop shadow] (3.15,6.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (3.15,6.866) circle (4mm) node[fill opacity=1]{g};
 
-\shade[draw=black, ball color=red, circular drop shadow] (0,6) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0,6) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=blue, circular drop shadow] (0.9,6) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (0.9,6) circle (4mm) node[fill opacity=1]{2};
-\shade[draw=black, ball color=red, circular drop shadow] (1.8,6) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (1.8,6) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=red, circular drop shadow] (2.7,6) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (2.7,6) circle (4mm) node[fill opacity=1]{1};
-\shade[draw=black, ball color=blue, circular drop shadow] (3.6,6) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (3.6,6) circle (4mm) node[fill opacity=1]{2};
+\shade[draw=black, ball color=green, circular drop shadow] (0,6) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0,6) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=gray, circular drop shadow] (0.9,6) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (0.9,6) circle (4mm) node[fill opacity=1]{};
+\shade[draw=black, ball color=green, circular drop shadow] (1.8,6) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (1.8,6) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=green, circular drop shadow] (2.7,6) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (2.7,6) circle (4mm) node[fill opacity=1]{g};
+\shade[draw=black, ball color=gray, circular drop shadow] (3.6,6) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (3.6,6) circle (4mm) node[fill opacity=1]{};
 
-\draw[very thick, ->, >=stealth'] (4.6,6.866) -- (5.6,6.866);
+\draw[very thick, ->, >=stealth'] (4.6,6.866) -- (5.6,6.866) node[midway, above] {$\frac{8}{12}$};
 
 \draw[draw=black] (6.6,6.866) circle (4mm);
 \draw[draw=black] (7.6,6.866) circle (4mm);
@@ -258,7 +258,7 @@ A collection of events $A_1, A_2, \ldots, A_n$ is said to be a \emph{partition} 
 \begin{equation*}
 \bigcup_{k=1}^n A_k = \Omega .
 \end{equation*}
-Visually, a partition divides an entire set into disjoint subsets, as exemplified in Figure~\ref{figure:SetPartitiion2}.
+Visually, a partition divides an entire set into disjoint subsets, as exemplified in Figure~\ref{figure:SetPartition2}.
 
 \begin{figure}[htb]
 \begin{center}
@@ -314,7 +314,7 @@ Visually, a partition divides an entire set into disjoint subsets, as exemplifie
 \draw[->,thick,>=stealth'] (2.25cm,0) to (3.25cm,0);
 \end{tikzpicture}
 \caption{A partition of $\Omega$ can be formed by selecting a collection of subsets that are disjoint and whose union is $\Omega$.}
-\label{figure:SetPartitiion2}
+\label{figure:SetPartition2}
 \end{center}
 \end{figure}
 
@@ -343,10 +343,10 @@ Combining these two facts, we get
 &= \Pr \left( B \cap \left( \bigcup_{k=1}^n A_k \right) \right)
 = \Pr \left( \bigcup_{k=1}^n (B \cap A_k) \right) \\
 &= \sum_{k=1}^n \Pr \left( B \cap A_k \right)
-= \sum_{k=1}^n \Pr (A_k) \Pr \left( B |A_k \right) ,
+= \sum_{k=1}^n \Pr (A_k) \Pr \left( B | A_k \right) ,
 \end{split}
 \end{equation*}
-where the fourth equality follows from the third axiom of probability.
+where the third equality follows from the third axiom of probability.
 \end{proof}
 
 \begin{figure}[htb]
@@ -410,10 +410,10 @@ A second urn contains three green balls and nine red balls.
 One of the two urns is picked at random, with equal probabilities, and a ball is drawn from the selected urn.
 We wish to compute the probability of obtaining a green ball.
 
-In this problem, using a divide and conquer approach seems appropriate;
+In this problem, using a divide-and-conquer approach seems appropriate;
 we therefore utilize the total probability theorem.
 If the first urn is chosen, then the ensuing probability of getting a green ball is $5/8$.
-One the other hand, if a ball is drawn from the second urn, the probability that it is green reduces to $3/12$.
+On the other hand, if a ball is drawn from the second urn, the probability that it is green reduces to $3/12$.
 Since the probability of selecting either urn is $1/2$, we can write the overall probability of getting a green ball as
 \begin{equation*}
 \begin{split}
@@ -493,6 +493,42 @@ Neglecting the underlying prevalence of a condition when weighing such evidence 
 Because only one person in a hundred carries the disease, the modest fraction of false positives drawn from the vast healthy majority outnumbers the true positives drawn from the few who are ill;
 the prior probability $\Pr (D)$ is every bit as essential to the answer as the accuracy of the test.
 
+\begin{example}[Monty Hall Problem] \index{Monty Hall problem}
+A game show presents a contestant with three closed doors.
+A car sits behind one door and a goat stands behind each of the other two;
+the car is equally likely to be in any of the three positions.
+The contestant selects a door, say door one, but it stays closed for the moment.
+The host, who knows where the car is, then opens one of the two remaining doors, always revealing a goat, and offers the contestant the chance to switch to the other unopened door.
+We wish to determine whether switching improves the contestant's chances of winning the car.
+
+Let $C_i$ denote the event that the car is behind door $i$, so that $\Pr (C_1) = \Pr (C_2) = \Pr (C_3) = 1/3$.
+Suppose the contestant has picked door one and the host responds by opening door three, an event we denote by $H$.
+To decide whether to switch, we compare $\Pr (C_1 | H)$, the probability of winning by staying, against $\Pr (C_2 | H)$, the probability of winning by switching.
+
+The crux of the problem is the likelihood assigned to the host's action under each hypothesis.
+If the car is behind door one, the host is free to open either remaining door, and we assume an unbiased choice, so that $\Pr (H | C_1) = 1/2$.
+If the car is behind door two, the host can open neither the contestant's door nor the door concealing the car, and is thus forced to open door three, giving $\Pr (H | C_2) = 1$.
+If the car is behind door three, the host will not reveal it, so that $\Pr (H | C_3) = 0$.
+By the total probability theorem, the probability that the host opens door three is
+\begin{equation*}
+\Pr (H)
+= \frac{1}{3} \cdot \frac{1}{2}
++ \frac{1}{3} \cdot 1
++ \frac{1}{3} \cdot 0
+= \frac{1}{2} .
+\end{equation*}
+Applying Bayes' rule, the posterior probabilities of the two remaining hypotheses are
+\begin{align*}
+\Pr (C_1 | H) &= \frac{ \Pr (C_1) \Pr (H | C_1) }{ \Pr (H) }
+= \frac{ (1/3)(1/2) }{ 1/2 } = \frac{1}{3} , \\
+\Pr (C_2 | H) &= \frac{ \Pr (C_2) \Pr (H | C_2) }{ \Pr (H) }
+= \frac{ (1/3)(1) }{ 1/2 } = \frac{2}{3} .
+\end{align*}
+Switching doubles the contestant's chance of winning, from one third to two thirds.
+The opened door is far from a neutral event;
+because the host is constrained to avoid both the contestant's door and the car, opening door three transfers its share of the probability onto door two rather than spreading it evenly.
+\end{example}
+
 
 \section{Independence}
 \label{section:Independence}
@@ -505,7 +541,7 @@ If $\Pr(B) > 0$ and events $A$ and $B$ are independent, then
 = \frac{ \Pr (A) \Pr(B) }{\Pr (B)}
 = \Pr (A).
 \end{equation*}
-That is, the \emph{a priori} probability of event $A$ is identical to the \emph{a posteriori} probability of $A$ given $B$.
+That is, the prior probability of event $A$ is identical to the posterior probability of $A$ given $B$.
 In other words, if $A$ is independent of $B$, then partial knowledge of $B$ contains no information about the likely occurrence of $A$.
 We note that independence is a symmetric relation; if $A$ is independent of $B$, then $B$ is also independent of $A$.
 It is therefore unambiguous to say that $A$ and $B$ are independent events.
@@ -591,7 +627,7 @@ This is illustrated below.
 A fair coin is flipped twice.
 Let $A$ denote the event that heads is observed on the first toss.
 Let $B$ be the event that heads is obtained on the second toss.
-Finally, let $C$ be the event that the two coins show distinct sides.
+Finally, let $C$ be the event that the two tosses show distinct sides.
 These three events each have a probability of $1/2$.
 Furthermore, we have
 \begin{equation*}

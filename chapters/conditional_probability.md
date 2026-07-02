@@ -42,9 +42,9 @@ Develop conditioning as the mechanism for updating probabilities given partial i
 - **Base-rate fallacy**: named immediately after the disease example, where the surprising 16% is exactly the base rate (1% prevalence) being neglected; ties the lesson back to the prior Pr(D).
 - **Disjoint ≠ independent** promoted to a named, indexed misconception (conflating independence with mutual exclusivity), where the chapter previously stated it only as unnamed prose.
 - **Gambler's fallacy**: named at the close of the two-event independence discussion — independent trials carry no memory; the long-run balancing of frequencies is not a corrective force on individual trials.
+- **Monty Hall problem**: added as a capstone worked example closing the Bayes' rule section. Car behind one of three doors, contestant picks door one, host opens door three revealing a goat; the asymmetric likelihoods Pr(H | C_1) = 1/2, Pr(H | C_2) = 1, Pr(H | C_3) = 0 drive Bayes' rule to posteriors 1/3 (stay) vs. 2/3 (switch). Emphasis on the host's constraint as the reason the opened door is not neutral — it exercises the total-probability/Bayes machinery and the confusion-of-the-inverse lesson at once.
 
 ## Open questions
-- **Monty Hall is absent.** The chapter has no iconic conditioning *puzzle* — the one problem that most sharply exposes the gap between intuition and the conditional law. It would sit naturally as a capstone example to the Bayes' rule section (or as a starred aside), and it reuses the total-probability/Bayes machinery already developed. Deferred (future possibility, not committed): decide whether it earns a full worked example or a Further-Reading pointer; the disease test already carries the base-rate lesson, so Monty Hall would be additive, not load-bearing.
 - **Simpson's paradox** is a candidate under total probability / conditional independence — aggregated and stratified conditionals can point opposite ways. Stronger fit once random variables and joint distributions are available downstream; likely better placed later than here. Left as a pointer for now.
 
 ## Notes & references
