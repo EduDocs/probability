@@ -454,6 +454,19 @@ Rearranging the terms yields the first equality.
 The second equality in \eqref{equation:BayesRule} is obtained by applying Theorem~\ref{theorem:TotalProbability} to the denominator $\Pr(B)$.
 \end{proof}
 
+The quantities that appear in Bayes' rule carry standard names.
+The unconditional probability $\Pr (A_i)$ is the \emph{prior} probability of $A_i$, the value held before $B$ is observed.\index{Prior probability}
+The conditional probability $\Pr (A_i | B)$ is the corresponding \emph{posterior} probability, the value that applies once $B$ has been taken into account.\index{Posterior probability}
+The factor $\Pr (B | A_i)$, viewed as a function of the conditioning event, is called the \emph{likelihood}.\index{Likelihood}
+Bayes' rule is, in this language, a recipe for turning prior probabilities into posterior probabilities in the light of new evidence.
+
+The rule also guards against a pervasive confusion.
+The conditional probabilities $\Pr (A | B)$ and $\Pr (B | A)$ answer different questions, and they are generally not equal;
+treating one as a substitute for the other is a reasoning error known as \emph{confusion of the inverse}.\index{Confusion of the inverse}
+The mistake carries real stakes in a courtroom, where the probability of observing the evidence in an innocent person may be small, yet it is wrongly read as the probability that an accused person is innocent given the evidence.
+This particular form of the error is often called the \emph{prosecutor's fallacy}.\index{Prosecutor's fallacy}
+Bayes' rule makes the relationship between the two conditional probabilities precise, and it shows that they coincide only in special circumstances.
+
 \begin{example}
 April, a biochemist, designs a test for a latent disease.
 If a subject has the disease, the probability that the test results turn out positive is $0.95$.
@@ -473,6 +486,12 @@ Using Bayes' rule, we can compute the probability that a person who tested posit
 \end{equation*}
 Although the test may initially appear fairly accurate, the probability that a person with a positive test carries the disease remains small.
 \end{example}
+
+This last result is frequently met with disbelief, and the surprise itself points to a widespread reasoning error.
+Confronted with a test that is correct ninety-five percent of the time, intuition tends to fix on this figure and to disregard how rare the disease is to begin with.
+Neglecting the underlying prevalence of a condition when weighing such evidence is known as the \emph{base-rate fallacy}.\index{Base-rate fallacy}
+Because only one person in a hundred carries the disease, the modest fraction of false positives drawn from the vast healthy majority outnumbers the true positives drawn from the few who are ill;
+the prior probability $\Pr (D)$ is every bit as essential to the answer as the accuracy of the test.
 
 
 \section{Independence}
@@ -525,12 +544,19 @@ In this case, we conclude that getting a four on the red die and a sum total of 
 
 The basic idea of independence seems intuitively clear: if knowledge about the occurrence of event $B$ has no impact on the probability of $A$, then these two events must be independent.
 Yet, independent events are not necessarily easy to visualize in terms of their sample space.
-A common mistake is to assume that two events are independent if they are disjoint.
+A common misconception conflates independence with mutual exclusivity, leading one to assume that two disjoint events must be independent.\index{Independence!versus mutual exclusivity}
+In fact, the opposite is closer to the truth.
 Two mutually exclusive events can hardly be independent: if $\Pr (A) > 0$, $\Pr (B) > 0$, and $\Pr (A \cap B) = 0$ then
 \begin{equation*}
 \Pr (A \cap B) = 0 < \Pr (A) \Pr(B).
 \end{equation*}
 Hence, $A$ and $B$ cannot be independent if they are disjoint, non-trivial events.
+
+Independence also dispels a stubborn intuition about repeated trials.
+When successive trials are independent, the outcomes already observed carry no information about those still to come;
+a fair coin that has just landed heads ten times in a row is no more likely to show tails on the next toss than it ever was.
+The belief that a run of one outcome makes the opposite outcome ``due'' is the \emph{gambler's fallacy}.\index{Gambler's fallacy}
+It mistakes the long-run balancing of frequencies, which independence does predict, for a corrective force acting on individual trials, which independence explicitly forbids.
 
 
 \subsection{Independence of Multiple Events}
