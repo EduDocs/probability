@@ -163,13 +163,13 @@ Using \eqref{equation:SimultaneousEvents}, we can compute the probability of dra
 \shade[draw=black, ball color=gray, circular drop shadow] (3.6,0) circle (4mm);
 \shade[fill=white, fill opacity=0.3] (3.6,0) circle (4mm) node[fill opacity=1]{};
 
-\draw[very thick, ->, >=stealth'] (4.6,0.866) -- (5.6,0.866) node[midway, above] {$\frac{6}{10}$};
+\draw[very thick, ->, >=stealth'] (4.6,0.866) -- (6.6,0.866) node[midway, above] {$\frac{6}{10}$} node[midway, below] {third draw};
 
-\shade[draw=black, ball color=green, circular drop shadow] (6.6,0.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (6.6,0.866) circle (4mm) node[fill opacity=1]{g};
 \shade[draw=black, ball color=green, circular drop shadow] (7.6,0.866) circle (4mm);
 \shade[fill=white, fill opacity=0.3] (7.6,0.866) circle (4mm) node[fill opacity=1]{g};
-\draw[draw=black] (8.6,0.866) circle (4mm);
+\shade[draw=black, ball color=green, circular drop shadow] (8.6,0.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (8.6,0.866) circle (4mm) node[fill opacity=1]{g};
+\draw[draw=black] (9.6,0.866) circle (4mm);
 
 \shade[draw=black, ball color=gray, circular drop shadow] (0.9,4.732) circle (4mm);
 \shade[fill=white, fill opacity=0.3] (0.9,4.732) circle (4mm) node[fill opacity=1]{};
@@ -196,12 +196,12 @@ Using \eqref{equation:SimultaneousEvents}, we can compute the probability of dra
 \shade[draw=black, ball color=gray, circular drop shadow] (3.6,3) circle (4mm);
 \shade[fill=white, fill opacity=0.3] (3.6,3) circle (4mm) node[fill opacity=1]{};
 
-\draw[very thick, ->, >=stealth'] (4.6,3.866) -- (5.6,3.866) node[midway, above] {$\frac{7}{11}$};
+\draw[very thick, ->, >=stealth'] (4.6,3.866) -- (6.6,3.866) node[midway, above] {$\frac{7}{11}$} node[midway, below] {second draw};
 
-\shade[draw=black, ball color=green, circular drop shadow] (6.6,3.866) circle (4mm);
-\shade[fill=white, fill opacity=0.3] (6.6,3.866) circle (4mm) node[fill opacity=1]{g};
-\draw[draw=black] (7.6,3.866) circle (4mm);
+\shade[draw=black, ball color=green, circular drop shadow] (7.6,3.866) circle (4mm);
+\shade[fill=white, fill opacity=0.3] (7.6,3.866) circle (4mm) node[fill opacity=1]{g};
 \draw[draw=black] (8.6,3.866) circle (4mm);
+\draw[draw=black] (9.6,3.866) circle (4mm);
 
 \shade[draw=black, ball color=gray, circular drop shadow] (0.9,7.732) circle (4mm);
 \shade[fill=white, fill opacity=0.3] (0.9,7.732) circle (4mm) node[fill opacity=1]{};
@@ -230,11 +230,11 @@ Using \eqref{equation:SimultaneousEvents}, we can compute the probability of dra
 \shade[draw=black, ball color=gray, circular drop shadow] (3.6,6) circle (4mm);
 \shade[fill=white, fill opacity=0.3] (3.6,6) circle (4mm) node[fill opacity=1]{};
 
-\draw[very thick, ->, >=stealth'] (4.6,6.866) -- (5.6,6.866) node[midway, above] {$\frac{8}{12}$};
+\draw[very thick, ->, >=stealth'] (4.6,6.866) -- (6.6,6.866) node[midway, above] {$\frac{8}{12}$} node[midway, below] {first draw};
 
-\draw[draw=black] (6.6,6.866) circle (4mm);
 \draw[draw=black] (7.6,6.866) circle (4mm);
 \draw[draw=black] (8.6,6.866) circle (4mm);
+\draw[draw=black] (9.6,6.866) circle (4mm);
 \end{tikzpicture}
 \end{footnotesize}
 \caption{Conditional probabilities can be employed to calculate the probability of multiple events occurring at the same time.}
