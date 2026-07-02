@@ -4,6 +4,12 @@ Open items from the `/progression` audit of the chapter sidecars (run on
 bootstrapped `.md` files in `chapters/`). Each item is a sidecar-level fix —
 surgical and additive — unless flagged otherwise.
 
+Reconciled against a re-run of `/progression` on 2026-06-28. That pass
+reframed the two blocker pairs as **2-cycles** (each chapter requires a concept
+the other introduces), confirmed the regenerated concept map now flags
+`continuous_random_variables → joint-pdf` mechanically, and closed the `iid`
+item below.
+
 ## Blockers (story does not hold as ordered)
 
 - [ ] **OGF forward-reference in `chapters/discrete_expectations.md`.**
@@ -11,11 +17,21 @@ surgical and additive — unless flagged otherwise.
   independence of RVs is only introduced one chapter later in
   `chapters/discrete_vectors.md`. Upstream, `conditional_probability.md` only
   defines independence of *events*.
+  This is one half of a **2-cycle**: `discrete_expectations` requires
+  `independence-of-rvs` / `convolution` from `discrete_vectors`, while
+  `discrete_vectors` requires `expectation` / `ogf` back from
+  `discrete_expectations`.
   - Option A: split the OGF bullet. Keep "OGF encodes the PMF; derivatives at 1
     recover moments" in `discrete_expectations.md`; move the
     convolution/independent-sums half to `discrete_vectors.md`.
   - Option B: add an "independence of two RVs" bullet to
     `discrete_expectations.md` as a brief setup before the OGF bullet.
+  - Option C (recommended — mirrors the `event`/`iid` precedent): treat the
+    convolution/independence link as a *preview*. Drop `independence-of-rvs`
+    and `convolution` from this sidecar's `requires`, and annotate the OGF
+    bullet that the property is previewed here and formalized in
+    `discrete_vectors.md`. This breaks the cycle at the frontmatter level, the
+    way `combinatorics` defers `event` and `discrete_vectors` re-grounds `iid`.
 
 - [ ] **MGF forward-reference in `chapters/expectations_and_bounds.md`.**
   The MGF multiplicativity bullet and the Chernoff bound assume independence of
@@ -36,6 +52,16 @@ surgical and additive — unless flagged otherwise.
   joint Gaussian are not formalized until `random_vectors.md`.
   Fix: mark these bullets as forward-pointers ("formalized in
   `random_vectors.md`"), or trim to a parametric definition.
+  - **`joint-pdf` 2-cycle (now mechanically flagged).** The sidecar's
+    `requires` lists `joint-pdf`, introduced later in `random_vectors.md`
+    (which depends back on `cdf`/`pdf`/`gaussian`), so the regenerated concept
+    map reports it as a forward reference. But **nothing in the
+    continuous-RV spine actually uses `joint-pdf`** — the outline is
+    single-variable throughout. Likely a *stale `requires` entry*. The one
+    possible genuine use is deriving Rayleigh as the norm of a 2-D Gaussian;
+    check `continuous_random_variables.tex`. If unused, remove `joint-pdf` from
+    `requires` (clears the cycle); if used, keep it and add the forward-pointer
+    above.
 
 - [ ] **Orphaned promise in `chapters/conditional_probability.md`.**
   The closing bullet promises "equivalent notations conventions used in the
@@ -44,19 +70,19 @@ surgical and additive — unless flagged otherwise.
   `p_{X|Y}(x|y)`, `E[X|Y]` as a random variable vs. `E[X|Y=y]` as a value), or
   drop the bullet.
 
-- [ ] **Orphaned indicator-function setup in `chapters/mathematical_review.md`.**
+- [ ] **Orphaned indicator-function setup in `chapters/sets_and_functions.md`.**
   The indicator function is introduced but no later sidecar names it again
   (Bernoulli is implicitly one).
-  Fix: drop from `mathematical_review.md`, or add a tie-back bullet in
+  Fix: drop from `sets_and_functions.md`, or add a tie-back bullet in
   `discrete_random_variables.md` ("Bernoulli RV = indicator of an event").
 
-- [ ] **"iid" used but never defined as a spine concept.**
-  `discrete_random_variables.md` ("iid Bernoulli trials") and
-  `empirical_sums.md` (LLN/CLT) both use "iid" without any sidecar
-  introducing it.
-  Fix: add an "iid" bullet to `chapters/discrete_vectors.md` right after the
-  independence-of-RVs bullet so it has a canonical home before
-  `empirical_sums` invokes it.
+- [x] **"iid" used but never defined as a spine concept.** *(Resolved.)*
+  `discrete_random_variables.md` now `introduces: iid` with a spine bullet
+  (informal, via independence of events), and `discrete_vectors.md` re-grounds
+  it ("made rigorous at the RV level here once independence of random variables
+  is defined") right after the independence-of-RVs bullet — the canonical home
+  the fix called for. The 2026-06-28 re-run treats this as a well-handled
+  spiral, not a defect.
 
 ## Notes (optional polish)
 
@@ -71,6 +97,17 @@ surgical and additive — unless flagged otherwise.
   Stirling's formula (starred, in `combinatorics.md`) and mixed RVs (starred,
   in `continuous_random_variables.md`) are not used downstream. Fine for
   starred topics; flagged for completeness.
+
+- [ ] **Orphaned `conditional-independence` in `chapters/conditional_probability.md`.**
+  Introduced but never consumed by a later sidecar. Standard topic, defensible
+  to keep, but it is a dangling setup. Confirm it stays, or add a downstream
+  tie-back (e.g. naive-Bayes-style factoring) if one fits.
+
+- [ ] **`binomial-theorem` introduced twice.**
+  Both `combinatorics.md` and the parked `appendix_background.md` introduce it
+  (flagged under "Aliasing / redundancy" in the concept map). Harmless while
+  the appendix stays parked; if it is ever `\include`d, make one the canonical
+  introduction and the other a back-reference.
 
 ## Out-of-scope chapter (separate issue, not a progression finding)
 
@@ -97,9 +134,13 @@ that mechanical audit** and live only in this document:
   the concept into `independence-of-rvs-discrete` / `-continuous`, so the gap
   shows up only in prose.
 - **Gamma / Rayleigh warning in `continuous_random_variables.md`** (above).
-  Same reason: `independence-of-rvs` and `joint-pdf` *are* in the requires
-  list, but the discrete vs. continuous distinction that makes these
-  forward-pointing is not in the graph's resolution.
+  Two distinct cases, now separated: `independence-of-rvs` *is* introduced
+  upstream (in `discrete_vectors.md`), so the graph treats it as satisfied even
+  though the *continuous* formalization only lands in `random_vectors.md` — that
+  discrete-vs-continuous gap is the part invisible to the graph. By contrast
+  `joint-pdf` is introduced **downstream** in `random_vectors.md`, so the graph
+  *does* flag it as a forward reference (see the `joint-pdf` 2-cycle item
+  above); it is not invisible.
 
 If we ever want these flagged mechanically, the fix is to split the concept
 in the sidecars' frontmatter (`independence-of-rvs-discrete`,
