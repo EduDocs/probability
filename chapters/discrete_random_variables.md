@@ -1,6 +1,13 @@
 ---
 introduces: [random-variable, pmf, function-of-rv, bernoulli, iid, binomial, poisson, geometric, discrete-uniform]
 requires:   [sample-space, event, probability-law, function, preimage, independence-of-events]
+videos:
+  - title: Discrete Random Variables
+    url: https://www.youtube.com/watch?v=m3Ed2gaMvaE
+  - title: Important Discrete Random Variables
+    url: https://www.youtube.com/watch?v=qw_aSHQIok4
+  - title: Functions of Discrete Random Variables
+    url: https://www.youtube.com/watch?v=6VmB79L0-2o
 ---
 
 # Discrete Random Variables — scratch

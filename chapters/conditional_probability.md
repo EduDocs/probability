@@ -1,6 +1,15 @@
 ---
 introduces: [conditional-probability, chain-rule, total-probability, bayes-rule, prior-posterior-likelihood, independence-of-events, conditional-independence]
 requires:   [sample-space, event, probability-law, partition, axioms-of-probability]
+videos:
+  - title: Conditional Probability
+    url: https://www.youtube.com/watch?v=9dCHpqF-LdQ
+  - title: The Total Probability Theorem
+    url: https://www.youtube.com/watch?v=VBhseyN6g44
+  - title: Bayes' Rule
+    url: https://www.youtube.com/watch?v=aSpL6jYRJKY
+  - title: Independence
+    url: https://www.youtube.com/watch?v=jxR67_4e2MI
 ---
 
 # Conditional Probability — scratch
