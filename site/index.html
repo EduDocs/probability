@@ -4,298 +4,63 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Probability</title>
-  <style>
-    :root {
-      --ink: #1a1a2e;
-      --muted: #5b6472;
-      --accent: #2f5d8a;
-      --accent-soft: #e8f0f8;
-      --line: #dfe3e8;
-      --bg: #ffffff;
-      --card: #f7f9fb;
-      --chip-intro: #e3f0e6;
-      --chip-intro-ink: #2c6b3f;
-      --chip-req: #f0eadf;
-      --chip-req-ink: #8a6d2f;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; height: 100%; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.55;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    a { color: var(--accent); }
-
-    header {
-      padding: 1.5rem 1.5rem 1.25rem;
-      border-bottom: 1px solid var(--line);
-    }
-    .titles h1 { font-size: 1.5rem; margin: 0 0 .2rem; letter-spacing: -0.01em; }
-    .titles p { margin: 0; color: var(--muted); font-size: .98rem; }
-    .actions { margin-top: .9rem; display: flex; gap: .6rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: .4rem;
-      border: 1px solid var(--line); border-radius: 999px;
-      padding: .4rem .9rem; text-decoration: none; color: var(--ink);
-      background: var(--card); font-size: .9rem; font-weight: 550;
-      transition: border-color .15s ease, background .15s ease;
-    }
-    .btn:hover { border-color: var(--accent); background: var(--accent-soft); }
-    .btn .eyebrow { color: var(--accent); font-weight: 700; }
-
-    main { flex: 1; display: flex; min-height: 0; }
-    /* position: relative is required — Cytoscape anchors its absolutely
-       positioned canvas layers to the nearest positioned ancestor; without it
-       the canvas offsets from the container and clicks land in the wrong spot. */
-    #graph { flex: 1 1 62%; min-width: 0; position: relative; background:
-      radial-gradient(circle at 1px 1px, #eef1f5 1px, transparent 0) 0 0 / 22px 22px; }
-    aside {
-      flex: 0 0 34%; max-width: 420px;
-      border-left: 1px solid var(--line);
-      padding: 1.4rem 1.4rem 2rem;
-      overflow-y: auto;
-      background: var(--bg);
-    }
-    @media (max-width: 780px) {
-      main { flex-direction: column; }
-      #graph { flex: none; height: 56vh; }
-      aside { flex: none; max-width: none; border-left: none; border-top: 1px solid var(--line); }
-    }
-
-    .panel-hint { color: var(--muted); }
-    .panel-hint strong { color: var(--ink); }
-
-    .detail .order { font-size: .78rem; text-transform: uppercase; letter-spacing: .07em; color: var(--accent); font-weight: 700; }
-    .detail h2 { font-size: 1.3rem; margin: .25rem 0 .6rem; }
-    .detail .summary { color: #2a2f38; margin: 0 0 1.1rem; }
-    .detail h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 1.1rem 0 .5rem; }
-    .chips { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .chip { font-size: .82rem; padding: .2rem .6rem; border-radius: 999px; }
-    .chip.intro { background: var(--chip-intro); color: var(--chip-intro-ink); }
-    .chip.req { background: var(--chip-req); color: var(--chip-req-ink); }
-    .chip.none { background: var(--card); color: var(--muted); }
-    .detail .read {
-      display: inline-block; margin-top: 1.3rem;
-      background: var(--accent); color: #fff; text-decoration: none;
-      padding: .5rem 1rem; border-radius: 8px; font-weight: 600; font-size: .92rem;
-    }
-    .detail .read:hover { background: #24486b; }
-    .detail ul.videos { list-style: none; padding: 0; margin: .35rem 0 0; }
-    .detail ul.videos li { margin: 0 0 .4rem; }
-    .detail ul.videos a { display: inline-flex; align-items: baseline; gap: .5rem; text-decoration: none; font-size: .95rem; color: var(--accent); }
-    .detail ul.videos a::before { content: "\25B6"; color: #c4302b; font-size: .7rem; }
-    .detail ul.videos a:hover { text-decoration: underline; }
-
-    .loading, .error { padding: 1.4rem; color: var(--muted); }
-    .error { color: #a3402f; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <div class="titles">
-      <h1>Probability</h1>
-      <p>The course, mapped. Each box is a chapter; arrows point from a topic to what builds on it.</p>
-    </div>
-    <div class="actions">
-      <a class="btn" href="probability.pdf"><span class="eyebrow">Read</span> The book (PDF)</a>
-      <a class="btn" href="https://www.youtube.com/playlist?list=PLZzFXOuI8eaY"><span class="eyebrow">Watch</span> Video playlist</a>
+<body class="page-about">
+  <header class="nav">
+    <a class="brand" href="index.html">Probability</a>
+    <div class="links">
+      <a href="index.html" aria-current="page">About</a>
+      <a href="map.html">Concept map</a>
+      <a href="probability.pdf">Book (PDF)</a>
+      <a href="https://www.youtube.com/playlist?list=PLZzFXOuI8eaY">Videos</a>
     </div>
   </header>
 
-  <main>
-    <div id="graph"><div class="loading">Loading the concept map…</div></div>
-    <aside id="panel">
-      <p class="panel-hint"><strong>Click a chapter</strong> to see what it covers, what it builds on, and where to read it.</p>
-    </aside>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Probability</h1>
+      <p class="lead">
+        This course will introduce the learner to the fundamental concepts of
+        probability theory applied to engineering problems. Its goal is to develop the
+        ability to construct and exploit probabilistic models in a manner that combines
+        intuition and mathematical precision.
+      </p>
+      <p class="desc">
+        The proposed treatment of probability includes elementary set operations, sample
+        spaces and probability laws, conditional probability, independence, and notions
+        of combinatorics. A discussion of discrete and continuous random variables,
+        common distributions, functions, and expectations forms an important part of
+        this course. Transform methods, limit theorems, modes of convergence, and
+        bounding techniques are also covered. In particular, special consideration will
+        be given to the law of large numbers. Examples from engineering, science, and
+        statistics will be provided.
+      </p>
+    </section>
+
+    <h2 class="section-title">Learning objectives</h2>
+    <ol class="objectives">
+      <li>Review basic notions of set theory and simple operations such as unions, intersections, differences and De Morgan's laws. Discuss Cartesian products and simple combinatorics. Go over the counting principle, permutations, combinations and partitions.</li>
+      <li>Introduce sample spaces, probability laws and random variables. Distinguish between events and outcomes, and illustrate how to compute their probabilities.</li>
+      <li>Present the concepts of independence and conditional probabilities. Study the total probability theorem and Bayes' rule. Provide examples of these important results applied to tangible engineering problems.</li>
+      <li>Understand mathematical descriptions of random variables including probability mass functions, cumulative distribution functions and probability density functions. Become familiar with commonly encountered random variables, in particular the Gaussian random variable.</li>
+      <li>Introduce the notions of expectations and moments, including means and variances. Calculate moments of common random variables. Characterize the distributions of functions of random variables.</li>
+      <li>Explore the properties of multiple random variables using joint probability mass functions and joint probability density functions. Understand correlation, covariance and the correlation coefficient. Discuss how these quantities relate to the independence of random variables.</li>
+      <li>Gain the ability to compute the sample mean and standard deviation of a random variable from a series of independent observations. Estimate the cumulative distribution function from a collection of independent observations. Study the law of large numbers and the central limit theorem, and illustrate how these two theorems can be employed to model random phenomena.</li>
+      <li>Explain the concept of confidence intervals associated with sample means. Calculate confidence intervals and use this statistical tool to interpret engineering data.</li>
+      <li>Engage the student in active learning through programming challenges, problem solving, and real-world examples. Encourage the student to become an independent learner and increase their awareness of available resources.</li>
+    </ol>
+
+    <p class="prereq">
+      <strong>Prerequisites.</strong> A basic understanding of calculus — sequences,
+      series, derivatives and integrals. Some programming background helps in order to
+      use the computing material and examples.
+    </p>
+
+    <div class="cta">
+      <a class="primary" href="map.html">Explore the concept map →</a>
+      <a class="secondary" href="probability.pdf">Read the notes (PDF)</a>
+    </div>
   </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dagre@0.8.5/dist/dagre.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
-  <script>
-    const panel = document.getElementById("panel");
-
-    function esc(s) {
-      return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-    }
-    function pretty(slug) { return esc(slug.replace(/-/g, " ")); }
-
-    function chips(list, kind, emptyLabel) {
-      if (!list || list.length === 0) return `<span class="chip none">${emptyLabel}</span>`;
-      return list.map(s => `<span class="chip ${kind}">${pretty(s)}</span>`).join("");
-    }
-
-    function videoSection(list) {
-      if (!list || list.length === 0) return "";
-      const items = list.map(v =>
-        `<li><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)}</a></li>`
-      ).join("");
-      return `<h3>Videos</h3><ul class="videos">${items}</ul>`;
-    }
-
-    function showDetail(d) {
-      panel.innerHTML = `
-        <div class="detail">
-          <div class="order">Chapter ${d.order} in the reading order</div>
-          <h2>${esc(d.title)}</h2>
-          <p class="summary">${esc(d.summary || "")}</p>
-          <h3>Introduces</h3>
-          <div class="chips">${chips(d.introduces, "intro", "—")}</div>
-          <h3>Builds on</h3>
-          <div class="chips">${chips(d.requires, "req", "nothing — it's a starting point")}</div>
-          ${videoSection(d.videos)}
-          <a class="read" href="${esc(d.pdf)}">Read notes →</a>
-        </div>`;
-    }
-
-    function resetPanel() {
-      panel.innerHTML = `<p class="panel-hint"><strong>Click a chapter</strong> to see what it covers, what it builds on, and where to read it.</p>`;
-    }
-
-    async function init() {
-      let data;
-      try {
-        const res = await fetch("data/graph.json");
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        data = await res.json();
-      } catch (err) {
-        document.getElementById("graph").innerHTML =
-          `<div class="error">Could not load the concept map (${esc(err.message)}).</div>`;
-        return;
-      }
-
-      const elements = [];
-      for (const n of data.nodes) elements.push({ data: { ...n, label: n.title } });
-      for (const e of data.edges) elements.push({ data: { id: `${e.source}__${e.target}`, source: e.source, target: e.target } });
-
-      // Rank by reading order: hidden "ordering" edges chain the chapters in
-      // sequence so dagre stacks them top-to-bottom in reading order (while
-      // still placing them horizontally). Never drawn; ignored by highlighting.
-      const byOrder = [...data.nodes].sort((a, b) => a.order - b.order);
-      for (let i = 0; i + 1 < byOrder.length; i++) {
-        elements.push({
-          data: { id: `order__${byOrder[i].id}__${byOrder[i + 1].id}`, source: byOrder[i].id, target: byOrder[i + 1].id },
-          classes: "order-edge",
-        });
-      }
-
-      const graphEl = document.getElementById("graph");
-      if (typeof cytoscape === "undefined") {
-        graphEl.innerHTML =
-          `<div class="error">The graph library failed to load. Check your connection and refresh.</div>`;
-        return;
-      }
-      // Clear the "Loading…" placeholder so Cytoscape owns an empty container;
-      // a leftover child offsets the canvas and throws off click hit-testing.
-      graphEl.innerHTML = "";
-
-      const cy = cytoscape({
-        container: graphEl,
-        elements,
-        wheelSensitivity: 0.2,
-        // The graph is a fixed map: no dragging boxes around, no box-select.
-        // This makes every click register as a clean tap (not a drag).
-        autoungrabify: true,
-        boxSelectionEnabled: false,
-        style: [
-          {
-            selector: "node",
-            style: {
-              "shape": "round-rectangle",
-              "background-color": "#e8f0f8",
-              "border-color": "#2f5d8a",
-              "border-width": 1.5,
-              "label": "data(label)",
-              "text-wrap": "wrap",
-              "text-max-width": "130px",
-              "text-valign": "center",
-              "text-halign": "center",
-              "color": "#1a1a2e",
-              "font-size": "12px",
-              "font-weight": 600,
-              "width": "label",
-              "height": "label",
-              "padding": "10px",
-              "overlay-opacity": 0,
-            },
-          },
-          {
-            selector: "node:selected",
-            style: { "background-color": "#2f5d8a", "color": "#ffffff", "border-width": 2.5 },
-          },
-          {
-            selector: "edge",
-            style: {
-              "width": 1.6,
-              "line-color": "#b6c1cf",
-              "target-arrow-color": "#b6c1cf",
-              "target-arrow-shape": "triangle",
-              "arrow-scale": 0.9,
-              "curve-style": "bezier",
-            },
-          },
-          { selector: ".order-edge", style: { "visibility": "hidden" } },
-          { selector: ".faded", style: { "opacity": 0.18 } },
-          {
-            selector: ".hl-edge",
-            style: { "line-color": "#2f5d8a", "target-arrow-color": "#2f5d8a", "width": 2.4, "opacity": 1 },
-          },
-        ],
-        // Positioned by layoutGraph() below so we can fall back if dagre is missing.
-        layout: { name: "preset" },
-      });
-
-      function layoutGraph() {
-        try {
-          cy.layout({
-            name: "dagre", rankDir: "TB", nodeSep: 28, rankSep: 58, edgeSep: 10,
-            acyclicer: "greedy",
-            // Keep the reading-order chain straight; let real dependency edges
-            // bend and, where they run backwards, be the ones dagre reverses.
-            edgeWeight: e => (e.hasClass("order-edge") ? 5 : 1),
-          }).run();
-        } catch (e) {
-          // cytoscape-dagre failed to load — fall back to a built-in hierarchical layout.
-          cy.layout({ name: "breadthfirst", directed: true, padding: 30, spacingFactor: 1.1 }).run();
-        }
-        // Gentle rightward drift by reading order, so the progression reads
-        // diagonally: top-to-bottom by rank, loosely left-to-right by order.
-        // DRIFT_X is the looseness knob — larger = more diagonal, 0 = straight.
-        const DRIFT_X = 64;
-        cy.nodes().forEach(n => n.position("x", n.position("x") + (n.data("order") - 1) * DRIFT_X));
-      }
-      layoutGraph();
-
-      function highlight(node) {
-        clearHighlight();
-        // Base the highlight on real dependencies only, not the hidden ordering edges.
-        const realEdges = node.connectedEdges().not(".order-edge");
-        const neighborhood = realEdges.connectedNodes().union(node);
-        cy.elements().addClass("faded");
-        neighborhood.removeClass("faded");
-        realEdges.removeClass("faded").addClass("hl-edge");
-      }
-      function clearHighlight() {
-        cy.elements().removeClass("faded").removeClass("hl-edge");
-      }
-
-      cy.on("tap", "node", evt => { showDetail(evt.target.data()); highlight(evt.target); });
-      cy.on("tap", evt => { if (evt.target === cy) { resetPanel(); cy.$(":selected").unselect(); clearHighlight(); } });
-
-      window.addEventListener("resize", () => cy.resize());
-      // Fit once the flex layout and fonts have settled, otherwise pointer
-      // hit-testing can be offset from where boxes are drawn.
-      requestAnimationFrame(() => { cy.resize(); cy.fit(undefined, 30); });
-    }
-
-    // Initialize after full load so the container has its final size.
-    if (document.readyState === "complete") init();
-    else window.addEventListener("load", init);
-  </script>
 </body>
 </html>

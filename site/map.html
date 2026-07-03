@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Concept map · Probability</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-map">
+  <header class="nav">
+    <a class="brand" href="index.html">Probability</a>
+    <div class="links">
+      <a href="index.html">About</a>
+      <a href="map.html" aria-current="page">Concept map</a>
+      <a href="probability.pdf">Book (PDF)</a>
+      <a href="https://www.youtube.com/playlist?list=PLZzFXOuI8eaY">Videos</a>
+    </div>
+  </header>
+
+  <main>
+    <div id="graph"><div class="loading">Loading the concept map…</div></div>
+    <aside id="panel">
+      <p class="panel-hint">Each box is a chapter; arrows point from a topic to what builds on it. <strong>Click a chapter</strong> for its summary, videos, and where to read it.</p>
+    </aside>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dagre@0.8.5/dist/dagre.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
+  <script>
+    const panel = document.getElementById("panel");
+    const HINT = `<p class="panel-hint">Each box is a chapter; arrows point from a topic to what builds on it. <strong>Click a chapter</strong> for its summary, videos, and where to read it.</p>`;
+
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    }
+    function pretty(slug) { return esc(slug.replace(/-/g, " ")); }
+
+    function chips(list, kind, emptyLabel) {
+      if (!list || list.length === 0) return `<span class="chip none">${emptyLabel}</span>`;
+      return list.map(s => `<span class="chip ${kind}">${pretty(s)}</span>`).join("");
+    }
+
+    function videoSection(list) {
+      if (!list || list.length === 0) return "";
+      const items = list.map(v =>
+        `<li><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)}</a></li>`
+      ).join("");
+      return `<h3>Videos</h3><ul class="videos">${items}</ul>`;
+    }
+
+    function showDetail(d) {
+      panel.innerHTML = `
+        <div class="detail">
+          <div class="order">Chapter ${d.order} in the reading order</div>
+          <h2>${esc(d.title)}</h2>
+          <p class="summary">${esc(d.summary || "")}</p>
+          <h3>Introduces</h3>
+          <div class="chips">${chips(d.introduces, "intro", "—")}</div>
+          <h3>Builds on</h3>
+          <div class="chips">${chips(d.requires, "req", "nothing — it's a starting point")}</div>
+          ${videoSection(d.videos)}
+          <a class="read" href="${esc(d.pdf)}">Read notes →</a>
+        </div>`;
+    }
+
+    function resetPanel() { panel.innerHTML = HINT; }
+
+    async function init() {
+      let data;
+      try {
+        const res = await fetch("data/graph.json");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        data = await res.json();
+      } catch (err) {
+        document.getElementById("graph").innerHTML =
+          `<div class="error">Could not load the concept map (${esc(err.message)}).</div>`;
+        return;
+      }
+
+      const elements = [];
+      for (const n of data.nodes) elements.push({ data: { ...n, label: n.title } });
+      for (const e of data.edges) elements.push({ data: { id: `${e.source}__${e.target}`, source: e.source, target: e.target } });
+
+      // Rank by reading order: hidden "ordering" edges chain the chapters in
+      // sequence so dagre stacks them top-to-bottom in reading order (while
+      // still placing them horizontally). Never drawn; ignored by highlighting.
+      const byOrder = [...data.nodes].sort((a, b) => a.order - b.order);
+      for (let i = 0; i + 1 < byOrder.length; i++) {
+        elements.push({
+          data: { id: `order__${byOrder[i].id}__${byOrder[i + 1].id}`, source: byOrder[i].id, target: byOrder[i + 1].id },
+          classes: "order-edge",
+        });
+      }
+
+      const graphEl = document.getElementById("graph");
+      if (typeof cytoscape === "undefined") {
+        graphEl.innerHTML =
+          `<div class="error">The graph library failed to load. Check your connection and refresh.</div>`;
+        return;
+      }
+      // Clear the "Loading…" placeholder so Cytoscape owns an empty container;
+      // a leftover child offsets the canvas and throws off click hit-testing.
+      graphEl.innerHTML = "";
+
+      const cy = cytoscape({
+        container: graphEl,
+        elements,
+        wheelSensitivity: 0.2,
+        // The graph is a fixed map: no dragging boxes around, no box-select.
+        // This makes every click register as a clean tap (not a drag).
+        autoungrabify: true,
+        boxSelectionEnabled: false,
+        style: [
+          {
+            selector: "node",
+            style: {
+              "shape": "round-rectangle",
+              "background-color": "#e8f0f8",
+              "border-color": "#2f5d8a",
+              "border-width": 1.5,
+              "label": "data(label)",
+              "text-wrap": "wrap",
+              "text-max-width": "130px",
+              "text-valign": "center",
+              "text-halign": "center",
+              "color": "#1a1a2e",
+              "font-size": "12px",
+              "font-weight": 600,
+              "width": "label",
+              "height": "label",
+              "padding": "10px",
+              "overlay-opacity": 0,
+            },
+          },
+          {
+            selector: "node:selected",
+            style: { "background-color": "#2f5d8a", "color": "#ffffff", "border-width": 2.5 },
+          },
+          {
+            selector: "edge",
+            style: {
+              "width": 1.6,
+              "line-color": "#b6c1cf",
+              "target-arrow-color": "#b6c1cf",
+              "target-arrow-shape": "triangle",
+              "arrow-scale": 0.9,
+              "curve-style": "bezier",
+            },
+          },
+          { selector: ".order-edge", style: { "visibility": "hidden" } },
+          { selector: ".faded", style: { "opacity": 0.18 } },
+          {
+            selector: ".hl-edge",
+            style: { "line-color": "#2f5d8a", "target-arrow-color": "#2f5d8a", "width": 2.4, "opacity": 1 },
+          },
+        ],
+        // Positioned by layoutGraph() below so we can fall back if dagre is missing.
+        layout: { name: "preset" },
+      });
+
+      function layoutGraph() {
+        try {
+          cy.layout({
+            name: "dagre", rankDir: "TB", nodeSep: 28, rankSep: 58, edgeSep: 10,
+            acyclicer: "greedy",
+            // Keep the reading-order chain straight; let real dependency edges
+            // bend and, where they run backwards, be the ones dagre reverses.
+            edgeWeight: e => (e.hasClass("order-edge") ? 5 : 1),
+          }).run();
+        } catch (e) {
+          // cytoscape-dagre failed to load — fall back to a built-in hierarchical layout.
+          cy.layout({ name: "breadthfirst", directed: true, padding: 30, spacingFactor: 1.1 }).run();
+        }
+        // Gentle rightward drift by reading order, so the progression reads
+        // diagonally: top-to-bottom by rank, loosely left-to-right by order.
+        // DRIFT_X is the looseness knob — larger = more diagonal, 0 = straight.
+        const DRIFT_X = 64;
+        cy.nodes().forEach(n => n.position("x", n.position("x") + (n.data("order") - 1) * DRIFT_X));
+      }
+      layoutGraph();
+
+      function highlight(node) {
+        clearHighlight();
+        // Base the highlight on real dependencies only, not the hidden ordering edges.
+        const realEdges = node.connectedEdges().not(".order-edge");
+        const neighborhood = realEdges.connectedNodes().union(node);
+        cy.elements().addClass("faded");
+        neighborhood.removeClass("faded");
+        realEdges.removeClass("faded").addClass("hl-edge");
+      }
+      function clearHighlight() {
+        cy.elements().removeClass("faded").removeClass("hl-edge");
+      }
+
+      cy.on("tap", "node", evt => { showDetail(evt.target.data()); highlight(evt.target); });
+      cy.on("tap", evt => { if (evt.target === cy) { resetPanel(); cy.$(":selected").unselect(); clearHighlight(); } });
+
+      window.addEventListener("resize", () => cy.resize());
+      // Fit once the flex layout and fonts have settled, otherwise pointer
+      // hit-testing can be offset from where boxes are drawn.
+      requestAnimationFrame(() => { cy.resize(); cy.fit(undefined, 30); });
+    }
+
+    // Initialize after full load so the container has its final size.
+    if (document.readyState === "complete") init();
+    else window.addEventListener("load", init);
+  </script>
+</body>
+</html>
