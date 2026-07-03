@@ -78,7 +78,7 @@ A variable is called discrete if its range is finite or countably infinite; that
 
 \begin{example}
 Consider the experiment where a coin is tossed repetitively until heads is observed.
-The corresponding function, which maps the number of tosses to an integer, is a discrete random variable that takes a countable number of values.
+The random variable that records the number of tosses needed to observe the first heads is discrete and takes a countable number of values.
 The range of this random variable is given by the positive integers $\{1, 2, \ldots \}$.
 \end{example}
 
@@ -194,7 +194,7 @@ Then, $X$ is a Bernoulli random variable and its PMF is given by
 \begin{equation*}
 p_X (x) = \begin{cases}
 1 - p, & x = 0 \\
-p, & x = 1 .
+p, & x = 1
 \end{cases}
 \end{equation*}
 where $p \in [0, 1]$.
@@ -221,12 +221,12 @@ where $p \in [0, 1]$.
 \begin{example}
 Consider the flipping of a biased coin, for which heads is obtained with probability $p$ and tails is obtained with probability $1-p$.
 A random variable that maps heads to one and tails to zero is a Bernoulli random variable with parameter~$p$.
-In fact, every Bernoulli random variable is equivalent to the tossing of a coin.
+In fact, every Bernoulli random variable is equivalent to the tossing of a coin, possibly biased.
 \end{example}
 
 
 \subsection{Binomial Random Variables}
-\label{subsection:BinormialRandomVariables}
+\label{subsection:BinomialRandomVariables}
 
 Multiple independent Bernoulli random variables can be combined to construct more sophisticated random variables.
 Suppose $X$ is the sum of $n$ independent and identically distributed Bernoulli random variables.
@@ -236,7 +236,7 @@ The PMF of $X$ is given by
 p_X (k) = \Pr (X = k)
 = \binom{n}{k} p^k (1-p)^{n-k},
 \end{equation*}
-where $k = 0, 1, \ldots n$.
+where $k = 0, 1, \ldots, n$.
 We can easily verify that $X$ fulfills the normalization axiom,
 \begin{equation*}
 \sum_{k=0}^n \binom{n}{k} p^k (1-p)^{n-k}
@@ -332,7 +332,7 @@ Requests at an Internet server arrive at a rate of $\lambda$ connections per sec
 The number of service requests per second is modeled as a random variable with a Poisson distribution.
 We wish to find the probability that no service requests arrive during a time interval of one second.
 
-Let $N$ be a random variable that represents the number of requests that arrives within a span of one second.
+Let $N$ be a random variable that represents the number of requests that arrive within a span of one second.
 By assumption, $N$ is a Poisson random variable with PMF
 \begin{equation*}
 p_N (k) = \frac{ \lambda^k }{k!} e^{-\lambda} .
@@ -342,7 +342,7 @@ The probability that no service requests arrive in one second is simply given by
 
 It is possible to obtain a Poisson random variable as the limit of a sequence of binomial random variables.
 Fix $\lambda$ and let $p_n = \lambda/n$.
-For $k = 1, 2, \ldots n$, we define the PMF of the random variable $X_n$ as
+For $k = 0, 1, \ldots, n$, we define the PMF of the random variable $X_n$ as
 \begin{equation*}
 \begin{split}
 p_{X_n} (k) &= \Pr (X_n = k)
@@ -376,7 +376,7 @@ Thus, the sequence of binomial random variables $\{ X_n \}$ converges in distrib
 	(4, 0.195367) (5, 0.156293) (6, 0.104196) (7, 0.059540)
 	(8, 0.029770) (9, 0.013231) (10, 0.005292) (11, 0.001925)
 	(12, 0.000642)};
-\addlegendentry{$\lambda = 10$}
+\addlegendentry{$\lambda = 4$}
 
 \addplot[ybar,lightgray,dotted]
     coordinates
@@ -452,11 +452,11 @@ This is in contrast to the exact answer, which can be written as $0.9899$ when t
 Consider a random experiment where a Bernoulli trial is repeated multiple times until a one is observed.
 At each time step, the probability of getting a one is equal to $p$ and the probability of getting a zero is $1-p$.
 The number of trials carried out before completion, which we denote by $X$, is recorded as the outcome of this experiment.
-The random variable $X$ is a \emph{geometric random variable}, and its PMF is given by \index{Geometric random variable}
+Then $X$ is a \emph{geometric random variable}, and its PMF is given by \index{Geometric random variable}
 \begin{equation*}
 p_X (k) = (1-p)^{k-1} p, \quad k = 1, 2, \ldots
 \end{equation*}
-We stress that $(1-p)^{k-1} p$ simply represents the probability of obtaining a sequence of $k-1$ zero immediately followed by a one.
+We stress that $(1-p)^{k-1} p$ simply represents the probability of obtaining a sequence of $k-1$ zeros immediately followed by a one.
 
 \begin{figure}[ht]
 \begin{center}
@@ -469,16 +469,16 @@ We stress that $(1-p)^{k-1} p$ simply represents the probability of obtaining a 
     ybar]
 \addplot
 	coordinates
-	{(0, 0.25) (1, 0.1875) (2, 0.140625) (3, 0.10546875) (4, 0.079101563)
-	(5, 0.059326172) (6, 0.044494629) (7, 0.033370972) (8, 0.025028229)
-	(9, 0.018771172) (10, 0.014078379) (11, 0.010558784) (12, 0.007919088)};
+	{(1, 0.25) (2, 0.1875) (3, 0.140625) (4, 0.10546875) (5, 0.079101563)
+	(6, 0.059326172) (7, 0.044494629) (8, 0.033370972) (9, 0.025028229)
+	(10, 0.018771172) (11, 0.014078379) (12, 0.010558784) (13, 0.007919088)};
 \addlegendentry{$p = 0.25$}
 \end{axis}
 \end{tikzpicture}
 \end{center}
 \caption{The PMF of a geometric random variable is a decreasing function of $k$.
 It is plotted above for $p = 0.25$.
-The values of the PMF are only present for $k = 1, 2, \ldots, 12$.}
+The values of the PMF are only present for $k = 1, 2, \ldots, 13$.}
 \end{figure}
 
 \begin{example}
@@ -660,7 +660,7 @@ and it is necessarily zero for any other argument.
 \item Ross, S., \emph{A First Course in Probability}, 7th edition, Pearson Prentice Hall, 2006: Sections~4.1--4.2, 4.6--4.8.
 \item Bertsekas, D. P., and Tsitsiklis, J. N., \emph{Introduction to Probability}, Athena Scientific, 2002: Sections~2.1--2.3.
 \item Miller, S. L., and Childers, D. G., \emph{Probability and Random Processes with Applications to Signal Processing and Communications}, 2004: Section~2.7.
-\item Gubner, J. A., \emph{Probability and Random Processes for Electrical and Computer Engineers}, Cambridge, 2006: Sections~2.1--1.2.
+\item Gubner, J. A., \emph{Probability and Random Processes for Electrical and Computer Engineers}, Cambridge, 2006: Sections~2.1--2.2.
 \end{enumerate}
 \end{small}
 
