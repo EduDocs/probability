@@ -1,0 +1,12 @@
+# Geometric-lint allowlist for scenes/model_categories.py.
+#
+# Only the UncountableModels scene needs an entry. The shaded sub-interval
+# [a,b] is drawn deliberately *on top of* the [0,1] number line to show that
+# its probability is its length -- the band overlapping the axis is the whole
+# point of the picture, not a layout mistake. snapshot "*" matches every frame.
+
+ignore:
+  - snapshot: "*"
+    a: "NumberLine[1]"
+    b: "Rectangle[3]"
+    reason: "shaded sub-interval [a,b] deliberately drawn over the [0,1] axis"

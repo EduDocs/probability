@@ -1,0 +1,11 @@
+# Renders, per-beat clips, and the TTS voiceover cache are all regenerable
+# from the tracked layers (project.yaml + content/ + scenes/ + sources/) via
+# tools/render.py + tools/assemble.py. Re-renders are approximate: TTS audio
+# is re-synthesized, so beat durations drift within the runtime tolerance.
+media/
+
+# Secrets (OPENAI_API_KEY); see the engine's .env.example for the shape.
+.env
+
+__pycache__/
+.DS_Store

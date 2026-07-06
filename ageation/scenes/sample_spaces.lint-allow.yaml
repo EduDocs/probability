@@ -1,0 +1,19 @@
+# Geometric-lint allowlist for scenes/sample_spaces.py.
+#
+# Only RulesForASampleSpace needs entries. In the non-admissible example, the
+# "prime" ellipse is drawn deliberately straddling the "odd" circle and the
+# "even" circle -- that overlap IS the point: 3 and 5 are odd AND prime, 2 is
+# even AND prime, so the categories are not mutually exclusive. The crossing of
+# the prime ellipse over both circles is intentional, so we declare it.
+# (The outcome balls themselves sit inside the prime ellipse, which the linter's
+# container rule already ignores.)
+
+ignore:
+  - snapshot: "*"
+    a: "Circle[2]"
+    b: "Ellipse[6]"
+    reason: "prime ellipse deliberately overlaps the odd circle (3,5 are odd and prime)"
+  - snapshot: "*"
+    a: "Circle[3]"
+    b: "Ellipse[6]"
+    reason: "prime ellipse deliberately overlaps the even circle (2 is even and prime)"

@@ -1,0 +1,1276 @@
+# Project manifest -- the ordering spine for this book's video series.
+# Embedded posture: this `ageation/` folder lives inside the Probability book
+# repo; upstream_dir points back at the book's chapters/.
+# Editable working copies are vendored into sources/ (tools/vendor_sources.py)
+# and are what the pipeline actually builds from.
+
+project:
+  title: Probability
+  shape: course             # many section-videos; recap_prior=true, narration=1.0x
+  upstream_dir: ../chapters
+  render:
+    quality: ql             # ql = 480p draft; qh = 1080p final
+  voice:
+    provider: openai        # final voice (needs OPENAI_API_KEY in .env)
+    name: nova              # enthusiastic, clear -- good for technical content
+    rate: 1.0
+  pedagogy:
+    target_minutes_per_video: 10   # this chapter's two videos target ~10 min each
+    open_with_objective: true
+    close_with_key_idea: true
+    recap_prior: true
+
+# Notation convention as data (same book, same rules as the worked example).
+# Enforced by tools/check_notation.py; manim has no access to the book's macros,
+# so scenes use the expanded forms via scenes/_style.py helpers.
+notation:
+  rules:
+    - avoid: '\mathbb{P}'
+      use: '\Pr'
+      reason: probability
+    - avoid: '\mathbb{E}'
+      use: '\mathrm{E}'
+      reason: expectation
+    - avoid: '\mathbb{V}'
+      use: '\mathrm{Var}'
+      reason: variance
+    - avoid: '\operatorname{E}'
+      use: '\mathrm{E}'
+      reason: expectation
+    - avoid: '\mathbb{1}'
+      use: '\mathbf{1}'
+      reason: indicator
+
+# Chapter 1 of the book (sets_and_functions.tex) is split into TWO section
+# videos: Sets (chapter intro + 1.1-1.3) and Functions (1.4). Both derive from
+# the same upstream .tex; each vendors its own editable working copy.
+#
+# stage:  planned -> scripted -> built -> rendered -> approved
+
+chapters:
+  - slug: 01-sets
+    title: Sets
+    upstream: ../chapters/sets_and_functions.tex
+    companion: ../chapters/sets_and_functions.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    videos:
+      - slug: 01-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 01-1-what-is-a-set
+        title: What Is a Set?
+        scene_class: WhatIsASet
+        est_minutes: 2
+      - slug: 01-2-special-sets
+        title: Special Sets and the Complement
+        scene_class: SpecialSets
+        est_minutes: 1
+      - slug: 01-3-operations
+        title: Elementary Set Operations
+        scene_class: SetOperations
+        est_minutes: 2
+      - slug: 01-4-partition
+        title: Disjointness and Partitions
+        scene_class: Partition
+        est_minutes: 1
+      - slug: 01-5-rules
+        title: Algebraic Rules and De Morgan's Laws
+        scene_class: AlgebraicRules
+        est_minutes: 2
+      - slug: 01-6-cartesian
+        title: Cartesian Products
+        scene_class: CartesianProduct
+        est_minutes: 1
+
+  - slug: 02-functions
+    title: Functions
+    upstream: ../chapters/sets_and_functions.tex
+    companion: ../chapters/sets_and_functions.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [01-sets]
+    videos:
+      - slug: 02-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 02-1-relations-functions
+        title: Relations and Functions
+        scene_class: RelationsToFunctions
+        est_minutes: 1
+      - slug: 02-2-domain-codomain
+        title: Domain, Codomain, and the Rule
+        scene_class: DomainCodomain
+        est_minutes: 1
+      - slug: 02-3-image-preimage
+        title: Image and Preimage
+        scene_class: ImagePreimage
+        est_minutes: 2
+      - slug: 02-4-properties
+        title: One-to-One and Onto
+        scene_class: InjSurjBij
+        est_minutes: 2
+      - slug: 02-5-indicator
+        title: The Indicator Function
+        scene_class: IndicatorFunction
+        est_minutes: 1
+      - slug: 02-6-tie-back
+        title: Set Theory and Probability
+        scene_class: SetTheoryAndProbability
+        est_minutes: 1
+
+  # Chapter 2 of the book (combinatorics.tex) -> four section videos.
+  - slug: 03-counting-principle
+    title: The Counting Principle
+    upstream: ../chapters/combinatorics.tex
+    companion: ../chapters/combinatorics.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [02-functions]
+    videos:
+      - slug: 03-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 03-1-equally-likely
+        title: Equally Likely Outcomes
+        scene_class: EquallyLikely
+        est_minutes: 1
+      - slug: 03-2-counting-principle
+        title: The Counting Principle
+        scene_class: CountingPrinciple
+        est_minutes: 2
+      - slug: 03-3-multistage
+        title: Multi-Stage Experiments and Sampling
+        scene_class: MultiStageSampling
+        est_minutes: 1
+      - slug: 03-4-power-set
+        title: Counting Subsets
+        scene_class: PowerSet
+        est_minutes: 1
+
+  - slug: 04-permutations-combinations
+    title: Permutations and Combinations
+    upstream: ../chapters/combinatorics.tex
+    companion: ../chapters/combinatorics.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [03-counting-principle]
+    videos:
+      - slug: 04-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 04-1-permutations
+        title: Permutations
+        scene_class: Permutations
+        est_minutes: 2
+      - slug: 04-2-k-permutations
+        title: k-Permutations
+        scene_class: KPermutations
+        est_minutes: 1
+      - slug: 04-3-combinations
+        title: Combinations
+        scene_class: Combinations
+        est_minutes: 2
+      - slug: 04-4-binomial-theorem
+        title: Pascal's Rule and the Binomial Theorem
+        scene_class: BinomialTheorem
+        est_minutes: 2
+
+  - slug: 05-partitions
+    title: Partitions and Stars and Bars
+    upstream: ../chapters/combinatorics.tex
+    companion: ../chapters/combinatorics.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [04-permutations-combinations]
+    videos:
+      - slug: 05-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 05-1-partitions
+        title: Partitions and the Multinomial Coefficient
+        scene_class: Partitions
+        est_minutes: 2
+      - slug: 05-2-stars-and-bars
+        title: Stars and Bars
+        scene_class: StarsAndBars
+        est_minutes: 2
+      - slug: 05-3-sampling-tie-in
+        title: Sampling With Replacement, Unordered
+        scene_class: SamplingTieIn
+        est_minutes: 1
+
+  - slug: 06-sampling
+    title: A Unified View of Sampling
+    upstream: ../chapters/combinatorics.tex
+    companion: ../chapters/combinatorics.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [05-partitions]
+    videos:
+      - slug: 06-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 06-1-sampling-table
+        title: The Sampling Table
+        scene_class: SamplingTable
+        est_minutes: 2
+      - slug: 06-2-birthday-problem
+        title: The Birthday Problem
+        scene_class: BirthdayProblem
+        est_minutes: 2
+      - slug: 06-3-birthday-punchline
+        title: The Birthday Punchline
+        scene_class: BirthdayPunchline
+        est_minutes: 1
+
+  # Chapter 3 of the book (probability_models.tex) -> four section videos.
+  - slug: 07-sample-spaces
+    title: Sample Spaces and Events
+    upstream: ../chapters/probability_models.tex
+    companion: ../chapters/probability_models.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [06-sampling]
+    videos:
+      - slug: 07-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 07-1-experiment-sample-space
+        title: Experiment and Sample Space
+        scene_class: ExperimentAndSampleSpace
+        est_minutes: 2
+      - slug: 07-2-choosing-a-sample-space
+        title: Choosing a Sample Space
+        scene_class: ChoosingASampleSpace
+        est_minutes: 1
+      - slug: 07-3-rules
+        title: Rules for a Sample Space
+        scene_class: RulesForASampleSpace
+        est_minutes: 2
+
+  - slug: 08-probability-laws
+    title: Probability Laws
+    upstream: ../chapters/probability_models.tex
+    companion: ../chapters/probability_models.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [07-sample-spaces]
+    videos:
+      - slug: 08-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 08-1-three-axioms
+        title: The Three Axioms
+        scene_class: ThreeAxioms
+        est_minutes: 2
+      - slug: 08-2-additivity
+        title: Additivity and Countable Additivity
+        scene_class: Additivity
+        est_minutes: 2
+      - slug: 08-3-consequences
+        title: Consequences of the Axioms
+        scene_class: Consequences
+        est_minutes: 2
+      - slug: 08-4-union-formula
+        title: The Union of Two Events
+        scene_class: UnionFormula
+        est_minutes: 1
+      - slug: 08-5-union-bound
+        title: The Union Bound
+        scene_class: UnionBound
+        est_minutes: 2
+
+  - slug: 09-model-categories
+    title: Categories of Probability Models
+    upstream: ../chapters/probability_models.tex
+    companion: ../chapters/probability_models.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [08-probability-laws]
+    videos:
+      - slug: 09-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 09-1-finite
+        title: Finite Sample Spaces
+        scene_class: FiniteModels
+        est_minutes: 2
+      - slug: 09-2-countably-infinite
+        title: Countably Infinite Models
+        scene_class: CountablyInfiniteModels
+        est_minutes: 2
+      - slug: 09-3-uncountable
+        title: Uncountably Infinite Models
+        scene_class: UncountableModels
+        est_minutes: 2
+
+  - slug: 10-continuity-measure
+    title: Continuity of Probability and a Measure-Theory View
+    upstream: ../chapters/probability_models.tex
+    companion: ../chapters/probability_models.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [09-model-categories]
+    videos:
+      - slug: 10-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 10-1-continuity-below
+        title: Continuity from Below
+        scene_class: ContinuityFromBelow
+        est_minutes: 2
+      - slug: 10-2-continuity-above
+        title: Continuity from Above
+        scene_class: ContinuityFromAbove
+        est_minutes: 1
+      - slug: 10-3-measure-theory
+        title: Probability and Measure Theory
+        scene_class: MeasureTheory
+        est_minutes: 2
+
+  # Chapter 4 of the book (conditional_probability.tex) -> four section videos.
+  - slug: 11-conditioning-events
+    title: Conditioning on Events
+    upstream: ../chapters/conditional_probability.tex
+    companion: ../chapters/conditional_probability.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [10-continuity-measure]
+    videos:
+      - slug: 11-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 11-1-conditioning
+        title: Conditioning on an Event
+        scene_class: ConditioningOnEvents
+        est_minutes: 2
+      - slug: 11-2-valid-law
+        title: The Conditional Law
+        scene_class: ConditionalLaw
+        est_minutes: 2
+      - slug: 11-3-chain-rule
+        title: The Chain Rule
+        scene_class: ChainRule
+        est_minutes: 2
+
+  - slug: 12-total-probability
+    title: The Total Probability Theorem
+    upstream: ../chapters/conditional_probability.tex
+    companion: ../chapters/conditional_probability.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [11-conditioning-events]
+    videos:
+      - slug: 12-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 12-1-partition
+        title: Partitioning the Sample Space
+        scene_class: Partitioning
+        est_minutes: 1
+      - slug: 12-2-theorem
+        title: The Total Probability Theorem
+        scene_class: TotalProbability
+        est_minutes: 2
+      - slug: 12-3-example
+        title: Divide and Conquer
+        scene_class: TwoUrns
+        est_minutes: 2
+
+  - slug: 13-bayes-monty-hall
+    title: Bayes' Rule and the Monty Hall Problem
+    upstream: ../chapters/conditional_probability.tex
+    companion: ../chapters/conditional_probability.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [12-total-probability]
+    videos:
+      - slug: 13-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 13-1-bayes-rule
+        title: Bayes' Rule
+        scene_class: BayesRule
+        est_minutes: 2
+      - slug: 13-2-pitfalls
+        title: The Base-Rate Fallacy
+        scene_class: BaseRateFallacy
+        est_minutes: 2
+      - slug: 13-3-monty-hall
+        title: The Monty Hall Problem
+        scene_class: MontyHall
+        est_minutes: 3
+
+  - slug: 14-independence
+    title: Independence
+    upstream: ../chapters/conditional_probability.tex
+    companion: ../chapters/conditional_probability.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [13-bayes-monty-hall]
+    videos:
+      - slug: 14-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 14-1-independence
+        title: Independent Events
+        scene_class: Independence
+        est_minutes: 2
+      - slug: 14-2-multiple-events
+        title: Independence of Multiple Events
+        scene_class: MultipleEvents
+        est_minutes: 2
+      - slug: 14-3-conditional
+        title: Conditional Independence
+        scene_class: ConditionalIndependence
+        est_minutes: 2
+
+  # Chapter 5 of the book (discrete_random_variables.tex) -> three section videos.
+  - slug: 15-discrete-random-variables
+    title: Discrete Random Variables and the PMF
+    upstream: ../chapters/discrete_random_variables.tex
+    companion: ../chapters/discrete_random_variables.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [14-independence]
+    videos:
+      - slug: 15-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 15-1-rv-as-function
+        title: A Random Variable is a Function
+        scene_class: RandomVariableMapping
+        est_minutes: 2
+      - slug: 15-2-discrete
+        title: Discrete Random Variables
+        scene_class: DiscreteRandomVariable
+        est_minutes: 1
+      - slug: 15-3-pmf
+        title: The Probability Mass Function
+        scene_class: PMFDefinition
+        est_minutes: 3
+      - slug: 15-4-example
+        title: A PMF in Action
+        scene_class: UrnExample
+        est_minutes: 2
+
+  - slug: 16-important-discrete-rvs
+    title: Important Discrete Random Variables
+    upstream: ../chapters/discrete_random_variables.tex
+    companion: ../chapters/discrete_random_variables.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [15-discrete-random-variables]
+    videos:
+      - slug: 16-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 16-1-bernoulli
+        title: The Bernoulli Random Variable
+        scene_class: Bernoulli
+        est_minutes: 1
+      - slug: 16-2-binomial
+        title: The Binomial Random Variable
+        scene_class: Binomial
+        est_minutes: 2
+      - slug: 16-3-poisson
+        title: The Poisson Random Variable
+        scene_class: Poisson
+        est_minutes: 2
+      - slug: 16-4-binomial-to-poisson
+        title: Binomial Converges to Poisson
+        scene_class: BinomialToPoisson
+        est_minutes: 2
+      - slug: 16-5-geometric
+        title: The Geometric Random Variable
+        scene_class: Geometric
+        est_minutes: 2
+      - slug: 16-6-uniform
+        title: The Discrete Uniform Random Variable
+        scene_class: DiscreteUniform
+        est_minutes: 1
+
+  - slug: 17-functions-of-random-variables
+    title: Functions of Random Variables
+    upstream: ../chapters/discrete_random_variables.tex
+    companion: ../chapters/discrete_random_variables.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [16-important-discrete-rvs]
+    videos:
+      - slug: 17-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 17-1-function-of-rv
+        title: A Function of a Random Variable
+        scene_class: FunctionOfRandomVariable
+        est_minutes: 2
+      - slug: 17-2-pmf-of-y
+        title: The PMF of Y = g(X)
+        scene_class: PMFofFunction
+        est_minutes: 2
+      - slug: 17-3-affine
+        title: Affine Functions
+        scene_class: AffineExample
+        est_minutes: 1
+      - slug: 17-4-taxi
+        title: Worked Example — Taxi Fares
+        scene_class: TaxiFare
+        est_minutes: 2
+
+  # Book chapter 6 (discrete_expectations.tex, "Meeting Expectations") is
+  # split into THREE section videos: Expected Values (chapter intro + 6.1),
+  # Functions and Expectations (6.2 with the Mean / Variance / Affine
+  # subsections), and Moments (6.3). The ordinary-generating-functions
+  # section is \iffalse'd out of the book and stays out of the videos.
+  - slug: 18-expected-values
+    title: Expected Values
+    upstream: ../chapters/discrete_expectations.tex
+    companion: ../chapters/discrete_expectations.md
+    status: approved          # 1080p60 nova final rendered + published to YouTube 2026-07-03
+    prereqs: [17-functions-of-random-variables]
+    videos:
+      - slug: 18-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 18-1-definition
+        title: The Expected Value
+        scene_class: ExpectedValueDefinition
+        est_minutes: 2
+      - slug: 18-2-die
+        title: A Fair Die
+        scene_class: FairDieExample
+        est_minutes: 2
+      - slug: 18-3-heads
+        title: Waiting for Heads
+        scene_class: WaitingForHeads
+        est_minutes: 2
+      - slug: 18-4-summary
+        title: From a PMF to a Single Number
+        scene_class: PMFToScalar
+        est_minutes: 1
+
+  - slug: 19-functions-and-expectations
+    title: Functions and Expectations
+    upstream: ../chapters/discrete_expectations.tex
+    companion: ../chapters/discrete_expectations.md
+    status: approved          # 1080p60 nova final rendered + published to YouTube 2026-07-03
+    prereqs: [18-expected-values]
+    videos:
+      - slug: 19-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 19-1-lotus
+        title: The Expectation of g(X)
+        scene_class: ExpectationOfFunction
+        est_minutes: 2
+      - slug: 19-2-two-ways
+        title: Two Ways to the Same Answer
+        scene_class: ExtremeTrio
+        est_minutes: 2
+      - slug: 19-3-mean
+        title: The Mean as a Center of Mass
+        scene_class: CenterOfMass
+        est_minutes: 2
+      - slug: 19-4-variance
+        title: The Variance
+        scene_class: VarianceDefinition
+        est_minutes: 2
+      - slug: 19-5-affine
+        title: Affine Functions
+        scene_class: AffineRules
+        est_minutes: 2
+
+  - slug: 20-moments
+    title: Moments
+    upstream: ../chapters/discrete_expectations.tex
+    companion: ../chapters/discrete_expectations.md
+    status: approved          # 1080p60 nova final rendered + published to YouTube 2026-07-03
+    prereqs: [19-functions-and-expectations]
+    videos:
+      - slug: 20-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 20-1-moments
+        title: The nth Moment
+        scene_class: MomentsDefinition
+        est_minutes: 2
+      - slug: 20-2-variance-formula
+        title: Variance from Two Moments
+        scene_class: VarianceFromMoments
+        est_minutes: 2
+      - slug: 20-3-uniform
+        title: Worked Example — the Uniform PMF
+        scene_class: UniformExample
+        est_minutes: 2
+      - slug: 20-4-central
+        title: Central Moments
+        scene_class: CentralMoments
+        est_minutes: 1
+
+  # Book chapter 7 (discrete_vectors.tex, "Multiple Discrete Random
+  # Variables") is split into FIVE section videos: Joint PMFs and
+  # Expectations (7.1-7.2), Conditioning (7.3), Conditional Expectation
+  # (7.4), Independence (7.5), and Sums and Many Variables (7.6-7.7).
+  # Unlike chapter 6, the OGF section here is live and load-bearing.
+  - slug: 21-joint-pmfs
+    title: Joint PMFs and Expectations
+    upstream: ../chapters/discrete_vectors.tex
+    companion: ../chapters/discrete_vectors.md
+    status: approved          # 1080p60 nova final uploaded 2026-07-05
+    prereqs: [20-moments]
+    videos:
+      - slug: 21-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 21-1-joint-pmf
+        title: The Joint PMF
+        scene_class: JointPMFDefinition
+        est_minutes: 2
+      - slug: 21-2-marginals
+        title: Marginals by Summing Out
+        scene_class: MarginalPMFs
+        est_minutes: 2
+      - slug: 21-3-not-enough
+        title: Marginals Are Not Enough
+        scene_class: MarginalsNotEnough
+        est_minutes: 1
+      - slug: 21-4-expectations
+        title: Functions and Linearity
+        scene_class: JointExpectation
+        est_minutes: 2
+
+  - slug: 22-conditioning-rvs
+    title: Conditioning Random Variables
+    upstream: ../chapters/discrete_vectors.tex
+    companion: ../chapters/discrete_vectors.md
+    status: approved          # 1080p60 nova final uploaded 2026-07-05
+    prereqs: [21-joint-pmfs]
+    videos:
+      - slug: 22-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 22-1-on-events
+        title: Conditioning on an Event
+        scene_class: ConditionOnEvent
+        est_minutes: 2
+      - slug: 22-2-on-rvs
+        title: Conditioning on a Random Variable
+        scene_class: ConditionOnRV
+        est_minutes: 2
+      - slug: 22-3-two-views
+        title: Two Views, One Idea
+        scene_class: EventVsRV
+        est_minutes: 1
+      - slug: 22-4-splitting
+        title: Splitting a Poisson
+        scene_class: PoissonSplitting
+        est_minutes: 2
+
+  - slug: 23-conditional-expectation
+    title: Conditional Expectation
+    upstream: ../chapters/discrete_vectors.tex
+    companion: ../chapters/discrete_vectors.md
+    status: approved          # 1080p60 nova final uploaded 2026-07-05
+    prereqs: [22-conditioning-rvs]
+    videos:
+      - slug: 23-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 23-1-definition
+        title: The Conditional Expectation
+        scene_class: CondExpDefinition
+        est_minutes: 2
+      - slug: 23-2-as-rv
+        title: E[Y given X] Is a Random Variable
+        scene_class: CondExpAsRV
+        est_minutes: 2
+      - slug: 23-3-tower
+        title: The Tower Property
+        scene_class: TowerProperty
+        est_minutes: 2
+      - slug: 23-4-shirts
+        title: Worked Example — the Shopping Spree
+        scene_class: ShoppingSpree
+        est_minutes: 2
+
+  - slug: 24-independence-rvs
+    title: Independent Random Variables
+    upstream: ../chapters/discrete_vectors.tex
+    companion: ../chapters/discrete_vectors.md
+    status: approved          # 1080p60 nova final uploaded 2026-07-05
+    prereqs: [23-conditional-expectation]
+    videos:
+      - slug: 24-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 24-1-factoring
+        title: Factoring the Joint PMF
+        scene_class: FactoringJointPMF
+        est_minutes: 2
+      - slug: 24-2-products
+        title: Expectations of Products
+        scene_class: ProductExpectation
+        est_minutes: 2
+      - slug: 24-3-variance
+        title: The Variance of a Sum
+        scene_class: VarianceOfSum
+        est_minutes: 2
+      - slug: 24-4-iid
+        title: Independence from Events, and iid
+        scene_class: IndependenceAndIID
+        est_minutes: 1
+
+  - slug: 25-sums-and-many
+    title: Sums and Many Variables
+    upstream: ../chapters/discrete_vectors.tex
+    companion: ../chapters/discrete_vectors.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [24-independence-rvs]
+    videos:
+      - slug: 25-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 25-1-convolution
+        title: The PMF of a Sum
+        scene_class: Convolution
+        est_minutes: 2
+      - slug: 25-2-ogf
+        title: The Generating Function
+        scene_class: GeneratingFunction
+        est_minutes: 2
+      - slug: 25-3-products
+        title: Sums Become Products
+        scene_class: SumsBecomeProducts
+        est_minutes: 2
+      - slug: 25-4-many
+        title: n Variables and Empirical Sums
+        scene_class: ManyVariables
+        est_minutes: 2
+
+  # Book chapter 8 (continuous_random_variables.tex, "Continuous Random
+  # Variables") is split into FIVE section videos: Cumulative Distribution
+  # Functions (8.1), Densities and Expectation (8.2-8.3), the Uniform and
+  # Gaussian distributions (8.4.1-8.4.2), the Exponential distribution
+  # (8.4.3), and the additional-distributions gallery (8.5).
+  - slug: 26-cdfs
+    title: Cumulative Distribution Functions
+    upstream: ../chapters/continuous_random_variables.tex
+    companion: ../chapters/continuous_random_variables.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [25-sums-and-many]
+    videos:
+      - slug: 26-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 26-1-definition
+        title: The CDF and Its Properties
+        scene_class: CDFDefinition
+        est_minutes: 2
+      - slug: 26-2-discrete
+        title: Staircases — Discrete Random Variables
+        scene_class: DiscreteCDF
+        est_minutes: 2
+      - slug: 26-3-continuous
+        title: Continuous Random Variables
+        scene_class: ContinuousCDF
+        est_minutes: 2
+      - slug: 26-4-mixed
+        title: Mixed Random Variables
+        scene_class: MixedRVs
+        est_minutes: 1
+
+  - slug: 27-pdfs-expectation
+    title: Densities and Expectation
+    upstream: ../chapters/continuous_random_variables.tex
+    companion: ../chapters/continuous_random_variables.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [26-cdfs]
+    videos:
+      - slug: 27-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 27-1-density
+        title: The Probability Density Function
+        scene_class: DensityDefinition
+        est_minutes: 2
+      - slug: 27-2-properties
+        title: What a Density Must Satisfy
+        scene_class: DensityProperties
+        est_minutes: 2
+      - slug: 27-3-expectation
+        title: Expectation as an Integral
+        scene_class: ExpectationIntegral
+        est_minutes: 2
+      - slug: 27-4-darts
+        title: Worked Example — Darts and the Tail Formula
+        scene_class: DartboardExample
+        est_minutes: 2
+
+  - slug: 28-uniform-gaussian
+    title: The Uniform and Gaussian Distributions
+    upstream: ../chapters/continuous_random_variables.tex
+    companion: ../chapters/continuous_random_variables.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [27-pdfs-expectation]
+    videos:
+      - slug: 28-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 28-1-uniform
+        title: The Uniform Distribution
+        scene_class: UniformDistribution
+        est_minutes: 2
+      - slug: 28-2-gaussian
+        title: The Gaussian Distribution
+        scene_class: GaussianDistribution
+        est_minutes: 2
+      - slug: 28-3-channel
+        title: Worked Example — a Noisy Channel
+        scene_class: NoisyChannel
+        est_minutes: 2
+      - slug: 28-4-integral
+        title: Why the Bell Curve Integrates to One
+        scene_class: GaussianIntegral
+        est_minutes: 2
+
+  - slug: 29-exponential
+    title: The Exponential Distribution
+    upstream: ../chapters/continuous_random_variables.tex
+    companion: ../chapters/continuous_random_variables.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [28-uniform-gaussian]
+    videos:
+      - slug: 29-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 29-1-definition
+        title: The Exponential Distribution
+        scene_class: ExponentialDefinition
+        est_minutes: 2
+      - slug: 29-2-limit
+        title: The Geometric, Squeezed
+        scene_class: GeometricLimit
+        est_minutes: 2
+      - slug: 29-3-memoryless
+        title: The Memoryless Property
+        scene_class: Memoryless
+        est_minutes: 2
+      - slug: 29-4-halflife
+        title: Worked Example — Half-Lives
+        scene_class: HalfLifeExample
+        est_minutes: 2
+
+  - slug: 30-additional-distributions
+    title: A Gallery of Densities
+    upstream: ../chapters/continuous_random_variables.tex
+    companion: ../chapters/continuous_random_variables.md
+    status: approved          # 1080p60 nova final published to YouTube 2026-07-05
+    prereqs: [29-exponential]
+    videos:
+      - slug: 30-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 30-1-gamma
+        title: The Gamma Distribution
+        scene_class: GammaDistribution
+        est_minutes: 2
+      - slug: 30-2-special-cases
+        title: Chi-Square and Erlang
+        scene_class: GammaSpecialCases
+        est_minutes: 2
+      - slug: 30-3-rayleigh
+        title: The Rayleigh Distribution
+        scene_class: RayleighDistribution
+        est_minutes: 2
+      - slug: 30-4-laplace-cauchy
+        title: Laplace and Cauchy
+        scene_class: LaplaceCauchy
+        est_minutes: 2
+
+  # Book chapter 9 (derived_distributions.tex, "Functions and Derived
+  # Distributions") is split into THREE section videos. Video beat lists
+  # are added at the script stage from the approved concepts.
+  - slug: 31-derived-cdf-method
+    title: Derived Distributions — the CDF Method
+    upstream: ../chapters/derived_distributions.tex
+    companion: ../chapters/derived_distributions.md
+    status: built             # scene built + lint clean 2026-07-03; 480p draft pending review
+    prereqs: [30-additional-distributions]
+    videos:
+      - slug: 31-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 31-1-cdf-method
+        title: The CDF Method
+        scene_class: CDFMethod
+        est_minutes: 2
+      - slug: 31-2-rayleigh-squared
+        title: Worked Example — Rayleigh Squared
+        scene_class: RayleighSquared
+        est_minutes: 2
+      - slug: 31-3-monotone
+        title: Monotone Functions
+        scene_class: MonotoneFunctions
+        est_minutes: 2
+      - slug: 31-4-decreasing
+        title: The Decreasing Mirror
+        scene_class: DecreasingMirror
+        est_minutes: 1
+
+  - slug: 32-change-of-variables
+    title: The Change-of-Variables Formula
+    upstream: ../chapters/derived_distributions.tex
+    companion: ../chapters/derived_distributions.md
+    status: built             # scene built + lint clean 2026-07-03; 480p draft pending review
+    prereqs: [31-derived-cdf-method]
+    videos:
+      - slug: 32-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 32-1-slope-rescales
+        title: Slopes Rescale Densities
+        scene_class: SlopeRescales
+        est_minutes: 2
+      - slug: 32-2-formula
+        title: The Change-of-Variables Formula
+        scene_class: ChangeOfVariables
+        est_minutes: 2
+      - slug: 32-3-gaussian-affine
+        title: Affine Maps of a Gaussian
+        scene_class: GaussianAffine
+        est_minutes: 2
+      - slug: 32-4-sum-over-roots
+        title: Sums over Roots — the Arcsine Pile-Up
+        scene_class: SumOverRoots
+        est_minutes: 2
+
+  - slug: 33-generating-rvs
+    title: Generating Random Variables
+    upstream: ../chapters/derived_distributions.tex
+    companion: ../chapters/derived_distributions.md
+    status: built             # scene built + lint clean 2026-07-03; 480p draft pending review
+    prereqs: [32-change-of-variables]
+    videos:
+      - slug: 33-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 33-1-uniform-from-cdf
+        title: Uniform from Any CDF
+        scene_class: UniformFromCDF
+        est_minutes: 2
+      - slug: 33-2-inverse-cdf
+        title: The Inverse-CDF Method
+        scene_class: InverseCDFMethod
+        est_minutes: 2
+      - slug: 33-3-exponential-recipe
+        title: Worked Example — the Exponential Recipe
+        scene_class: ExponentialRecipe
+        est_minutes: 2
+      - slug: 33-4-discrete-binning
+        title: Discrete Binning
+        scene_class: DiscreteBinning
+        est_minutes: 2
+
+  # Book chapter 10 (expectations_and_bounds.tex, "Expectations and
+  # Bounds") is split into THREE section videos.
+  - slug: 34-mgfs
+    title: Moment Generating Functions
+    upstream: ../chapters/expectations_and_bounds.tex
+    companion: ../chapters/expectations_and_bounds.md
+    status: built             # scene built + lint clean 2026-07-04; 480p draft pending review
+    prereqs: [33-generating-rvs]
+    videos:
+      - slug: 34-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 34-1-mgf-definition
+        title: The Moment Generating Function
+        scene_class: MGFDefinition
+        est_minutes: 2
+      - slug: 34-2-moments
+        title: Moments from Derivatives
+        scene_class: MomentsFromDerivatives
+        est_minutes: 2
+      - slug: 34-3-exponential-mgf
+        title: Worked Example — the Exponential MGF
+        scene_class: ExponentialMGF
+        est_minutes: 2
+      - slug: 34-4-gaussian-mgf
+        title: The Gaussian MGF and Affine Maps
+        scene_class: GaussianMGF
+        est_minutes: 2
+
+  - slug: 35-markov-chebyshev
+    title: The Markov and Chebyshev Inequalities
+    upstream: ../chapters/expectations_and_bounds.tex
+    companion: ../chapters/expectations_and_bounds.md
+    status: built             # scene built + lint clean 2026-07-04; 480p draft pending review
+    prereqs: [34-mgfs]
+    videos:
+      - slug: 35-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 35-1-why-bounds
+        title: Why Bounds — Dominating Functions
+        scene_class: WhyBounds
+        est_minutes: 2
+      - slug: 35-2-markov
+        title: The Markov Inequality
+        scene_class: MarkovInequality
+        est_minutes: 2
+      - slug: 35-3-chebyshev
+        title: The Chebyshev Inequality
+        scene_class: ChebyshevInequality
+        est_minutes: 2
+      - slug: 35-4-cantelli
+        title: The Cantelli Bound
+        scene_class: CantelliBound
+        est_minutes: 2
+
+  - slug: 36-chernoff-jensen
+    title: The Chernoff Bound and Jensen's Inequality
+    upstream: ../chapters/expectations_and_bounds.tex
+    companion: ../chapters/expectations_and_bounds.md
+    status: built             # scene built + lint clean 2026-07-04; 480p draft pending review
+    prereqs: [35-markov-chebyshev]
+    videos:
+      - slug: 36-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 36-1-construction
+        title: The Chernoff Construction
+        scene_class: ChernoffConstruction
+        est_minutes: 2
+      - slug: 36-2-optimize
+        title: Optimizing over s
+        scene_class: ChernoffOptimize
+        est_minutes: 2
+      - slug: 36-3-convexity
+        title: Convexity and Tangents
+        scene_class: ConvexityTangent
+        est_minutes: 2
+      - slug: 36-4-jensen
+        title: Jensen's Inequality
+        scene_class: JensenInequality
+        est_minutes: 2
+
+  # Book chapter 11 (random_vectors.tex, continuous random vectors) is
+  # split into FOUR section videos.
+  - slug: 37-joint-continuous
+    title: Joint Continuous Distributions
+    upstream: ../chapters/random_vectors.tex
+    companion: ../chapters/random_vectors.md
+    status: built             # scene built + lint clean 2026-07-04; 480p draft pending review
+    prereqs: [36-chernoff-jensen]
+    videos:
+      - slug: 37-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 37-1-joint-cdf
+        title: The Joint CDF
+        scene_class: JointCDF
+        est_minutes: 2
+      - slug: 37-2-joint-pdf
+        title: The Joint PDF — Probability as Volume
+        scene_class: JointPDF
+        est_minutes: 2
+      - slug: 37-3-marginals
+        title: Marginal PDFs
+        scene_class: MarginalPDFs
+        est_minutes: 2
+      - slug: 37-4-unit-circle
+        title: Worked Example — Uniform on a Disk
+        scene_class: UnitCircleExample
+        est_minutes: 2
+
+  - slug: 38-conditioning-densities
+    title: Conditioning with Densities
+    upstream: ../chapters/random_vectors.tex
+    companion: ../chapters/random_vectors.md
+    status: built             # scene built + lint clean 2026-07-04; 480p draft pending review
+    prereqs: [37-joint-continuous]
+    videos:
+      - slug: 38-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 38-1-on-event
+        title: Conditioning on an Event
+        scene_class: ConditionOnEvent
+        est_minutes: 2
+      - slug: 38-2-on-values
+        title: Conditioning on Values
+        scene_class: ConditionOnValues
+        est_minutes: 2
+      - slug: 38-3-cond-expectation
+        title: Conditional Expectation
+        scene_class: ConditionalExpectation
+        est_minutes: 2
+      - slug: 38-4-jacobian
+        title: Derived Distributions — the Jacobian
+        scene_class: JacobianDerived
+        est_minutes: 2
+
+  - slug: 39-independence-continuous
+    title: Independent Continuous Variables
+    upstream: ../chapters/random_vectors.tex
+    companion: ../chapters/random_vectors.md
+    status: built             # scene built + lint clean 2026-07-04; 480p draft pending review
+    prereqs: [38-conditioning-densities]
+    videos:
+      - slug: 39-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 39-1-definition
+        title: The Independence Definition
+        scene_class: IndependenceDefinition
+        est_minutes: 2
+      - slug: 39-2-factorizes
+        title: The Density Factorizes
+        scene_class: PDFFactorizes
+        est_minutes: 2
+      - slug: 39-3-cond-marginal
+        title: Conditionals Equal Marginals
+        scene_class: ConditionalIsMarginal
+        est_minutes: 2
+      - slug: 39-4-unit-square
+        title: Worked Example — the Unit Square
+        scene_class: UnitSquareExample
+        est_minutes: 2
+
+  - slug: 40-continuous-sums
+    title: Sums of Continuous Random Variables
+    upstream: ../chapters/random_vectors.tex
+    companion: ../chapters/random_vectors.md
+    status: built             # scene built + lint clean 2026-07-04; 480p draft pending review
+    prereqs: [39-independence-continuous]
+    videos:
+      - slug: 40-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 40-1-convolution
+        title: The Convolution of Densities
+        scene_class: ConvolutionDefinition
+        est_minutes: 2
+      - slug: 40-2-uniform-sum
+        title: Worked Example — the Triangle
+        scene_class: UniformSum
+        est_minutes: 2
+      - slug: 40-3-exp-gauss
+        title: Exponential and Gaussian Sums
+        scene_class: ExponentialGaussianSums
+        est_minutes: 2
+      - slug: 40-4-mgf-product
+        title: Sums Become Products
+        scene_class: MGFProduct
+        est_minutes: 2
+
+  # Book chapter 12 (empirical_sums.tex) is split into THREE section
+  # videos.
+  - slug: 41-convergence
+    title: Types of Convergence
+    upstream: ../chapters/empirical_sums.tex
+    companion: ../chapters/empirical_sums.md
+    status: built             # scene built + lint clean 2026-07-04; 480p draft pending review
+    prereqs: [40-continuous-sums]
+    videos:
+      - slug: 41-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 41-1-two-sequences
+        title: Two Sequences, Two Behaviors
+        scene_class: TwoSequences
+        est_minutes: 2
+      - slug: 41-2-in-probability
+        title: Convergence in Probability
+        scene_class: ConvergenceInProbability
+        est_minutes: 2
+      - slug: 41-3-mean-square
+        title: Mean Square Convergence
+        scene_class: MeanSquareConvergence
+        est_minutes: 2
+      - slug: 41-4-in-distribution
+        title: Convergence in Distribution
+        scene_class: ConvergenceInDistribution
+        est_minutes: 2
+
+  - slug: 42-law-large-numbers
+    title: The Law of Large Numbers
+    upstream: ../chapters/empirical_sums.tex
+    companion: ../chapters/empirical_sums.md
+    status: built             # scene built + lint clean 2026-07-04; 480p draft pending review
+    prereqs: [41-convergence]
+    videos:
+      - slug: 42-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 42-1-statement
+        title: The Law of Large Numbers
+        scene_class: LLNStatement
+        est_minutes: 2
+      - slug: 42-2-chebyshev
+        title: Chebyshev Closes the Proof
+        scene_class: ChebyshevCloses
+        est_minutes: 2
+      - slug: 42-3-die
+        title: Worked Example — Die Frequencies
+        scene_class: DieFrequency
+        est_minutes: 2
+      - slug: 42-4-cauchy
+        title: The Cauchy Refusal
+        scene_class: CauchyRefusal
+        est_minutes: 2
+
+  - slug: 43-central-limit
+    title: The Central Limit Theorem
+    upstream: ../chapters/empirical_sums.tex
+    companion: ../chapters/empirical_sums.md
+    status: built             # scene built + lint clean 2026-07-04; 480p draft pending review
+    prereqs: [42-law-large-numbers]
+    videos:
+      - slug: 43-0-overview
+        title: Chapter Overview
+        scene_class: ChapterOverview
+        est_minutes: 1
+      - slug: 43-1-statement
+        title: The Central Limit Theorem
+        scene_class: CLTStatement
+        est_minutes: 2
+      - slug: 43-2-gaussian-exact
+        title: The Gaussian Case Is Exact
+        scene_class: GaussianExact
+        est_minutes: 2
+      - slug: 43-3-mgf-proof
+        title: The MGF Proof
+        scene_class: MGFProof
+        est_minutes: 2
+      - slug: 43-4-normal-approx
+        title: Normal Approximation
+        scene_class: NormalApproximation
+        est_minutes: 2
