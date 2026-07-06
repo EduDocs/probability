@@ -5,7 +5,7 @@ videos:
   - title: Moment Generating Functions
     url: https://www.youtube.com/watch?v=QmbGolrQ5QE
   - title: The Markov and Chebyshev Inequalities
-    url: https://www.youtube.com/watch?v=9_8mrMfaBos
+    url: https://www.youtube.com/watch?v=6MA5g1eAkRg
   - title: The Chernoff and Jensen Inequalities
     url: https://www.youtube.com/watch?v=uC69BOjOTJY
 ---

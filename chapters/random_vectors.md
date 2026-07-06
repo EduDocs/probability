@@ -3,9 +3,9 @@ introduces: [joint-cdf, joint-pdf, conditional-pdf, covariance, correlation, gau
 requires:   [cdf, pdf, expectation, variance, marginal, conditional-expectation, tower-property, change-of-variables, jacobian, independence-of-rvs, convolution, gaussian]
 videos:
   - title: Joint Continuous Random Variables
-    url: https://www.youtube.com/watch?v=Zm-kdekJGrg
+    url: https://www.youtube.com/watch?v=uU02tO5RCMI
   - title: Conditioning and Densities
-    url: https://www.youtube.com/watch?v=MtjpNy2mAmQ
+    url: https://www.youtube.com/watch?v=WbtjV4KXnVE
   - title: Independence and Continuous Random Variables
     url: https://www.youtube.com/watch?v=n81wq0F1aAU
   - title: Sums of Continuous Random Variables

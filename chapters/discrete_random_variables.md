@@ -5,7 +5,7 @@ videos:
   - title: Discrete Random Variables
     url: https://www.youtube.com/watch?v=m3Ed2gaMvaE
   - title: Important Discrete Random Variables
-    url: https://www.youtube.com/watch?v=qw_aSHQIok4
+    url: https://www.youtube.com/watch?v=diZOQHqd-4E
   - title: Functions of Discrete Random Variables
     url: https://www.youtube.com/watch?v=6VmB79L0-2o
 ---

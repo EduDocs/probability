@@ -7,7 +7,7 @@ videos:
   - title: Probability Laws
     url: https://www.youtube.com/watch?v=vbEUdfAjyew
   - title: Model Categories
-    url: https://www.youtube.com/watch?v=HVpQbN0vzg8
+    url: https://www.youtube.com/watch?v=dDIXDqmpmeY
   - title: Continuity and Measure Theory
     url: https://www.youtube.com/watch?v=PdD5u1hMzgA
 ---

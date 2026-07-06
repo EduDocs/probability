@@ -7,7 +7,7 @@ videos:
   - title: Permutations and Combinations
     url: https://www.youtube.com/watch?v=M2DJYK704L4
   - title: Partitions
-    url: https://www.youtube.com/watch?v=Mhh1_y1KjgI
+    url: https://www.youtube.com/watch?v=brGyxJHEPl0
   - title: Sampling, Replacement, and Ordering
     url: https://www.youtube.com/watch?v=ZfURIW7ipkA
 ---

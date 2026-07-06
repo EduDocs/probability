@@ -7,7 +7,7 @@ videos:
   - title: Derived Probability Density Functions
     url: https://www.youtube.com/watch?v=I8XkZuPKDQU
   - title: Generating Random Variables Algorithmically
-    url: https://www.youtube.com/watch?v=1AdRq4aJbeo
+    url: https://www.youtube.com/watch?v=-1sfh0p_8eI
 ---
 
 # Functions and Derived Distributions — scratch

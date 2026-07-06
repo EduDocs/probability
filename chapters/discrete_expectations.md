@@ -3,7 +3,7 @@ introduces: [expectation, lotus, variance, moment, ogf]
 requires:   [random-variable, pmf, function-of-rv, independence-of-rvs, convolution]
 videos:
   - title: Expected Values
-    url: https://www.youtube.com/watch?v=fcTnBgVb8E0
+    url: https://www.youtube.com/watch?v=zWhTxMCgBUM
   - title: Functions and Expectations
     url: https://www.youtube.com/watch?v=B7RzzKD7ZRQ
   - title: Moments

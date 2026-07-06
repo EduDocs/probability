@@ -3,7 +3,7 @@ introduces: [conditional-probability, chain-rule, total-probability, bayes-rule,
 requires:   [sample-space, event, probability-law, partition, axioms-of-probability]
 videos:
   - title: Conditional Probability
-    url: https://www.youtube.com/watch?v=9dCHpqF-LdQ
+    url: https://www.youtube.com/watch?v=5k61hZgadCU
   - title: The Total Probability Theorem
     url: https://www.youtube.com/watch?v=VBhseyN6g44
   - title: Bayes' Rule

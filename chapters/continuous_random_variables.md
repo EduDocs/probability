@@ -5,13 +5,13 @@ videos:
   - title: Cumulative Distribution Functions
     url: https://www.youtube.com/watch?v=efruBDxXoC8
   - title: Probability Density Functions and Expectation
-    url: https://www.youtube.com/watch?v=wph-ZYmhQ-I
+    url: https://www.youtube.com/watch?v=Dpo8hO3xb6w
   - title: Uniform and Gaussian Random Variables
     url: https://www.youtube.com/watch?v=o0UZHYtonXI
   - title: Exponential Random Variable
-    url: https://www.youtube.com/watch?v=FIhvj1yAC3s
+    url: https://www.youtube.com/watch?v=pj2hh_LlKas
   - title: Additional Continuous Distributions
-    url: https://www.youtube.com/watch?v=8ij5BX4G0iE
+    url: https://www.youtube.com/watch?v=4AS4I4DDYbA
 ---
 
 # Continuous Random Variables — scratch
