@@ -27,38 +27,38 @@ target_runtime_sec: 290
 tolerance_sec: 45
 
 estimated_runtime_sec: 353
-measured_runtime_sec: 408.3
+measured_runtime_sec: 331.1
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 98
     est_sec: 38
-    measured_sec: 40.4
+    measured_sec: 36.0
     sync_points: [definition, limit, memoryless, halflife]
   - id: definition
     scene_class: ExponentialDefinition
     narration_words: 229
     est_sec: 88
-    measured_sec: 104.7
+    measured_sec: 82.1
     sync_points: [density, cdf, rate, rate2, server, answer]
   - id: limit
     scene_class: GeometricLimit
     narration_words: 202
     est_sec: 78
-    measured_sec: 86.9
+    measured_sec: 68.0
     sync_points: [setup, scaled, staircase, melt, arrival]
   - id: memoryless
     scene_class: Memoryless
     narration_words: 177
     est_sec: 68
-    measured_sec: 78.3
+    measured_sec: 63.7
     sync_points: [statement, proof, restart, restart2, restart3, unique]
   - id: halflife
     scene_class: HalfLifeExample
     narration_words: 211
     est_sec: 81
-    measured_sec: 97.9
+    measured_sec: 81.4
     sync_points: [setup, split, solve, stream, outro]
 ---
 

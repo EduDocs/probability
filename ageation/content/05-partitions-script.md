@@ -24,32 +24,32 @@ target_runtime_sec: 220  # recalibrated 2026-07-06: published nova final ~0.8x g
 tolerance_sec: 45
 
 estimated_runtime_sec: 390
-measured_runtime_sec: 274.5
+measured_runtime_sec: 212.7
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 80
     est_sec: 32
-    measured_sec: 36.4
+    measured_sec: 28.9
     sync_points: []
   - id: partitions
     scene_class: Partitions
     narration_words: 200
     est_sec: 80
-    measured_sec: 73.9
+    measured_sec: 60.0
     sync_points: [split, arrange, divide, formula]
   - id: stars-and-bars
     scene_class: StarsAndBars
     narration_words: 215
     est_sec: 86
-    measured_sec: 82.2
+    measured_sec: 58.7
     sync_points: [row, cut, tuple, count]
   - id: sampling
     scene_class: SamplingTieIn
     narration_words: 175
     est_sec: 70
-    measured_sec: 82.1
+    measured_sec: 65.1
     sync_points: [urn, formula, emphasize, outro]
 ---
 

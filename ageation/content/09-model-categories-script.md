@@ -26,32 +26,32 @@ target_runtime_sec: 300  # recalibrated 2026-07-06: published nova final ~0.8x g
 tolerance_sec: 45
 
 estimated_runtime_sec: 480
-measured_runtime_sec: 375.8
+measured_runtime_sec: 303.2
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 100
     est_sec: 40
-    measured_sec: 41.7
+    measured_sec: 32.1
     sync_points: []
   - id: finite
     scene_class: FiniteModels
     narration_words: 185
     est_sec: 74
-    measured_sec: 96.3
+    measured_sec: 78.2
     sync_points: [equally, die, count, caution]
   - id: countable
     scene_class: CountablyInfiniteModels
     narration_words: 230
     est_sec: 92
-    measured_sec: 97.8
+    measured_sec: 76.8
     sync_points: [listable, coin, weights, sum, even]
   - id: uncountable
     scene_class: UncountableModels
     narration_words: 280
     est_sec: 112
-    measured_sec: 139.9
+    measured_sec: 116.1
     sync_points: [interval, length, point, wheel, arc, outro]
 ---
 

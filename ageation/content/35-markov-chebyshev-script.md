@@ -31,38 +31,38 @@ tolerance_sec: 45
 # est_sec: narration_words / 2.6 (cheap, pre-render).
 # measured_sec: written back by assemble / make measure (ffprobe).
 estimated_runtime_sec: 379
-measured_runtime_sec: 426.1
+measured_runtime_sec: 342.3
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 94
     est_sec: 36
-    measured_sec: 43.7
+    measured_sec: 35.7
     sync_points: [dominate, markov, chebyshev, cantelli]
   - id: why-bounds
     scene_class: WhyBounds
     narration_words: 198
     est_sec: 76
-    measured_sec: 87.3
+    measured_sec: 70.1
     sync_points: [unknown, claim, domination, weighted, indicator, strategy]
   - id: markov
     scene_class: MarkovInequality
     narration_words: 219
     est_sec: 84
-    measured_sec: 90.6
+    measured_sec: 73.0
     sync_points: [step, line, expect, markov, use, slack]
   - id: chebyshev
     scene_class: ChebyshevInequality
     narration_words: 245
     est_sec: 94
-    measured_sec: 99.4
+    measured_sec: 81.3
     sync_points: [setup, chain, template, square, variance, lln]
   - id: cantelli
     scene_class: CantelliBound
     narration_words: 230
     est_sec: 88
-    measured_sec: 105.1
+    measured_sec: 82.1
     sync_points: [center, family, optimize, cantelli, rehearse, outro]
 ---
 

@@ -28,27 +28,27 @@ target_runtime_sec: 320
 tolerance_sec: 45
 
 estimated_runtime_sec: 367
-measured_runtime_sec: 435.3
+measured_runtime_sec: 347.5
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 105
     est_sec: 40
-    measured_sec: 48.3
+    measured_sec: 40.5
     sync_points: [event, values, average, transform]
   - id: on-event
     scene_class: ConditionOnEvent
     narration_words: 208
     est_sec: 80
-    measured_sec: 90.9
+    measured_sec: 74.6
     sync_points: [ratio, derivative, interval, lifetime, truncate, rescale,
                   rises, echo, region, arrivals, any-region]
   - id: on-values
     scene_class: ConditionOnValues
     narration_words: 228
     est_sec: 88
-    measured_sec: 101.2
+    measured_sec: 78.9
     sync_points: [prob-zero, box, window, honest, cancel, formula,
                   definition, integrate, slice, profile, disk, chord,
                   marginal, uniform, flat]
@@ -56,7 +56,7 @@ beats:
     scene_class: ConditionalExpectation
     narration_words: 198
     est_sec: 76
-    measured_sec: 91.5
+    measured_sec: 72.0
     sync_points: [integral, event-version, h-of-x, random-h, channel,
                   transmit, noise, guess, slice-gauss, collapse, mmse,
                   workhorse]
@@ -64,7 +64,7 @@ beats:
     scene_class: JacobianDerived
     narration_words: 214
     est_sec: 83
-    measured_sec: 103.4
+    measured_sec: 81.5
     sync_points: [recall, setup, invertible, patch, carries, determinant,
                   formula, dimension-echo, gauss, gauss-form, survive, outro]
 ---

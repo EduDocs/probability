@@ -30,38 +30,38 @@ target_runtime_sec: 210
 tolerance_sec: 45
 
 estimated_runtime_sec: 300
-measured_runtime_sec: 262.2
+measured_runtime_sec: 210.0
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 105
     est_sec: 42
-    measured_sec: 44.5
+    measured_sec: 35.6
     sync_points: [define, examples, object]
   - id: definition
     scene_class: ExpectedValueDefinition
     narration_words: 175
     est_sec: 70
-    measured_sec: 71.9
+    measured_sec: 58.5
     sync_points: [full-pmf, weighted-sum, converge, of-the-pmf]
   - id: die
     scene_class: FairDieExample
     narration_words: 130
     est_sec: 52
-    measured_sec: 39.8
+    measured_sec: 31.7
     sync_points: [flat-pmf, compute, between]
   - id: heads
     scene_class: WaitingForHeads
     narration_words: 150
     est_sec: 60
-    measured_sec: 56.9
+    measured_sec: 43.1
     sync_points: [halving-pmf, series, partial-sums]
   - id: summary
     scene_class: PMFToScalar
     narration_words: 135
     est_sec: 54
-    measured_sec: 49.2
+    measured_sec: 41.1
     sync_points: [pmf-in, scalar-out, trade, outro]
 ---
 

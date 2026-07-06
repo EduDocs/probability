@@ -30,38 +30,38 @@ tolerance_sec: 45
 # est_sec: narration_words / 2.6 (cheap, pre-render).
 # measured_sec: written back by assemble / make measure (ffprobe).
 estimated_runtime_sec: 371
-measured_runtime_sec: 424.9
+measured_runtime_sec: 338.2
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 98
     est_sec: 38
-    measured_sec: 45.3
+    measured_sec: 38.0
     sync_points: [density, area, expectation]
   - id: density
     scene_class: DensityDefinition
     narration_words: 213
     est_sec: 82
-    measured_sec: 98.9
+    measured_sec: 77.9
     sync_points: [slope, ftc, duality, drag, interval, area]
   - id: properties
     scene_class: DensityProperties
     narration_words: 222
     est_sec: 85
-    measured_sec: 97.9
+    measured_sec: 76.2
     sync_points: [strip, shrink, zero, endpoints, not-prob, tall, axiom-one, axiom-two, admissible]
   - id: expectation
     scene_class: ExpectationIntegral
     narration_words: 236
     est_sec: 91
-    measured_sec: 96.9
+    measured_sec: 78.0
     sync_points: [discrete, morph, mean, variance, shortcut, tail, columns, rows]
   - id: darts
     scene_class: DartboardExample
     narration_words: 196
     est_sec: 75
-    measured_sec: 85.9
+    measured_sec: 68.0
     sync_points: [setup, ring, tail, integrate, result, outro]
 ---
 

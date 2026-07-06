@@ -75,7 +75,7 @@ authoring synchronization marker realized as a separate sequential
 
 ## Beat: overview  (scene: ChapterOverview)
 
-> The uniform, the Gaussian, the exponential — three densities carried this
+> The uniform, the Gaussian, the exponential — these densities carried the
 > chapter. But engineering keeps a wider gallery, and every curve in it is a
 > record of a construction. <bookmark mark="family"/> In this video we extend
 > the factorial into the gamma function and unlock a two parameter family,

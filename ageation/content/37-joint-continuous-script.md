@@ -28,20 +28,20 @@ target_runtime_sec: 300
 tolerance_sec: 45
 
 estimated_runtime_sec: 366
-measured_runtime_sec: 429.7
+measured_runtime_sec: 351.9
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 112
     est_sec: 43
-    measured_sec: 48.5
+    measured_sec: 41.3
     sync_points: [cdf, pdf, marginals, examples]
   - id: joint-cdf
     scene_class: JointCDF
     narration_words: 241
     est_sec: 93
-    measured_sec: 106.9
+    measured_sec: 84.7
     sync_points: [pmf-table, no-mass, definition, outcome-set, quadrant,
                   region, slide, limit-y, half-plane, limit-y-formula,
                   limit-x, limit-zero, one-function]
@@ -49,19 +49,19 @@ beats:
     scene_class: JointPDF
     narration_words: 198
     est_sec: 76
-    measured_sec: 89.3
+    measured_sec: 72.9
     sync_points: [mixed, rebuild, surface, volume, rectangle]
   - id: marginal-pdfs
     scene_class: MarginalPDFs
     narration_words: 165
     est_sec: 63
-    measured_sec: 75.9
+    measured_sec: 63.2
     sync_points: [slice, integrate, both]
   - id: unit-circle
     scene_class: UnitCircleExample
     narration_words: 237
     est_sec: 91
-    measured_sec: 109.1
+    measured_sec: 89.8
     sync_points: [disk, quarter, gauss, polar, rayleigh, outro]
 ---
 

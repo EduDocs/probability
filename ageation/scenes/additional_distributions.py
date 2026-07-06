@@ -1,5 +1,5 @@
 # derived_from: content/30-additional-distributions-script.md
-# derived_from_sha256: 34176b4a842bad2c8dda205857e476ea48d0f1c795d5908d17959068caf3d393
+# derived_from_sha256: 746f99d963974285d5798d8898b9e8ab4f57d2935d45200c13645b86c3d2a786
 """Chapter 8, Video 5 -- A Gallery of Densities.
 
 Source notes : continuous_random_variables.tex (Section 8.5, Additional
@@ -170,8 +170,10 @@ class ChapterOverview(VoiceoverScene):
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.35)
 
         with self.voiceover(
-            text="The uniform, the Gaussian, the exponential — three "
-                 "densities carried this chapter. But engineering keeps a "
+            # (2026-07-06 draft review) reworded "three ... this" -> "these ...
+            # the": nova ran "three densi-ties" as a near-rhyme stutter.
+            text="The uniform, the Gaussian, the exponential — these "
+                 "densities carried the chapter. But engineering keeps a "
                  "wider gallery, and every curve in it is a record of a "
                  "construction."
         ):

@@ -31,38 +31,38 @@ tolerance_sec: 45
 # est_sec: narration_words / wpm (cheap, pre-render).
 # measured_sec: written back by assemble / make measure (ffprobe).
 estimated_runtime_sec: 359
-measured_runtime_sec: 428.1
+measured_runtime_sec: 325.5
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 99
     est_sec: 38
-    measured_sec: 48.3
+    measured_sec: 39.5
     sync_points: [flatten, backwards, worked, discrete]
   - id: uniform-from-cdf
     scene_class: UniformFromCDF
     narration_words: 200
     est_sec: 77
-    measured_sec: 94.9
+    measured_sec: 71.5
     sync_points: [setup, apply, flat, uniform]
   - id: inverse-cdf-method
     scene_class: InverseCDFMethod
     narration_words: 206
     est_sec: 79
-    measured_sec: 89.7
+    measured_sec: 69.8
     sync_points: [identity, derive, rain, dense, method]
   - id: exponential-recipe
     scene_class: ExponentialRecipe
     narration_words: 174
     est_sec: 67
-    measured_sec: 79.5
+    measured_sec: 59.3
     sync_points: [cdf, invert, recipe, draws, check]
   - id: discrete-binning
     scene_class: DiscreteBinning
     narration_words: 256
     est_sec: 98
-    measured_sec: 115.6
+    measured_sec: 85.5
     sync_points: [pmf, bins, rule, drops, why, caveat, outro]
 ---
 

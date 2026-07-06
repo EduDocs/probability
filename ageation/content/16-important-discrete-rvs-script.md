@@ -26,50 +26,50 @@ target_runtime_sec: 290  # recalibrated 2026-07-06: published nova final ~0.8x g
 tolerance_sec: 60
 
 estimated_runtime_sec: 650
-measured_runtime_sec: 359.1
+measured_runtime_sec: 293.1
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 95
     est_sec: 38
-    measured_sec: 38.9
+    measured_sec: 32.5
     sync_points: []
   - id: bernoulli
     scene_class: Bernoulli
     narration_words: 105
     est_sec: 42
-    measured_sec: 43.7
+    measured_sec: 35.3
     sync_points: [define, chart, coin]
   - id: binomial
     scene_class: Binomial
     narration_words: 150
     est_sec: 60
-    measured_sec: 59.5
+    measured_sec: 49.1
     sync_points: [define, chart, soda]
   - id: poisson
     scene_class: Poisson
     narration_words: 140
     est_sec: 56
-    measured_sec: 54.8
+    measured_sec: 44.1
     sync_points: [define, chart, server]
   - id: binomial-to-poisson
     scene_class: BinomialToPoisson
     narration_words: 130
     est_sec: 52
-    measured_sec: 50.8
+    measured_sec: 41.8
     sync_points: [setup, n5, n15, n35, settle]
   - id: geometric
     scene_class: Geometric
     narration_words: 140
     est_sec: 56
-    measured_sec: 59.9
+    measured_sec: 49.3
     sync_points: [define, chart, memoryless]
   - id: uniform
     scene_class: DiscreteUniform
     narration_words: 110
     est_sec: 44
-    measured_sec: 51.6
+    measured_sec: 41.1
     sync_points: [define, chart, outro]
 ---
 

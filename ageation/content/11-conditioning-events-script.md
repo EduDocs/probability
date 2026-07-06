@@ -26,32 +26,32 @@ target_runtime_sec: 280  # recalibrated 2026-07-06: published nova final ~0.8x g
 tolerance_sec: 45
 
 estimated_runtime_sec: 430
-measured_runtime_sec: 349.9
+measured_runtime_sec: 287.1
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 110
     est_sec: 44
-    measured_sec: 49.7
+    measured_sec: 42.9
     sync_points: []
   - id: conditioning
     scene_class: ConditioningOnEvents
     narration_words: 240
     est_sec: 96
-    measured_sec: 100.8
+    measured_sec: 81.2
     sync_points: [reveal, ratio, frequency, define]
   - id: valid-law
     scene_class: ConditionalLaw
     narration_words: 220
     est_sec: 88
-    measured_sec: 91.3
+    measured_sec: 72.3
     sync_points: [nonneg, norm, add, coin]
   - id: chain-rule
     scene_class: ChainRule
     narration_words: 250
     est_sec: 100
-    measured_sec: 108.1
+    measured_sec: 90.7
     sync_points: [rule, urn, draws, outro]
 ---
 
