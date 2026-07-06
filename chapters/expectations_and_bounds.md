@@ -1,6 +1,13 @@
 ---
 introduces: [mgf, markov-inequality, chebyshev-inequality, chernoff-bound, jensen-inequality, confidence-interval]
 requires:   [expectation, variance, moment, ogf, random-variable, independence-of-rvs, iid]
+videos:
+  - title: Moment Generating Functions
+    url: https://www.youtube.com/watch?v=QmbGolrQ5QE
+  - title: The Markov and Chebyshev Inequalities
+    url: https://www.youtube.com/watch?v=9_8mrMfaBos
+  - title: The Chernoff and Jensen Inequalities
+    url: https://www.youtube.com/watch?v=uC69BOjOTJY
 ---
 
 # Expectations and Bounds — scratch

@@ -1,6 +1,15 @@
 ---
 introduces: [joint-cdf, joint-pdf, conditional-pdf, covariance, correlation, gaussian-vector]
 requires:   [cdf, pdf, expectation, variance, marginal, conditional-expectation, tower-property, change-of-variables, jacobian, independence-of-rvs, convolution, gaussian]
+videos:
+  - title: Joint Continuous Random Variables
+    url: https://www.youtube.com/watch?v=Zm-kdekJGrg
+  - title: Conditioning and Densities
+    url: https://www.youtube.com/watch?v=MtjpNy2mAmQ
+  - title: Independence and Continuous Random Variables
+    url: https://www.youtube.com/watch?v=n81wq0F1aAU
+  - title: Sums of Continuous Random Variables
+    url: https://www.youtube.com/watch?v=ar0IqTyu694
 ---
 
 # Multiple Continuous Random Variables — scratch

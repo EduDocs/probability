@@ -1,6 +1,17 @@
 ---
 introduces: [cdf, pdf, uniform-continuous, gaussian, exponential, gamma, rayleigh, laplace, cauchy]
 requires:   [random-variable, pmf, expectation, lotus, function-of-rv, independence-of-rvs, joint-pdf]
+videos:
+  - title: Cumulative Distribution Functions
+    url: https://www.youtube.com/watch?v=efruBDxXoC8
+  - title: Probability Density Functions and Expectation
+    url: https://www.youtube.com/watch?v=wph-ZYmhQ-I
+  - title: Uniform and Gaussian Random Variables
+    url: https://www.youtube.com/watch?v=o0UZHYtonXI
+  - title: Exponential Random Variable
+    url: https://www.youtube.com/watch?v=FIhvj1yAC3s
+  - title: Additional Continuous Distributions
+    url: https://www.youtube.com/watch?v=8ij5BX4G0iE
 ---
 
 # Continuous Random Variables — scratch

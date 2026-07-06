@@ -1,6 +1,13 @@
 ---
 introduces: [change-of-variables, jacobian, probability-integral-transform]
 requires:   [random-variable, pmf, pdf, cdf, function-of-rv, uniform-continuous]
+videos:
+  - title: Derived Cumulative Distribution Functions
+    url: https://www.youtube.com/watch?v=fqC4IaOhk9M
+  - title: Derived Probability Density Functions
+    url: https://www.youtube.com/watch?v=I8XkZuPKDQU
+  - title: Generating Random Variables Algorithmically
+    url: https://www.youtube.com/watch?v=1AdRq4aJbeo
 ---
 
 # Functions and Derived Distributions — scratch

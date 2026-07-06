@@ -1,6 +1,13 @@
 ---
 introduces: [convergence-in-probability, convergence-in-distribution, convergence-in-mean-square, lln, clt]
 requires:   [random-variable, expectation, variance, iid, gaussian]
+videos:
+  - title: Random Sequences and Convergence
+    url: https://www.youtube.com/watch?v=azNGCqYRBwE
+  - title: The Law of Large Numbers
+    url: https://www.youtube.com/watch?v=dBxxZhCPZX8
+  - title: The Central Limit Theorem
+    url: https://www.youtube.com/watch?v=6f6TSaBL-FM
 ---
 
 # Sequences, Convergence and Limit Theorems — scratch

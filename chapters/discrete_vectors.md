@@ -1,6 +1,17 @@
 ---
 introduces: [joint-pmf, marginal, conditional-pmf, conditional-expectation, tower-property, linearity-of-expectation, independence-of-rvs, convolution]
 requires:   [random-variable, pmf, expectation, ogf, independence-of-events]
+videos:
+  - title: Joint Probability Mass Functions
+    url: https://www.youtube.com/watch?v=8Q5TyvEKlRA
+  - title: Conditioning and Random Variables
+    url: https://www.youtube.com/watch?v=l31U0tftty4
+  - title: Conditional Expectation
+    url: https://www.youtube.com/watch?v=PlF7eFZgqUM
+  - title: Independence and Discrete Random Variables
+    url: https://www.youtube.com/watch?v=HuTokZ0iLTc
+  - title: Sums of Random Variables
+    url: https://www.youtube.com/watch?v=COKTKiWAGdA
 ---
 
 # Multiple Discrete Random Variables — scratch
