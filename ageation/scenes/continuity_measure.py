@@ -1,5 +1,5 @@
 # derived_from: content/10-continuity-measure-script.md
-# derived_from_sha256: 14b36099c407b473d8cebe27cc750fa13fa8a7a870a7c3b5ff92ddc8644129f7
+# derived_from_sha256: 7d2383ce5ec5b32c8edbbdf44c20a008ff01ceb288ba952edeba732cd3d3b0b0
 """Chapter 3, Video 4 -- Continuity of Probability and a Measure-Theory View.
 
 Source notes : ../chapters/probability_models.tex  (3.2.4 Continuity of

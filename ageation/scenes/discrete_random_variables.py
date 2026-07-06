@@ -1,5 +1,5 @@
 # derived_from: content/15-discrete-random-variables-script.md
-# derived_from_sha256: 68dbb694b59a716a3fa3973456d221a31251729fbde217137c9bd9047bd6d1da
+# derived_from_sha256: b0abcb93d96311d04a4fba667a613bdc10667f8defd53da31290bb496d8f6c3e
 """Chapter 5 -- Discrete Random Variables and the PMF (narrated with manim-voiceover).
 
 Source notes : ../chapters/discrete_random_variables.tex

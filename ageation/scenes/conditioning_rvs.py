@@ -1,5 +1,5 @@
 # derived_from: content/22-conditioning-rvs-script.md
-# derived_from_sha256: bf900ba31935dcaad0e19a05d07047181ebfe2ac0666449bf8d8ec6e6daf5c55
+# derived_from_sha256: eb09084e7f71a8a0b16b9fc864f9d8dded281aed08a2ca76e6e4222635b52988
 """Chapter 7, Video 2 -- Conditioning Random Variables.
 
 Source notes : discrete_vectors.tex (Section 7.3, both subsections) --

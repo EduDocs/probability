@@ -1,5 +1,5 @@
 # derived_from: content/27-pdfs-expectation-script.md
-# derived_from_sha256: c9c966986a0e9502103075611c5d1a9ee041646f5df30267222f2d45f0741a50
+# derived_from_sha256: 26c22a93f50545ae3136eca7edc067c60db8407e4e7c6bccede8f0311b943f12
 """Chapter 8, Video 2 -- Densities and Expectation.
 
 Source notes : 27-pdfs-expectation.tex (Sections 8.2-8.3) -- the probability
@@ -92,7 +92,8 @@ class ChapterOverview(VoiceoverScene):
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.4)
 
         with self.voiceover(
-            text="Last video built the bridge: the cumulative distribution "
+            # (2026-07-06 intro-variety pass) opener reworded for playlist variety.
+            text="The bridge is in place: the cumulative distribution "
                  "function, one function that describes any random variable "
                  "— staircases for the discrete, smooth progressions for the "
                  "continuous."

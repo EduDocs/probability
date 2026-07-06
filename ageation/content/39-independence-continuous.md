@@ -6,7 +6,7 @@ status: approved          # approved via scheduled batch instruction 2026-07-03
 source: sources/39-independence-continuous.tex
 source_sha256: 2da1958c9d3a0c53407034836104566198687b16e6087b0eaddaae49bc5824f8
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/random_vectors.tex
 companion: sources/39-independence-continuous.md
 companion_sha256: 844e4470fe388913fc5a31a5b72b6646b968aeac5a4f499cf40952e94bdf1277

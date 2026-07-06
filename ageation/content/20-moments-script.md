@@ -4,7 +4,7 @@ title: Moments
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human approved the 480p draft for finals 2026-07-03
 derived_from: 20-moments.md
-derived_from_sha256: b86b0caaa75ca7413509090f133d090afb724b301a5845e6445a56fd779cd405
+derived_from_sha256: 7a8284d2a525841eee5f06d4bdef88f4d628e3dbf75b836b70f577fa192bd76a
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/moments.py
 

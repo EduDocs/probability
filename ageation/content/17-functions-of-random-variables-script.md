@@ -4,7 +4,7 @@ title: Functions of Random Variables
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 17-functions-of-random-variables.md
-derived_from_sha256: 7b08fd0e0fe47d6ebac1f22d87df409617931eb462fe997563e62ea0ca1381fd
+derived_from_sha256: a7672ebebad1350eeedfe40930d5229393f873559960312050d270fbfcc97da9
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/functions_of_random_variables.py
 

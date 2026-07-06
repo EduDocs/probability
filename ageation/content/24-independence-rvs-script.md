@@ -4,7 +4,7 @@ title: Independent Random Variables
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human approved the script 2026-07-03
 derived_from: 24-independence-rvs.md
-derived_from_sha256: 5470e54dec0b0f02799c07bf5838c801abf6dc93a94bc679b138f524b4aaf5a2
+derived_from_sha256: 5e4038ba876806aac4123c307653a4f80b5a337b3dfdf9515918ccd23592f5bb
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/independence_rvs.py
 

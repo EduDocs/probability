@@ -6,7 +6,7 @@ status: reviewed          # human approved via chat 2026-07-03
 source: sources/25-sums-and-many.tex
 source_sha256: 720b9deaf084fab02fbf89e2487f4ad3594bbd53458a78dc1975eca3293c6b7b
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/discrete_vectors.tex
 companion: sources/25-sums-and-many.md
 companion_sha256: 24365e9d6b861b146df44bdc5fd758e3aedc15ae905f595e143aacdc613a4a68

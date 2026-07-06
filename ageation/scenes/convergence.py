@@ -1,5 +1,5 @@
 # derived_from: content/41-convergence-script.md
-# derived_from_sha256: c35470e4e219d73691323cbc0ae261ae290722ddff06477d08b0839286507b2e
+# derived_from_sha256: 5588142c7bc0674a4ce451caa8fa3157c8f3106f96c47a500c313f39d04709a0
 """Chapter 12, Video 1 -- Types of Convergence.
 
 Source notes : empirical_sums.tex (Section 12.1 + its three subsections) --

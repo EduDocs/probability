@@ -4,7 +4,7 @@ title: Functions
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 02-functions.md
-derived_from_sha256: 7ec838e33f1185d443e1d5b8e87a0fac8020b3bcdd2058b4257df3981f27498c
+derived_from_sha256: 1de7359c4d3bcbec62fd30affd31b3d12559cf660543f5599efd6941535db18a
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/functions.py
 

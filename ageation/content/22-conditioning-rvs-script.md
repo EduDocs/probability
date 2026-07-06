@@ -4,7 +4,7 @@ title: Conditioning Random Variables
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human approved the script 2026-07-03
 derived_from: 22-conditioning-rvs.md
-derived_from_sha256: 5bbdb34dfa0b644b08d8480d8f8826a4cf13c99bddeaba7d7f45fd72d40dcfd1
+derived_from_sha256: a8326df9a1e2097d1eaab7c57fe864d6fb86271e5aa3c4fb02be6b9cb245015d
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/conditioning_rvs.py
 

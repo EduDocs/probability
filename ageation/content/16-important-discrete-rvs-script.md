@@ -4,7 +4,7 @@ title: Important Discrete Random Variables
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 16-important-discrete-rvs.md
-derived_from_sha256: c6acca6c0879849496742350fe0d8ec4aead978f719afa59ebc98d592ac5f11e
+derived_from_sha256: c893923538af95c48d2baf7a17b0f5bc5acab9fe114448e67bf2b970f2a3b7d7
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/important_discrete_rvs.py
 
@@ -22,54 +22,54 @@ voice:
   name: nova
   rate: 1.0
 words_per_minute: 150
-target_runtime_sec: 660
+target_runtime_sec: 290  # recalibrated 2026-07-06: published nova final ~0.8x gtts draft; original target was a pre-render word-count guess never reconciled
 tolerance_sec: 60
 
 estimated_runtime_sec: 650
-measured_runtime_sec: null
+measured_runtime_sec: 359.1
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 95
     est_sec: 38
-    measured_sec: null
+    measured_sec: 38.9
     sync_points: []
   - id: bernoulli
     scene_class: Bernoulli
     narration_words: 105
     est_sec: 42
-    measured_sec: null
+    measured_sec: 43.7
     sync_points: [define, chart, coin]
   - id: binomial
     scene_class: Binomial
     narration_words: 150
     est_sec: 60
-    measured_sec: null
+    measured_sec: 59.5
     sync_points: [define, chart, soda]
   - id: poisson
     scene_class: Poisson
     narration_words: 140
     est_sec: 56
-    measured_sec: null
+    measured_sec: 54.8
     sync_points: [define, chart, server]
   - id: binomial-to-poisson
     scene_class: BinomialToPoisson
     narration_words: 130
     est_sec: 52
-    measured_sec: null
+    measured_sec: 50.8
     sync_points: [setup, n5, n15, n35, settle]
   - id: geometric
     scene_class: Geometric
     narration_words: 140
     est_sec: 56
-    measured_sec: null
+    measured_sec: 59.9
     sync_points: [define, chart, memoryless]
   - id: uniform
     scene_class: DiscreteUniform
     narration_words: 110
     est_sec: 44
-    measured_sec: null
+    measured_sec: 51.6
     sync_points: [define, chart, outro]
 ---
 
@@ -83,7 +83,7 @@ authoring synchronization marker realized as a separate sequential
 
 ## Beat: overview  (scene: ChapterOverview)
 
-> Last video we learned that a discrete random variable is captured entirely by
+> Recall that a discrete random variable is captured entirely by
 > its probability mass function. In practice, though, you rarely start from
 > scratch. A small number of distributions show up frequently, and almost all of
 > them come from counting. In this video we tour five of them — the

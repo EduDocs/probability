@@ -1,5 +1,5 @@
 # derived_from: content/05-partitions-script.md
-# derived_from_sha256: 8044f9e2bca2f49ca40d975692fbdd88abe778a872e5aaaebb92d94159c50974
+# derived_from_sha256: c4aaf6cdee7438955ddf5fb675aacb5937f54994d580b7c544ce5fec3cd39c12
 """Chapter 2, Video 3 -- Partitions and Stars and Bars (manim-voiceover).
 
 Source notes : ../chapters/combinatorics.tex  (2.4 Partitions, 2.4.1 Integer
@@ -36,15 +36,18 @@ from _style import (
     progress_tag,
     fit_to_frame,
     configure_openai_client,
+    speech_service,
 )
 
 
 def make_speech_service():
-    """Draft -> GTTSService (free). Final -> OpenAIService(voice="nova")."""
-    # return GTTSService(lang="en", tld="com")  # free draft voice
-    configure_openai_client()
-    return OpenAIService(voice="nova", model="tts-1",
-                         transcription_model=None)
+    """Voice comes from project.yaml (project.voice) via _style.speech_service.
+
+    Drafts are free: tools/render.py exports AGEATION_TTS=gtts for -ql, and
+    the env var beats the configured provider. Finals read the per-project
+    voice (nova for this series).
+    """
+    return speech_service()
 
 
 def ball(label, color, radius=0.32, font_size=22):
@@ -81,7 +84,8 @@ class ChapterOverview(VoiceoverScene):
         tag = progress_tag(3, 4).to_corner(DR, buff=0.4)
 
         with self.voiceover(
-            text="Last video, we counted permutations and combinations — ordered "
+            # (2026-07-06 intro-variety pass) opener reworded for playlist variety.
+            text="Previously, we counted permutations and combinations — ordered "
                  "arrangements versus unordered selections. A combination split a "
                  "set in two: the chosen and the rest."
         ):

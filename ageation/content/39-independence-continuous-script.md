@@ -4,7 +4,7 @@ title: Independent Continuous Variables
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # approved via scheduled batch instruction 2026-07-03
 derived_from: 39-independence-continuous.md
-derived_from_sha256: 1061621be50273752eb7c2d1f4bcf5326276613b4ae9e510d543b07165e32d77
+derived_from_sha256: 618554280c32b9bfd027b98cd175b96d48be7f43eb551866444be5e121060b9a
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/independence_continuous.py
 

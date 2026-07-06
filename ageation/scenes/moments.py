@@ -1,5 +1,5 @@
 # derived_from: content/20-moments-script.md
-# derived_from_sha256: f40707c2ff1db8d1001daeebcc65f31cbf269bd1b392b8c4d4614fef37a3e75a
+# derived_from_sha256: fcb18452629631d69435ccc09d271098519c950c2de74af4fef6e94847ecb1d7
 """Chapter 6, Video 3 -- Moments.
 
 Source notes : discrete_expectations.tex (Section 6.3) -- the ladder of

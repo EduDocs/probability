@@ -6,7 +6,7 @@ status: reviewed          # human approved via chat 2026-07-03 ("Proceed")
 source: sources/18-expected-values.tex
 source_sha256: 7d9dd7a05900c28f44df3fc44020688a88d369c496d80b458771ff4f674a8d25
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/discrete_expectations.tex
 companion: sources/18-expected-values.md
 companion_sha256: b99ba1690b46f38674b6e913054edefe24cd3d73c2dae1d2e1702b69fed80027

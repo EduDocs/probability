@@ -6,7 +6,7 @@ status: approved             # draft | reviewed | approved  (human gate)
 source: sources/01-sets.tex
 source_sha256: 59944a8561c362cc895bc69b53687751333071b8e0fbe589d0db2f09b215c17f
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/sets_and_functions.tex
 companion: sources/01-sets.md
 companion_sha256: 23e302453063904227fd401d8691d0806a24f8f20f633101e400b9b3fbc50f41

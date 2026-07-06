@@ -4,7 +4,7 @@ title: Derived Distributions — the CDF Method
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human pre-approved via chat 2026-07-03 (batch instruction)
 derived_from: 31-derived-cdf-method.md
-derived_from_sha256: 0b164d408d7b33f88a8b137479d8def3c55a0b059e785f9bc591db4256cd161b
+derived_from_sha256: 25e1c581facd6e73dbafbf8a09be4e3a5d70cda4f0036cae2480eb975e4d5f77
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/derived_cdf_method.py
 

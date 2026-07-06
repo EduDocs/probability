@@ -4,7 +4,7 @@ title: Joint PMFs and Expectations
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human approved the script 2026-07-03
 derived_from: 21-joint-pmfs.md
-derived_from_sha256: 8d0d331b28b7c40d2d7c5ee2d279014d6b534fa9956ea540f45f8ecaa7e6d5ac
+derived_from_sha256: 7fb3f0287fbc4c0464a4fd33865a9ce9cd11d5937fc81887703f0cbc40a45479
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/joint_pmfs.py
 

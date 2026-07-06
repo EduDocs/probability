@@ -6,7 +6,7 @@ status: approved             # draft | reviewed | approved  (human gate)
 source: sources/03-counting-principle.tex
 source_sha256: 89f6242bfc55652aff4bf045a23070d126be93b694263a7d7bb064b96d39be88
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/combinatorics.tex
 companion: sources/03-counting-principle.md
 companion_sha256: 3975ab2c65c197a52bc419a814356b63159df0f57ebee864f5bb421fea0f2cc8

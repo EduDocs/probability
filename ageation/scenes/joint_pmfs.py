@@ -1,5 +1,5 @@
 # derived_from: content/21-joint-pmfs-script.md
-# derived_from_sha256: 9fd2e82cbf934e58190c55d2df4c8d38c0aa88f1084b5147636efc1802cb2b96
+# derived_from_sha256: 76cf1332bbf310d86e7e510ae630d6a247f4c560fbb89de906c017015bf90540
 """Chapter 7, Video 1 -- Joint PMFs and Expectations.
 
 Source notes : discrete_vectors.tex (chapter intro + Sections 7.1-7.2) --

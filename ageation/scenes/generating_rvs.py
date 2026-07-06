@@ -1,5 +1,5 @@
 # derived_from: content/33-generating-rvs-script.md
-# derived_from_sha256: 46761124e41dede852af67ea2ca4d868edd7b7b1878ade129d413cf1dc9c8cd5
+# derived_from_sha256: 05c7c7b25ad17dd34aeece65a768e9a5d758de48e889bcd819c49b3865727ce1
 """Chapter 9, Video 3 -- Generating Random Variables.
 
 Source notes : derived_distributions.tex (Section 9.3, both subsections) --
@@ -114,7 +114,8 @@ class ChapterOverview(VoiceoverScene):
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.35)
 
         with self.voiceover(
-            text="Last video gave us the change-of-variables formula: pass "
+            # (2026-07-06 intro-variety pass) opener reworded for playlist variety.
+            text="Our newest tool is the change-of-variables formula: pass "
                  "a continuous random variable through a smooth monotone "
                  "function, and the density transforms by the slope. This "
                  "video points that formula at one special function, the "

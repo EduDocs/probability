@@ -1,5 +1,5 @@
 # derived_from: content/07-sample-spaces-script.md
-# derived_from_sha256: 59eb04a979f6b56783770d2caca918868bcffe6bd64ddf05f44655044669d02c
+# derived_from_sha256: eeac9dcf9f72d560d6646288aa6769202e2747d77af56686bd1ef7d427a4c4d2
 """Chapter 3, Video 1 -- Sample Spaces and Events (narrated with manim-voiceover).
 
 Source notes : ../chapters/probability_models.tex  (chapter intro + 3.1 Sample

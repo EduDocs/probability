@@ -1,5 +1,5 @@
 # derived_from: content/02-functions-script.md
-# derived_from_sha256: f71e635dc69712a79b5439b500b601d7f8297062beefa578da81259199e8716f
+# derived_from_sha256: 7b705d8851483ec12806dc41afbd54f6da348d1072e03e588993f0b22ad52663
 """Chapter 1, Video 2 -- Functions (narrated with manim-voiceover).
 
 Source notes : ../chapters/sets_and_functions.tex  (sections: Functions, and

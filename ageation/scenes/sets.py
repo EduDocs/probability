@@ -1,5 +1,5 @@
 # derived_from: content/01-sets-script.md
-# derived_from_sha256: a267509764208c6481a4a3cd5929fa3c91a1483feb7be42f534d66ad23cdc2fe
+# derived_from_sha256: 25c257cbe966e88dc34e64c582b0ef25c38a9042216b8814646a2989e0232c09
 """Chapter 1, Video 1 -- Sets (narrated with manim-voiceover).
 
 Source notes : ../chapters/sets_and_functions.tex  (sections: chapter intro,

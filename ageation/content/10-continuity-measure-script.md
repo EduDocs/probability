@@ -4,7 +4,7 @@ title: Continuity of Probability and a Measure-Theory View
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 10-continuity-measure.md
-derived_from_sha256: be36bd250706e9c255d58dc01ebc6e7ea0feccd0fd9aeda5edc8c1cf365bceff
+derived_from_sha256: 05e88eceb396cc1b31d85cf815b79438fb7861e166f54556d1095483d65357f2
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/continuity_measure.py
 

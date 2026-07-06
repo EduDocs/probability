@@ -1,5 +1,5 @@
 # derived_from: content/34-mgfs-script.md
-# derived_from_sha256: a34317995a3589ac31dbbfbad0e3fe4f4f093a9cf83f3360dbc7102822a75af6
+# derived_from_sha256: 753be77095ddda99eab87c8c18d36b43e2616cccb1a89ecca937fe1def337d56
 """Chapter 10, Video 1 -- Moment Generating Functions.
 
 Source notes : expectations_and_bounds.tex (section "Moment Generating

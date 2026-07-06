@@ -1,5 +1,5 @@
 # derived_from: content/08-probability-laws-script.md
-# derived_from_sha256: 6bca4b0572bc69afc330d0fb811ae3b57c770d2199825cc2d85907502915ecdd
+# derived_from_sha256: 0ccd5f5db680210efc36390e2afc487cc229d6add2182b82b189c1108054537d
 """Chapter 3, Video 2 -- Probability Laws (narrated with manim-voiceover).
 
 Source notes : ../chapters/probability_models.tex  (section 3.2 Probability

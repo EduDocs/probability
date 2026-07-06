@@ -4,7 +4,7 @@ title: Sets
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 01-sets.md
-derived_from_sha256: fb88bb73bf668afff6b43604c1264cf8e788eee827ddf459af50144b940655c7
+derived_from_sha256: 9d1f44a4dfbab1c21626525b3cc691c264ae9e7dd37d5ea6f6efb8d8a525e6f6
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/sets.py
 

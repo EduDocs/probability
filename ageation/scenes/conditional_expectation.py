@@ -1,5 +1,5 @@
 # derived_from: content/23-conditional-expectation-script.md
-# derived_from_sha256: fa643180542f258158dd3238f21c17a9d25c38f6683d03e6cc1bd5ca594e3884
+# derived_from_sha256: 8b0fe422558cf93c40f964b5c81ecd516c881cb89bc5f86148f0a168b1a8a8ef
 """Chapter 7, Video 3 -- Conditional Expectation.
 
 Source notes : discrete_vectors.tex (Section 7.4) -- E[Y | X = x], the

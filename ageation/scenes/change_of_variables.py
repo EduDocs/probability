@@ -1,5 +1,5 @@
 # derived_from: content/32-change-of-variables-script.md
-# derived_from_sha256: e8617ed158d35155313c33f86a4e62e2bf2bc3fb500eaeb8a5752b4639d06ab1
+# derived_from_sha256: ced9f17c32e04605072d0c1b06bb7ee331f6e7be411524971065f6344215ef53
 """Chapter 9, Video 2 -- The Change-of-Variables Formula.
 
 Source notes : derived_distributions.tex (Section 9.2, "Differentiable

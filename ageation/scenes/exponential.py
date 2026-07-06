@@ -1,5 +1,5 @@
 # derived_from: content/29-exponential-script.md
-# derived_from_sha256: bff1dd4c76ca57e3df06cc66eb32880a56b0858cafc9fdc71cbb6ba1a79bdc9a
+# derived_from_sha256: 8de43e28e092845aeacc4c52c9c60198ef68bf0f1e6948540220b8ea80ca056d
 """Chapter 8, Video 4 -- The Exponential Distribution.
 
 Source notes : continuous_random_variables.tex (Section 8.4.3) -- PDF/CDF,
@@ -123,7 +123,8 @@ class ChapterOverview(VoiceoverScene):
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.35)
 
         with self.voiceover(
-            text="Last video opened the catalog of continuous models with "
+            # (2026-07-06 intro-variety pass) opener reworded for playlist variety.
+            text="The catalog of continuous models opened with "
                  "the uniform and the Gaussian. Today we add the third leg "
                  "of the triad: the exponential distribution, the model for "
                  "waiting."

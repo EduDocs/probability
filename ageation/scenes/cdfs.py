@@ -1,5 +1,5 @@
 # derived_from: content/26-cdfs-script.md
-# derived_from_sha256: 47b31f872736df3342a1778f3006768422118784e348416926d72c704c440211
+# derived_from_sha256: d33cb5807838df2e7beaa879a94e4367d8c0f4961ff6227cb0be7ed1fe6be270
 """Chapter 8, Video 1 -- Cumulative Distribution Functions.
 
 Source notes : continuous_random_variables.tex (Section 8.1, all three

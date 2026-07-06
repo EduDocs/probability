@@ -4,7 +4,7 @@ title: The Counting Principle
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 03-counting-principle.md
-derived_from_sha256: 2bf2f25ffce5b615ee734934b5a5131fd6fc706e5baa22d84bc3227819ff930e
+derived_from_sha256: 26831818b4edff26308cd64484bdfd8effc818c127c6384bd1149d60196a93cc
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/counting_principle.py
 

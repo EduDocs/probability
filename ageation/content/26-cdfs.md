@@ -6,7 +6,7 @@ status: approved          # human approved via chat 2026-07-03
 source: sources/26-cdfs.tex
 source_sha256: 97aed752ea5c0b160dea541368e4cd64a021b6399ffd9be0c700af4b14c4bb41
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/continuous_random_variables.tex
 companion: sources/26-cdfs.md
 companion_sha256: 03278c8dbecd26d8dca205580ba51bc9f97be65ef64ad47c706c28ed082efb4c

@@ -4,7 +4,7 @@ title: Bayes' Rule and the Monty Hall Problem
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 13-bayes-monty-hall.md
-derived_from_sha256: d58a62ad6e5a46e8e3a5f53342d6e7060b67969a188c9407c8ae86e0ea5b278c
+derived_from_sha256: 7d47f5d641de2780c4c632dd26c64bd7ea6382cb03f286c43d680fe6c83e6aed
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/bayes_monty_hall.py
 

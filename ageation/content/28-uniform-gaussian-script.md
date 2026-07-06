@@ -4,7 +4,7 @@ title: The Uniform and Gaussian Distributions
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human pre-approved via chat 2026-07-03 (batch instruction)
 derived_from: 28-uniform-gaussian.md
-derived_from_sha256: d8cfdcc7c6e6e6c6f0d6529f5a93063ad45baac005c2a77ae74a7c3626cd0407
+derived_from_sha256: b551e118a669ef7cdf6f2e09eb177707e7fc8ec398668f852286b364718e5f90
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/uniform_gaussian.py
 

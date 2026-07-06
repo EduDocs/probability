@@ -1,5 +1,5 @@
 # derived_from: content/39-independence-continuous-script.md
-# derived_from_sha256: 0e6165a107b4d7314a99db4aabb92a3007b66a8e3a12c8e8aa8da641e647791e
+# derived_from_sha256: a830ec8849eeb53426586bcb0836611c713a8f9692031f51dd04f06b14415405
 """Chapter 11, Video 3 -- Independent Continuous Variables.
 
 Source notes : random_vectors.tex (Section Independence, excluding the sums

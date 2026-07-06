@@ -1,5 +1,5 @@
 # derived_from: content/17-functions-of-random-variables-script.md
-# derived_from_sha256: e9ce82bc4d5e7846423174ea2a046f89543d158c79df68b2d7e4afce5e68c717
+# derived_from_sha256: ea484a8337880fe49aade3a22577ac36fd883d865558b5a6bbc2809a4dcf9513
 """Chapter 5, Video 3 -- Functions of Random Variables.
 
 Source notes : ../chapters/discrete_random_variables.tex (Y = g(X): the PMF of

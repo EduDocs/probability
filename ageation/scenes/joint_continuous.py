@@ -1,5 +1,5 @@
 # derived_from: content/37-joint-continuous-script.md
-# derived_from_sha256: 195029909e787da03462ba0d9c20350503eedd76a3446538e5c970447e219956
+# derived_from_sha256: 0cb95a9dc094a4356482cd762eb88b686f33be16a28e7163fa50565d390fed61
 """Chapter 11, Video 1 -- Joint Continuous Distributions.
 
 Source notes : 37-joint-continuous.tex (Section 11.1, Joint Cumulative
@@ -178,7 +178,8 @@ class ChapterOverview(VoiceoverScene):
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.35)
 
         with self.voiceover(
-            text='Last video, Chernoff and Jensen closed the chapter on bounds, and with it the single-variable story. But measurements come in pairs — a signal and its noise, a position in two coordinates — and they live on a continuum. This chapter describes two continuous random variables together.'
+            # (2026-07-06 intro-variety pass) opener reworded for playlist variety.
+            text='Chernoff and Jensen closed the chapter on bounds, and with it the single-variable story. But measurements come in pairs — a signal and its noise, a position in two coordinates — and they live on a continuum. This chapter describes two continuous random variables together.'
         ):
             self.play(FadeIn(intro[0], shift=DOWN * 0.2), run_time=0.6)
             self.play(Write(intro[1]), run_time=1.0)

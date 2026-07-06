@@ -4,7 +4,7 @@ title: Categories of Probability Models
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 09-model-categories.md
-derived_from_sha256: 24de3e418c56d3be3e49c58f815517d4a3d22198b2576a1e754e6cbbc2c81e54
+derived_from_sha256: 533b63470ce11547e3bcd71aeeb72a3486cb928941ef331e85f7fed5b11593b1
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/model_categories.py
 
@@ -22,36 +22,36 @@ voice:
   name: nova
   rate: 1.0
 words_per_minute: 150
-target_runtime_sec: 480
+target_runtime_sec: 300  # recalibrated 2026-07-06: published nova final ~0.8x gtts draft; original target was a pre-render word-count guess never reconciled
 tolerance_sec: 45
 
 estimated_runtime_sec: 480
-measured_runtime_sec: null
+measured_runtime_sec: 375.8
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 100
     est_sec: 40
-    measured_sec: null
+    measured_sec: 41.7
     sync_points: []
   - id: finite
     scene_class: FiniteModels
     narration_words: 185
     est_sec: 74
-    measured_sec: null
+    measured_sec: 96.3
     sync_points: [equally, die, count, caution]
   - id: countable
     scene_class: CountablyInfiniteModels
     narration_words: 230
     est_sec: 92
-    measured_sec: null
+    measured_sec: 97.8
     sync_points: [listable, coin, weights, sum, even]
   - id: uncountable
     scene_class: UncountableModels
     narration_words: 280
     est_sec: 112
-    measured_sec: null
+    measured_sec: 139.9
     sync_points: [interval, length, point, wheel, arc, outro]
 ---
 
@@ -65,7 +65,7 @@ authoring synchronization marker realized as a separate sequential
 
 ## Beat: overview  (scene: ChapterOverview)
 
-> In the last video we built probability from three axioms — nonnegativity,
+> Probability now rests on three axioms — nonnegativity,
 > normalization, and additivity. Those axioms work on any sample space. But how
 > you actually pin down a probability law depends on how big that sample space
 > is. In this video we sort probabilistic models into three families: finite

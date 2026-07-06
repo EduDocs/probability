@@ -6,7 +6,7 @@ status: approved             # draft | reviewed | approved  (human gate)
 source: sources/13-bayes-monty-hall.tex
 source_sha256: 06a6b3017505d1b38097fa3b77de3dccd518a7f4fa89e43e1bda8552febd7727
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/conditional_probability.tex
 companion_upstream: ../chapters/conditional_probability.md
 companion: sources/13-bayes-monty-hall.md

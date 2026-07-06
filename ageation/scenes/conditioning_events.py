@@ -1,5 +1,5 @@
 # derived_from: content/11-conditioning-events-script.md
-# derived_from_sha256: 6b07194c1fbf0a996c1410b2d12aeb0a027d8a7361265fb3ca089f4280820831
+# derived_from_sha256: 0ce04f7a095ad35b72b0e426e18190c391d33bb6c6b972e6ce0fe4cf40343a67
 """Chapter 4, Video 1 -- Conditioning on Events.
 
 Source notes : conditional probability -- the definition of Pr(A | B), the
@@ -39,18 +39,18 @@ from _style import (
     progress_tag,
     fit_to_frame,
     configure_openai_client,
+    speech_service,
 )
 
 
 def make_speech_service():
-    """Voice (mirrors voice: in the script YAML).
+    """Voice comes from project.yaml (project.voice) via _style.speech_service.
 
-    Draft  -> GTTSService (free). Final -> OpenAIService(voice="nova"), matching
-    the rest of the series; switch the lines below and add OPENAI_API_KEY.
+    Drafts are free: tools/render.py exports AGEATION_TTS=gtts for -ql, and
+    the env var beats the configured provider. Finals read the per-project
+    voice (nova for this series).
     """
-    # return GTTSService(lang="en", tld="com")  # free draft voice
-    configure_openai_client()
-    return OpenAIService(voice="nova", model="tts-1", transcription_model=None)
+    return speech_service()
 
 
 # --- Shared visual helpers (mirroring the house style) -----------------------
@@ -95,8 +95,9 @@ class ChapterOverview(VoiceoverScene):
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.4)
 
         with self.voiceover(
-            text="In the last chapter we finished building the probabilistic "
-                 "model — a sample space of possible outcomes, and a probability "
+            # (2026-07-06 intro-variety pass) opener reworded for playlist variety.
+            text="The probabilistic model is now complete "
+                 "— a sample space of possible outcomes, and a probability "
                  "law that gives each event its likelihood. But probability is "
                  "rarely frozen. The moment we learn something — a partial clue "
                  "about how the experiment turned out — the odds should shift. "

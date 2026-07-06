@@ -4,7 +4,7 @@ title: Generating Random Variables
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human pre-approved via chat 2026-07-03 (batch instruction)
 derived_from: 33-generating-rvs.md
-derived_from_sha256: cc31793a15f51729f2e0a4b0f47e91f1caaa9bddcc5bf499640f7c342a7e379b
+derived_from_sha256: fb89665c2200e4a264e0b814caafa5fcf320dfbaac3bb5e3f0451fbbd4e0e665
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/generating_rvs.py
 
@@ -31,38 +31,38 @@ tolerance_sec: 45
 # est_sec: narration_words / wpm (cheap, pre-render).
 # measured_sec: written back by assemble / make measure (ffprobe).
 estimated_runtime_sec: 359
-measured_runtime_sec: 324.8
+measured_runtime_sec: 428.1
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 99
     est_sec: 38
-    measured_sec: 38.7
+    measured_sec: 48.3
     sync_points: [flatten, backwards, worked, discrete]
   - id: uniform-from-cdf
     scene_class: UniformFromCDF
     narration_words: 200
     est_sec: 77
-    measured_sec: 71.5
+    measured_sec: 94.9
     sync_points: [setup, apply, flat, uniform]
   - id: inverse-cdf-method
     scene_class: InverseCDFMethod
     narration_words: 206
     est_sec: 79
-    measured_sec: 69.8
+    measured_sec: 89.7
     sync_points: [identity, derive, rain, dense, method]
   - id: exponential-recipe
     scene_class: ExponentialRecipe
     narration_words: 174
     est_sec: 67
-    measured_sec: 59.3
+    measured_sec: 79.5
     sync_points: [cdf, invert, recipe, draws, check]
   - id: discrete-binning
     scene_class: DiscreteBinning
     narration_words: 256
     est_sec: 98
-    measured_sec: 85.5
+    measured_sec: 115.6
     sync_points: [pmf, bins, rule, drops, why, caveat, outro]
 ---
 
@@ -76,7 +76,7 @@ authoring synchronization marker realized as a separate sequential
 
 ## Beat: overview  (scene: ChapterOverview)
 
-> Last video gave us the change-of-variables formula: pass a continuous
+> Our newest tool is the change-of-variables formula: pass a continuous
 > random variable through a smooth monotone function, and the density
 > transforms by the slope. This video points that formula at one special
 > function, the CDF itself, and theory becomes an algorithm.

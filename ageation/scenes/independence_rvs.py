@@ -1,5 +1,5 @@
 # derived_from: content/24-independence-rvs-script.md
-# derived_from_sha256: 28ab422ad7f0fd1cb790a579c154b0a906af04d82025e97aa852671034c69c3e
+# derived_from_sha256: 46ccae060da91678e55ae911ff48bcddc31421d3d398d558a881ebf915cd2d7e
 """Chapter 7, Video 4 -- Independent Random Variables.
 
 Source notes : discrete_vectors.tex (Section 7.5) -- independence as

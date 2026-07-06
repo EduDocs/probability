@@ -4,7 +4,7 @@ title: Cumulative Distribution Functions
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human pre-approved via chat 2026-07-03 (batch instruction)
 derived_from: 26-cdfs.md
-derived_from_sha256: 6b2535ac3ce488d159ec075b018401cf7a188d3f3f68b79d473d1dbb6b76f307
+derived_from_sha256: 0a5bdeaa7856b229053ac7b6ec1519cf3ec6f5d3419f13501468685ca88d3181
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/cdfs.py
 

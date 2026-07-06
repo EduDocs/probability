@@ -4,7 +4,7 @@ title: Independence
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 14-independence.md
-derived_from_sha256: da53207d774919c95385585620985b839a4f88a9e58ea2b61acb2e4b3785c5f9
+derived_from_sha256: 3290402aaadfff486a1138184ad77a1ccdc82735f39b14ba6abf1ea062a2d8d6
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/independence.py
 

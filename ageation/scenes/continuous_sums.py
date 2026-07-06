@@ -1,5 +1,5 @@
 # derived_from: content/40-continuous-sums-script.md
-# derived_from_sha256: 0865d3300d5f59e40623df19af28a1502b0f89319fb78ae2c1867e78e8c38d80
+# derived_from_sha256: 8bf344fb2cc2622216516c60b12d508a0eae3870cb897d679d6573b22b967a76
 """Chapter 11, Video 4 -- Sums of Continuous Random Variables.
 
 Source notes : random_vectors.tex (Independence section, "Sums of

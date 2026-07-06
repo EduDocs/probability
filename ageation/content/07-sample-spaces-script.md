@@ -4,7 +4,7 @@ title: Sample Spaces and Events
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 07-sample-spaces.md
-derived_from_sha256: 7242e3646a659ff21d760887b595b4281dba14464148b89df7321e80c2b30576
+derived_from_sha256: 9827451b0f47a0984704aa31f928462701acca51b9e25321c3f8e0812e1a8d22
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/sample_spaces.py
 

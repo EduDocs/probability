@@ -6,7 +6,7 @@ status: approved          # human approved via chat 2026-07-03
 source: sources/32-change-of-variables.tex
 source_sha256: 7c91a09f784bbdf3d5af3f1433210909e87bc606c7686af4e399619680d116bc
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/derived_distributions.tex
 companion: sources/32-change-of-variables.md
 companion_sha256: af8623dfc2346b019e3e5f41f532c43d3eb0800478e576aef14c19a60a613439

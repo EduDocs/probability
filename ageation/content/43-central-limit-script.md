@@ -4,7 +4,7 @@ title: The Central Limit Theorem
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human approved via chat 2026-07-04
 derived_from: 43-central-limit.md
-derived_from_sha256: efe92a236efcf8ccdbaa92164be92ee0677b180df0ed1bd57e0429c85fe07f0b
+derived_from_sha256: caf9e333e1bbf44675c56c9a25c7e32caa8176790d04a0b32afe367e81cf84a2
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/central_limit.py
 

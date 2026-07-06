@@ -1,5 +1,5 @@
 # derived_from: content/28-uniform-gaussian-script.md
-# derived_from_sha256: 79a80787cb6a16b9513c6181adf85264b347e4e207cd8639ee14aaa8d44a72e9
+# derived_from_sha256: 44df9243b436e1eded0cb767af8600adcf678341a6770f55bc13b1481120c6b2
 """Chapter 8, Video 3 -- The Uniform and Gaussian Distributions.
 
 Source notes : 28-uniform-gaussian.tex (Sections 8.4.1-8.4.2) -- the uniform

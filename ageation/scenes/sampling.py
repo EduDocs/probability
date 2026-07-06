@@ -1,5 +1,5 @@
 # derived_from: content/06-sampling-script.md
-# derived_from_sha256: 9533b9c08967106076d0fcfb61eef9e93830a2ff11447a058337205d5bdef061
+# derived_from_sha256: d1128433f505480f198f4f89a82a8b09f21cec3d2e42b97548a9e85bd6df9dec
 """Chapter 2, Video 4 (finale) -- A Unified View of Sampling (manim-voiceover).
 
 Source notes : ../chapters/combinatorics.tex  (2.5 A Unified View of Sampling

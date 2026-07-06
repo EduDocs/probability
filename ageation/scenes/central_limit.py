@@ -1,5 +1,5 @@
 # derived_from: content/43-central-limit-script.md
-# derived_from_sha256: c145db5c2b98baa8f369431d31d3d8a3c7a780702cd851e5ed2dee6f44b8ae26
+# derived_from_sha256: 139a8124730c6ccb19a4c51c8ef742d230772686e0b76d4e8717e9ab525d09df
 """Chapter 12, Video 3 -- The Central Limit Theorem (series finale).
 
 Source notes : empirical_sums.tex (Section "The Central Limit Theorem" +

@@ -4,7 +4,7 @@ title: The Markov and Chebyshev Inequalities
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # approved via scheduled batch instruction 2026-07-03
 derived_from: 35-markov-chebyshev.md
-derived_from_sha256: 01b5974ec6640ead6c489e55cd7b14af78c280665afd83ef3b4c551a4ebe7716
+derived_from_sha256: f2d06cb6286919804a4fc4e495a01c69004adb09ed76127c6bc55087fe08aef2
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/markov_chebyshev.py
 
@@ -31,38 +31,38 @@ tolerance_sec: 45
 # est_sec: narration_words / 2.6 (cheap, pre-render).
 # measured_sec: written back by assemble / make measure (ffprobe).
 estimated_runtime_sec: 379
-measured_runtime_sec: 342.4
+measured_runtime_sec: 426.1
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 94
     est_sec: 36
-    measured_sec: 35.7
+    measured_sec: 43.7
     sync_points: [dominate, markov, chebyshev, cantelli]
   - id: why-bounds
     scene_class: WhyBounds
     narration_words: 198
     est_sec: 76
-    measured_sec: 70.1
+    measured_sec: 87.3
     sync_points: [unknown, claim, domination, weighted, indicator, strategy]
   - id: markov
     scene_class: MarkovInequality
     narration_words: 219
     est_sec: 84
-    measured_sec: 73.0
+    measured_sec: 90.6
     sync_points: [step, line, expect, markov, use, slack]
   - id: chebyshev
     scene_class: ChebyshevInequality
     narration_words: 245
     est_sec: 94
-    measured_sec: 81.3
+    measured_sec: 99.4
     sync_points: [setup, chain, template, square, variance, lln]
   - id: cantelli
     scene_class: CantelliBound
     narration_words: 230
     est_sec: 88
-    measured_sec: 82.1
+    measured_sec: 105.1
     sync_points: [center, family, optimize, cantelli, rehearse, outro]
 ---
 
@@ -76,7 +76,7 @@ authoring synchronization marker realized as a separate sequential
 
 ## Beat: overview  (scene: ChapterOverview)
 
-> Last video, the moment generating function packaged every moment of a
+> Recently, the moment generating function packaged every moment of a
 > random variable into one function. This video puts those moments to work:
 > when a probability cannot be computed exactly, a single moment can still
 > fence it in. <bookmark mark="dominate"/> First, the engine behind every

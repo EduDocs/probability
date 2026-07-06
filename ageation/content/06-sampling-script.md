@@ -4,7 +4,7 @@ title: A Unified View of Sampling
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 06-sampling.md
-derived_from_sha256: eb830877f66b7a166d4ac217d9e05f6c3453c4de5912f106fb049c17d95affd3
+derived_from_sha256: 7a6eb61542c9f282bb5d671278015a7965cc9d767c275cd876620272c1b77c10
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/sampling.py
 

@@ -4,7 +4,7 @@ title: Partitions and Stars and Bars
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 05-partitions.md
-derived_from_sha256: 8f7342b3fcbadd22a09dd61868a6909e04c8ead38686a789e65ee9e8af8ad539
+derived_from_sha256: e1f0bde7f9f980baadb5cf0043dac761a234298b53f8012ffed13c0b5f2a0e7e
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/partitions.py
 
@@ -20,36 +20,36 @@ voice:
   name: nova
   rate: 1.0
 words_per_minute: 150
-target_runtime_sec: 390
+target_runtime_sec: 220  # recalibrated 2026-07-06: published nova final ~0.8x gtts draft; original target was a pre-render word-count guess never reconciled
 tolerance_sec: 45
 
 estimated_runtime_sec: 390
-measured_runtime_sec: null
+measured_runtime_sec: 274.5
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 80
     est_sec: 32
-    measured_sec: null
+    measured_sec: 36.4
     sync_points: []
   - id: partitions
     scene_class: Partitions
     narration_words: 200
     est_sec: 80
-    measured_sec: null
+    measured_sec: 73.9
     sync_points: [split, arrange, divide, formula]
   - id: stars-and-bars
     scene_class: StarsAndBars
     narration_words: 215
     est_sec: 86
-    measured_sec: null
+    measured_sec: 82.2
     sync_points: [row, cut, tuple, count]
   - id: sampling
     scene_class: SamplingTieIn
     narration_words: 175
     est_sec: 70
-    measured_sec: null
+    measured_sec: 82.1
     sync_points: [urn, formula, emphasize, outro]
 ---
 
@@ -59,7 +59,7 @@ beats:
 
 ## Beat: overview  (scene: ChapterOverview)
 
-> Last video, we counted permutations and combinations — ordered arrangements
+> Previously, we counted permutations and combinations — ordered arrangements
 > versus unordered selections. A combination split a set in two: the chosen and
 > the rest. In this video, we split a set into several groups at once. We start
 > with partitions and the multinomial coefficient; then stars and bars, a picture

@@ -4,7 +4,7 @@ title: Types of Convergence
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human approved via chat 2026-07-04
 derived_from: 41-convergence.md
-derived_from_sha256: 255c2b1b91dab2c1520dba8e02b9cd7c7a134713f75edfdc88e3251e9b1a8dd9
+derived_from_sha256: 2296831ad514b3c6c181d4432f4e5e488048d41e2ad7d4b3e7a1fc1c94bc37d6
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/convergence.py
 

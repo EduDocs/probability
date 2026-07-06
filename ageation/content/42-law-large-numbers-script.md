@@ -4,7 +4,7 @@ title: The Law of Large Numbers
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human approved via chat 2026-07-04
 derived_from: 42-law-large-numbers.md
-derived_from_sha256: 2707f990913c8e6726281a937dc32b25684cb68e52521c4afa74614d09cd6d80
+derived_from_sha256: b6d6f4e034333ad6e3fbde1f71ba643642d436016b8bd0c9db536c52e89131e9
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/law_large_numbers.py
 

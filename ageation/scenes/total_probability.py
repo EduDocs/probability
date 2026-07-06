@@ -1,5 +1,5 @@
 # derived_from: content/12-total-probability-script.md
-# derived_from_sha256: 730427ab951b75d668c382c0d5cb091c74c2aadcb04328acdb6caa4f5e87a447
+# derived_from_sha256: b3dd138af6049f4b4280d623d7f3d061d327ddc7f1f5cd89d795f00967047a8a
 """Chapter 4, Video 2 -- The Total Probability Theorem.
 
 Source notes : ../chapters/conditional_probability.tex (total probability).

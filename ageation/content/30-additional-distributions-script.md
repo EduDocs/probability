@@ -4,7 +4,7 @@ title: A Gallery of Densities
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human pre-approved via chat 2026-07-03 (batch instruction)
 derived_from: 30-additional-distributions.md
-derived_from_sha256: 05b150faae2b0ed00ad7a98009373caccf349dbd5be78a12bb3fcda5a2f2e7a1
+derived_from_sha256: f69fcea359f8580a97b7de5948dce1d2589e80aeb9bbef4fb2605dc8a10a2aba
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/additional_distributions.py
 

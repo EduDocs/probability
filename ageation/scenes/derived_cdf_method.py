@@ -1,5 +1,5 @@
 # derived_from: content/31-derived-cdf-method-script.md
-# derived_from_sha256: 3d05b3811fc061f342066c37cf29405f60066b2e9e6edcf2bf9e561712271053
+# derived_from_sha256: d08a1292e644e4efd83cf81a52847c2a0da59cadef8ec50f0d0a5b5102e00410
 """Chapter 9, Video 1 -- Derived Distributions: the CDF Method.
 
 Source notes : derived_distributions.tex (chapter opening + Section 9.1,

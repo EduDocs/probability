@@ -1,5 +1,5 @@
 # derived_from: content/03-counting-principle-script.md
-# derived_from_sha256: 965084e014e91ed901e683c06c1955361cc94c5ae32c207cb0989787d288c5ed
+# derived_from_sha256: f885c1948576f0a93d67a06aab218a204bc22a992a55ca40c997751b557f0db1
 """Chapter 2, Video 1 -- The Counting Principle (narrated with manim-voiceover).
 
 Source notes : ../chapters/combinatorics.tex  (chapter intro + 2.1 Counting

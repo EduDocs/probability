@@ -6,7 +6,7 @@ status: approved          # approved via scheduled batch instruction 2026-07-03
 source: sources/36-chernoff-jensen.tex
 source_sha256: ed51482cf6eb97cf3db7069cb4b2b7be472baea9b4a953de39f301327a986252
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/expectations_and_bounds.tex
 companion: sources/36-chernoff-jensen.md
 companion_sha256: e034200c86458961206f714159e3abfba75bddd45e4e1c74f4980f14a60bd496

@@ -4,7 +4,7 @@ title: Probability Laws
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 08-probability-laws.md
-derived_from_sha256: 2645e18ed78923e41d4a7a077750ccabf03ab67ba3958719c76ab87b4f6c92eb
+derived_from_sha256: 9882f44c56fa79e61bfb7511be2687954788c14a4b6cca9427f45be43801de46
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/probability_laws.py
 

@@ -4,7 +4,7 @@ title: Sums of Continuous Random Variables
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # approved via scheduled batch instruction 2026-07-03
 derived_from: 40-continuous-sums.md
-derived_from_sha256: 9f030c074161a49b3d2547384cbccf8b951c03618a424f9950d4536c26f498d4
+derived_from_sha256: 99c691ac5fc7680cc8479a4ef0b0bb6c8b561555a791e5a1c2544a9a37160c3a
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/continuous_sums.py
 

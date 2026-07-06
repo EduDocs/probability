@@ -1,5 +1,5 @@
 # derived_from: content/14-independence-script.md
-# derived_from_sha256: e6ec329451e55f92dc34f94c26fee07d27bc40e7b002b2b1f072b5ca90f0deeb
+# derived_from_sha256: 11a06a01acf8b2f4e433db8d9959610f31eb4b9464c79721fdc4b75929da56f0
 """Chapter 4, Video 4 -- Independence.
 
 Source notes : ../chapters/conditional_probability.tex  (independence of two

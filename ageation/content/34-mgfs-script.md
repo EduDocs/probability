@@ -4,7 +4,7 @@ title: Moment Generating Functions
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # approved via scheduled batch instruction 2026-07-03
 derived_from: 34-mgfs.md
-derived_from_sha256: 8b313318f4258ec5f49c41953619c79031188634d1acd78eeeea12200f1707d2
+derived_from_sha256: 58dfc2dada5eb190bed3077fa095e17d4ddb6c780abc9aaa0ef77056206486ee
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/mgfs.py
 

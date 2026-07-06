@@ -4,7 +4,7 @@ title: Discrete Random Variables and the PMF
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 15-discrete-random-variables.md
-derived_from_sha256: c2b9f6a5fb683ac5f86b8dc88e601ee4b17181c7025a40ed01c8d89ab53ff227
+derived_from_sha256: 8d5aa57522e36f42770bbf68940f324f8365de98fe172c0d1989dbedc31cf86e
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/discrete_random_variables.py
 

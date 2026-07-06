@@ -4,7 +4,7 @@ title: The Total Probability Theorem
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 12-total-probability.md
-derived_from_sha256: 295728ce47cc5ab97bea7610369e1f7a21ab2568e9b0711a11ed4fab7805005a
+derived_from_sha256: 22a2cfce7583a77f555429ef8724b2ad0f1ab8f71e608022c0193fd6b768aba2
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/total_probability.py
 

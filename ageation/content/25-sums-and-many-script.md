@@ -4,7 +4,7 @@ title: Sums and Many Variables
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human approved the script 2026-07-03
 derived_from: 25-sums-and-many.md
-derived_from_sha256: 8394c782f34470d1bb5b181b3c860ef75928546bc66d3da026a0a17ed64eb2c5
+derived_from_sha256: bf316d9eb9872305a5f31c53d8e0d744e5593548289d006dfe6e3e91144f29ec
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/sums_and_many.py
 

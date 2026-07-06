@@ -1,5 +1,5 @@
 # derived_from: content/35-markov-chebyshev-script.md
-# derived_from_sha256: 5b21c8aa470fe976bbe3904b16a7cb4403138600fedbcbf3b141b66270c19729
+# derived_from_sha256: ed254c178079d98444d4c2b8f58c784dc9dec31a47194897b67b3dd64398ec56
 """Chapter 10, Video 2 -- The Markov and Chebyshev Inequalities.
 
 Source notes : 35-markov-chebyshev.tex (Important Inequalities intro +
@@ -79,7 +79,8 @@ class ChapterOverview(VoiceoverScene):
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.35)
 
         with self.voiceover(
-            text="Last video, the moment generating function packaged every "
+            # (2026-07-06 intro-variety pass) opener reworded for playlist variety.
+            text="Recently, the moment generating function packaged every "
                  "moment of a random variable into one function. This video "
                  "puts those moments to work: when a probability cannot be "
                  "computed exactly, a single moment can still fence it in."

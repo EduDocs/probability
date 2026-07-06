@@ -6,7 +6,7 @@ status: reviewed             # draft | reviewed | approved  (human gate)
 source: sources/15-discrete-random-variables.tex
 source_sha256: 5015c13f03c72bce580e69e1b93d862bf8356315ac5ed52a76e3e64986556556
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/discrete_random_variables.tex
 companion: sources/15-discrete-random-variables.md
 companion_sha256: b5c87cf6e9842e326bd11d2344f531af394339de4087ab9155f583285430a248

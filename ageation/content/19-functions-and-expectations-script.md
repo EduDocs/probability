@@ -4,7 +4,7 @@ title: Functions and Expectations
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human approved the 480p draft for finals 2026-07-03
 derived_from: 19-functions-and-expectations.md
-derived_from_sha256: 2725a6d88ee3f3a6d641607d08b8d7546f708d4ee56eed39f282fdd57dc816d5
+derived_from_sha256: 7ac86c8404ea2238b1720c43c339f4aad3065ccde2c61e9c14b9a2a9077978e3
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/functions_and_expectations.py
 

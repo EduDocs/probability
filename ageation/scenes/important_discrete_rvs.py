@@ -1,5 +1,5 @@
 # derived_from: content/16-important-discrete-rvs-script.md
-# derived_from_sha256: 68952830fd46f175f3e70fcd3f274d45b32eefd6959569a2c1d48ee4ba9365c0
+# derived_from_sha256: 7529f14c11eb3fdc0057932a81145daa2843f84ca925285357e78a9e99868842
 """Chapter 5 -- Important Discrete Random Variables (narrated with manim-voiceover).
 
 Source notes : the named-distributions section of the discrete random
@@ -44,18 +44,18 @@ from _style import (
     progress_tag,
     fit_to_frame,
     configure_openai_client,
+    speech_service,
 )
 
 
 def make_speech_service():
-    """Voice (mirrors voice: in the script YAML).
+    """Voice comes from project.yaml (project.voice) via _style.speech_service.
 
-    Draft  -> GTTSService (free). Final -> OpenAIService(voice="nova"), matching
-    the rest of the series; switch the lines below and add OPENAI_API_KEY.
+    Drafts are free: tools/render.py exports AGEATION_TTS=gtts for -ql, and
+    the env var beats the configured provider. Finals read the per-project
+    voice (nova for this series).
     """
-    # return GTTSService(lang="en", tld="com")  # free draft voice
-    configure_openai_client()
-    return OpenAIService(voice="nova", model="tts-1", transcription_model=None)
+    return speech_service()
 
 
 # --- PMF generators (plain Python, kept out of the Scene classes) ------------
@@ -103,7 +103,8 @@ class ChapterOverview(VoiceoverScene):
                          font_size=SMALL, color=ACCENT)
 
         with self.voiceover(
-            text="Last video we learned that a discrete random variable is "
+            # (2026-07-06 intro-variety pass) opener reworded for playlist variety.
+            text="Recall that a discrete random variable is "
                  "captured entirely by its probability mass function. In "
                  "practice, though, you rarely start from scratch. A small "
                  "number of distributions show up frequently, and almost all of "

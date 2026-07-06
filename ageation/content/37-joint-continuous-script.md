@@ -4,7 +4,7 @@ title: Joint Continuous Distributions
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # approved via scheduled batch instruction 2026-07-03
 derived_from: 37-joint-continuous.md
-derived_from_sha256: e38021b89e5ff48afd01e32c9930f7dc160380e04f89f2f807c3de561730cd62
+derived_from_sha256: cbb6d56f6f00eeb6680273a5babb0cb798d158fc75a5214493db3e9d7cc7140a
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/joint_continuous.py
 
@@ -28,20 +28,20 @@ target_runtime_sec: 300
 tolerance_sec: 45
 
 estimated_runtime_sec: 366
-measured_runtime_sec: 352.5
+measured_runtime_sec: 429.7
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 112
     est_sec: 43
-    measured_sec: 41.8
+    measured_sec: 48.5
     sync_points: [cdf, pdf, marginals, examples]
   - id: joint-cdf
     scene_class: JointCDF
     narration_words: 241
     est_sec: 93
-    measured_sec: 84.7
+    measured_sec: 106.9
     sync_points: [pmf-table, no-mass, definition, outcome-set, quadrant,
                   region, slide, limit-y, half-plane, limit-y-formula,
                   limit-x, limit-zero, one-function]
@@ -49,19 +49,19 @@ beats:
     scene_class: JointPDF
     narration_words: 198
     est_sec: 76
-    measured_sec: 72.9
+    measured_sec: 89.3
     sync_points: [mixed, rebuild, surface, volume, rectangle]
   - id: marginal-pdfs
     scene_class: MarginalPDFs
     narration_words: 165
     est_sec: 63
-    measured_sec: 63.2
+    measured_sec: 75.9
     sync_points: [slice, integrate, both]
   - id: unit-circle
     scene_class: UnitCircleExample
     narration_words: 237
     est_sec: 91
-    measured_sec: 89.8
+    measured_sec: 109.1
     sync_points: [disk, quarter, gauss, polar, rayleigh, outro]
 ---
 
@@ -75,7 +75,7 @@ authoring synchronization marker realized as a separate sequential
 
 ## Beat: overview  (scene: ChapterOverview)
 
-> Last video, Chernoff and Jensen closed the chapter on bounds, and with it
+> Chernoff and Jensen closed the chapter on bounds, and with it
 > the single-variable story. But measurements come in pairs — a signal and
 > its noise, a position in two coordinates — and they live on a continuum.
 > This chapter describes two continuous random variables together.

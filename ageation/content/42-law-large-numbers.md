@@ -6,7 +6,7 @@ status: approved          # human approved via chat 2026-07-04
 source: sources/42-law-large-numbers.tex
 source_sha256: c13bf4618eb4bbe38d3a7468994a46bd69e62bf1753311394259509f2466e2c5
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/empirical_sums.tex
 companion: sources/42-law-large-numbers.md
 companion_sha256: 51341fb22e74140f95766dd58eb5134122f48455900bc4f5c1726b03d683b956

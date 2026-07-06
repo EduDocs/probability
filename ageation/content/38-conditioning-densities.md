@@ -6,7 +6,7 @@ status: approved          # approved via scheduled batch instruction 2026-07-03
 source: sources/38-conditioning-densities.tex
 source_sha256: ef89abce190ca6564704c55877c2f10d89c6d17eb67f14322b820b3eed1a3d8b
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/random_vectors.tex
 companion: sources/38-conditioning-densities.md
 companion_sha256: 844e4470fe388913fc5a31a5b72b6646b968aeac5a4f499cf40952e94bdf1277

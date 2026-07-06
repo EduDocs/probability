@@ -6,7 +6,7 @@ status: approved             # draft | reviewed | approved  (human gate)
 source: sources/10-continuity-measure.tex
 source_sha256: 0390aee133c064796b1e43553c5d8a427df530f6fb48a0e2403d86c11a61bcfa
 provenance_stamped: 2026-07-06
-framework_commit: a64a018
+framework_commit: 9ec97cb-dirty
 upstream: ../chapters/probability_models.tex
 companion: sources/10-continuity-measure.md
 companion_sha256: a85a1f30cd74d5e583096067e8b704a4e5d8a0b8b2984f995a05e92b1e62c533

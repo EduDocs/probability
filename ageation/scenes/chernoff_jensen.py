@@ -1,5 +1,5 @@
 # derived_from: content/36-chernoff-jensen-script.md
-# derived_from_sha256: 20b750e1fdcb4af44af30f6f8a599668c41e1718a9907d278d7995681cd262bc
+# derived_from_sha256: b2bad368b3c321d0f4830ebb8e3798394d261d69f345ae21a061741e61dad0d1
 """Chapter 10, Video 3 -- The Chernoff Bound and Jensen's Inequality.
 
 Source notes : expectations_and_bounds.tex (subsections "The Chernoff

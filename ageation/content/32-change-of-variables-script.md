@@ -4,7 +4,7 @@ title: The Change-of-Variables Formula
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human pre-approved via chat 2026-07-03 (batch instruction)
 derived_from: 32-change-of-variables.md
-derived_from_sha256: 901df8bf7fb2faf55fd6cc009bfec2b1ba149f3dfc03445152d363702c872bfa
+derived_from_sha256: 0296efa1f6b727917a7875ebb875c1fd9b411ba1f66978b93a5395999e15efcf
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/change_of_variables.py
 

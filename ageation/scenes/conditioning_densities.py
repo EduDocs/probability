@@ -1,5 +1,5 @@
 # derived_from: content/38-conditioning-densities-script.md
-# derived_from_sha256: 3308d37f861c78cbbf6ccbcfdb37b8cef220e70d8243612d77865cb9d9a571a6
+# derived_from_sha256: b165f7c5da0cf81bdd4b730b241b3ef85c7ed2614c3317419d599b293f0a1bdc
 """Chapter 11, Video 2 -- Conditioning with Densities.
 
 Source notes : random_vectors.tex (Section 11.2, preamble + all three
@@ -84,7 +84,8 @@ class ChapterOverview(VoiceoverScene):
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.35)
 
         with self.voiceover(
-            text="Last video built the joint density: a surface over the "
+            # (2026-07-06 intro-variety pass) opener reworded for playlist variety.
+            text="We have just built the joint density: a surface over the "
                  "plane whose volume above a region is probability, with "
                  "marginals found by integrating one variable out. This "
                  "video slices that surface, because that is how observation "

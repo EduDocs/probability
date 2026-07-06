@@ -4,7 +4,7 @@ title: Permutations and Combinations
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 04-permutations-combinations.md
-derived_from_sha256: c7d7d036f28b04fb94e6fa3e1b60e9501db11c2e95e059637fbe902dce96a54e
+derived_from_sha256: 3422f4baf4063cb9549847bd8da710f2e568aefca44acb84429d709e4748266b
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/permutations_combinations.py
 

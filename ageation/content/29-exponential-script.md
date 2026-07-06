@@ -4,7 +4,7 @@ title: The Exponential Distribution
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human pre-approved via chat 2026-07-03 (batch instruction)
 derived_from: 29-exponential.md
-derived_from_sha256: 8c26665c8babb1df9e6c464dac45c49cb1bb86301d6a446ef55b5f84f856a747
+derived_from_sha256: 6ba67e0eabd92f0014aae162feda196a20b80e939690ed25b5aa8d15c4a45889
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/exponential.py
 
@@ -27,38 +27,38 @@ target_runtime_sec: 290
 tolerance_sec: 45
 
 estimated_runtime_sec: 353
-measured_runtime_sec: 331.6
+measured_runtime_sec: 408.3
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 98
     est_sec: 38
-    measured_sec: 36.4
+    measured_sec: 40.4
     sync_points: [definition, limit, memoryless, halflife]
   - id: definition
     scene_class: ExponentialDefinition
     narration_words: 229
     est_sec: 88
-    measured_sec: 82.1
+    measured_sec: 104.7
     sync_points: [density, cdf, rate, rate2, server, answer]
   - id: limit
     scene_class: GeometricLimit
     narration_words: 202
     est_sec: 78
-    measured_sec: 68.0
+    measured_sec: 86.9
     sync_points: [setup, scaled, staircase, melt, arrival]
   - id: memoryless
     scene_class: Memoryless
     narration_words: 177
     est_sec: 68
-    measured_sec: 63.7
+    measured_sec: 78.3
     sync_points: [statement, proof, restart, restart2, restart3, unique]
   - id: halflife
     scene_class: HalfLifeExample
     narration_words: 211
     est_sec: 81
-    measured_sec: 81.4
+    measured_sec: 97.9
     sync_points: [setup, split, solve, stream, outro]
 ---
 
@@ -72,7 +72,7 @@ authoring synchronization marker realized as a separate sequential
 
 ## Beat: overview  (scene: ChapterOverview)
 
-> Last video opened the catalog of continuous models with the uniform and
+> The catalog of continuous models opened with the uniform and
 > the Gaussian. Today we add the third leg of the triad: the exponential
 > distribution, the model for waiting. <bookmark mark="definition"/> We meet
 > its density and its CDF, and put them straight to work on a server,

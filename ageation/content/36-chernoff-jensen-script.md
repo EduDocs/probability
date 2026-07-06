@@ -4,7 +4,7 @@ title: The Chernoff Bound and Jensen's Inequality
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # approved via scheduled batch instruction 2026-07-03
 derived_from: 36-chernoff-jensen.md
-derived_from_sha256: cc798ad32dddcaf3c7bd4a039b069729065e6703d94007be25730d0bb59dd95f
+derived_from_sha256: c983407d99189ee7cb26cc38331846462d104190b021ac09f60189c9bde3a279
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/chernoff_jensen.py
 

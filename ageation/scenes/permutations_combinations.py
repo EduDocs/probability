@@ -1,5 +1,5 @@
 # derived_from: content/04-permutations-combinations-script.md
-# derived_from_sha256: 5803181b45f0a802d6cb2523b4d1542304cb100205aafde3f1324ab8c4c5c5a2
+# derived_from_sha256: ee0061c3a0a4c7dfa8072ecdcc34470173d4c0bf76fdcddfe50b603346cbe70e
 """Chapter 2, Video 2 -- Permutations and Combinations (manim-voiceover).
 
 Source notes : ../chapters/combinatorics.tex  (2.2 Permutations, 2.2.1

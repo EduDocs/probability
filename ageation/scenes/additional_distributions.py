@@ -1,5 +1,5 @@
 # derived_from: content/30-additional-distributions-script.md
-# derived_from_sha256: d7323a4dc9d163e4fd890f9632630ee0d1213d6f1277918750ead504c903b853
+# derived_from_sha256: 34176b4a842bad2c8dda205857e476ea48d0f1c795d5908d17959068caf3d393
 """Chapter 8, Video 5 -- A Gallery of Densities.
 
 Source notes : continuous_random_variables.tex (Section 8.5, Additional

@@ -1,5 +1,5 @@
 # derived_from: content/19-functions-and-expectations-script.md
-# derived_from_sha256: 0a91be4e10742e84efd90aff181f5efb0d124eb7b7c9fd5967de417cf67a0b15
+# derived_from_sha256: 288b25036b8dae85c325ef0f7193152fef2501a1f4cef45ad84d33446ea55436
 """Chapter 6, Video 2 -- Functions and Expectations.
 
 Source notes : discrete_expectations.tex (Section 6.2 + subsections 6.2.1

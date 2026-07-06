@@ -1,5 +1,5 @@
 # derived_from: content/09-model-categories-script.md
-# derived_from_sha256: aaf2bf92604048bc05dc283dbebe2fdd311e7866fc18e95f7026051396eb1a46
+# derived_from_sha256: a418b6077ac03f7f5141b56ba9f662b1e8798ff9244dd0b757e9b824d2e5ef8e
 """Chapter 3, Video 3 -- Categories of Probability Models (narrated with manim-voiceover).
 
 Source notes : ../chapters/probability_models.tex  (3.2.1 Finite Sample Spaces,
@@ -41,19 +41,18 @@ from _style import (
     fit_to_frame,
     make_pmf_chart,
     configure_openai_client,
+    speech_service,
 )
 
 
 def make_speech_service():
-    """Voice (mirrors voice: in the script YAML).
+    """Voice comes from project.yaml (project.voice) via _style.speech_service.
 
-    Draft  -> GTTSService (free). Final -> OpenAIService(voice="nova"), matching
-    the rest of the series; switch the lines below and add OPENAI_API_KEY.
+    Drafts are free: tools/render.py exports AGEATION_TTS=gtts for -ql, and
+    the env var beats the configured provider. Finals read the per-project
+    voice (nova for this series).
     """
-    # return GTTSService(lang="en", tld="com")  # free draft voice
-    configure_openai_client()
-    return OpenAIService(voice="nova", model="tts-1",
-                         transcription_model=None)
+    return speech_service()
 
 
 # --- Shared visual helpers (mirroring the house style) -----------------------
@@ -104,7 +103,8 @@ class ChapterOverview(VoiceoverScene):
         tag = progress_tag(3, 4).to_corner(DR, buff=0.4)
 
         with self.voiceover(
-            text="In the last video we built probability from three axioms — "
+            # (2026-07-06 intro-variety pass) opener reworded for playlist variety.
+            text="Probability now rests on three axioms — "
                  "nonnegativity, normalization, and additivity. Those axioms work "
                  "on any sample space."
         ):

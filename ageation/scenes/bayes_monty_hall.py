@@ -1,5 +1,5 @@
 # derived_from: content/13-bayes-monty-hall-script.md
-# derived_from_sha256: 564b0e243c964bddaa92adc75691a5307e22dff6df355d0b8a033b821e7ea835
+# derived_from_sha256: e71fb3173c91e8539b084a6c71a77969e71d2e8305a1b69468a19cd8e1c18cc2
 """Chapter 4, Video 3 -- Bayes' Rule and the Monty Hall Problem.
 
 Source notes : conditional-probability chapter (Bayes' rule, base-rate

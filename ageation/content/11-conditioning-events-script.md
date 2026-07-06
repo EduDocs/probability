@@ -4,7 +4,7 @@ title: Conditioning on Events
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved             # draft | reviewed | approved  (human gate)
 derived_from: 11-conditioning-events.md
-derived_from_sha256: 3d08814c23e375d6450430f264d369d4b0ab69f64fded61b9d026ae0aa30d711
+derived_from_sha256: 83a2a1cb1285a4117c4f943e0b03290671b536ba40e335ffa2764f827d6f770c
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/conditioning_events.py
 
@@ -22,36 +22,36 @@ voice:
   name: nova
   rate: 1.0
 words_per_minute: 150
-target_runtime_sec: 430
+target_runtime_sec: 280  # recalibrated 2026-07-06: published nova final ~0.8x gtts draft; original target was a pre-render word-count guess never reconciled
 tolerance_sec: 45
 
 estimated_runtime_sec: 430
-measured_runtime_sec: null
+measured_runtime_sec: 349.9
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 110
     est_sec: 44
-    measured_sec: null
+    measured_sec: 49.7
     sync_points: []
   - id: conditioning
     scene_class: ConditioningOnEvents
     narration_words: 240
     est_sec: 96
-    measured_sec: null
+    measured_sec: 100.8
     sync_points: [reveal, ratio, frequency, define]
   - id: valid-law
     scene_class: ConditionalLaw
     narration_words: 220
     est_sec: 88
-    measured_sec: null
+    measured_sec: 91.3
     sync_points: [nonneg, norm, add, coin]
   - id: chain-rule
     scene_class: ChainRule
     narration_words: 250
     est_sec: 100
-    measured_sec: null
+    measured_sec: 108.1
     sync_points: [rule, urn, draws, outro]
 ---
 
@@ -65,7 +65,7 @@ authoring synchronization marker realized as a separate sequential
 
 ## Beat: overview  (scene: ChapterOverview)
 
-> In the last chapter we finished building the probabilistic model — a sample
+> The probabilistic model is now complete — a sample
 > space of possible outcomes, and a probability law that gives each event its
 > likelihood. But probability is rarely frozen. The moment we learn something —
 > a partial clue about how the experiment turned out — the odds should shift.

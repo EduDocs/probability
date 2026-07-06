@@ -1,5 +1,5 @@
 # derived_from: content/18-expected-values-script.md
-# derived_from_sha256: 0dd0614eb16e14c9407a8041c009990f611c7abc3d5a7b69e8426094c156242a
+# derived_from_sha256: ee4c631e6889555cb01cff3a2a06a79c9b95360eafed5986a551da0c5e35ada6
 """Chapter 6, Video 1 -- Expected Values.
 
 Source notes : discrete_expectations.tex (chapter intro + Section 6.1) --
@@ -79,7 +79,8 @@ class ChapterOverview(VoiceoverScene):
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.4)
 
         with self.voiceover(
-            text="Last time we saw that applying a function to a random "
+            # (2026-07-06 intro-variety pass) opener reworded for playlist variety.
+            text="We now know that applying a function to a random "
                  "variable gives another random variable, with its own PMF. "
                  "So by now, a PMF is something we can build and transform. "
                  "But a PMF is a lot of information — a whole table of values "

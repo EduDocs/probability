@@ -4,7 +4,7 @@ title: Densities and Expectation
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human pre-approved via chat 2026-07-03 (batch instruction)
 derived_from: 27-pdfs-expectation.md
-derived_from_sha256: 8ae214e6421bc32f31a59484118191c54097a311a89a231811ea62249ebd662a
+derived_from_sha256: 38cc16f132387afb8c6bd7444442d42f9bd1c617376cca0be918e19e30ccadf2
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/pdfs_expectation.py
 
@@ -30,38 +30,38 @@ tolerance_sec: 45
 # est_sec: narration_words / 2.6 (cheap, pre-render).
 # measured_sec: written back by assemble / make measure (ffprobe).
 estimated_runtime_sec: 371
-measured_runtime_sec: 339.2
+measured_runtime_sec: 424.9
 
 beats:
   - id: overview
     scene_class: ChapterOverview
     narration_words: 98
     est_sec: 38
-    measured_sec: 39.1
+    measured_sec: 45.3
     sync_points: [density, area, expectation]
   - id: density
     scene_class: DensityDefinition
     narration_words: 213
     est_sec: 82
-    measured_sec: 77.9
+    measured_sec: 98.9
     sync_points: [slope, ftc, duality, drag, interval, area]
   - id: properties
     scene_class: DensityProperties
     narration_words: 222
     est_sec: 85
-    measured_sec: 76.2
+    measured_sec: 97.9
     sync_points: [strip, shrink, zero, endpoints, not-prob, tall, axiom-one, axiom-two, admissible]
   - id: expectation
     scene_class: ExpectationIntegral
     narration_words: 236
     est_sec: 91
-    measured_sec: 78.0
+    measured_sec: 96.9
     sync_points: [discrete, morph, mean, variance, shortcut, tail, columns, rows]
   - id: darts
     scene_class: DartboardExample
     narration_words: 196
     est_sec: 75
-    measured_sec: 68.0
+    measured_sec: 85.9
     sync_points: [setup, ring, tail, integrate, result, outro]
 ---
 
@@ -75,7 +75,7 @@ authoring synchronization marker realized as a separate sequential
 
 ## Beat: overview  (scene: ChapterOverview)
 
-> Last video built the bridge: the cumulative distribution function, one
+> The bridge is in place: the cumulative distribution function, one
 > function that describes any random variable — staircases for the
 > discrete, smooth progressions for the continuous. <bookmark mark="density"/> In
 > this video we differentiate that smooth function and meet the density, the working

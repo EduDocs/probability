@@ -1,5 +1,5 @@
 # derived_from: content/25-sums-and-many-script.md
-# derived_from_sha256: 93340fb2a180584440c41f56ebf716edc5afb530e8c94fe9778815e89afd38c8
+# derived_from_sha256: d2971f39b7fd458b348a433af12fbd784e65661a1044971e2c7820e139d2f5a7
 """Chapter 7, Video 5 -- Sums of Variables.
 
 Source notes : discrete_vectors.tex (Sections 7.6-7.7) -- convolution, the

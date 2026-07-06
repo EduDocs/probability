@@ -1,5 +1,5 @@
 # derived_from: content/42-law-large-numbers-script.md
-# derived_from_sha256: ab233e8a1659bfe5f92fb204d46cb2a6761843c3440f55531f4fa4808aa92de0
+# derived_from_sha256: c6d3dd9f890083292fdde8aa7f8e86de557649aa18f8338d44df5e500d5e8393
 """Chapter 12, Video 2 -- The Law of Large Numbers.
 
 Source notes : 42-law-large-numbers.tex (\\section{The Law of Large

@@ -4,7 +4,7 @@ title: Conditional Expectation
 stage: script             # tex -> concept -> [script] -> scene -> render
 status: approved          # human approved the script 2026-07-03
 derived_from: 23-conditional-expectation.md
-derived_from_sha256: 133a81be52e92da0afb0e6ea7c0189f23dfe34f080aa8aa6225e18a38311570e
+derived_from_sha256: 661d5810fb6b1fb48e3b71b65a9d444a9a919cfc6dfec935ae4dba9f397579da
 provenance_stamped: 2026-07-06
 target_scene_file: scenes/conditional_expectation.py
 
